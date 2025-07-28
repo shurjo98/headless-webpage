@@ -4,12 +4,32 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
+import * as $api_contact from "./routes/api/contact.ts";
+import * as $api_features from "./routes/api/features.ts";
 import * as $api_joke from "./routes/api/joke.ts";
+import * as $api_packages from "./routes/api/packages.ts";
+import * as $blog from "./routes/blog.tsx";
+import * as $case_studies_slug_ from "./routes/case-studies/[slug].tsx";
+import * as $case_studies_index from "./routes/case-studies/index.tsx";
+import * as $contact from "./routes/contact.tsx";
+import * as $docs from "./routes/docs.tsx";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
+import * as $legal_privacy from "./routes/legal/privacy.tsx";
+import * as $legal_sla from "./routes/legal/sla.tsx";
+import * as $legal_terms from "./routes/legal/terms.tsx";
+import * as $platform from "./routes/platform.tsx";
+import * as $pricing from "./routes/pricing.tsx";
+import * as $pricing_configurator from "./routes/pricing/configurator.tsx";
+import * as $services from "./routes/services.tsx";
+import * as $solutions from "./routes/solutions.tsx";
+import * as $why_headless from "./routes/why-headless.tsx";
+import * as $Configurator from "./islands/Configurator.tsx";
+import * as $ContactForm from "./islands/ContactForm.tsx";
 import * as $Counter from "./islands/Counter.tsx";
 import * as $FeatureTabs from "./islands/FeatureTabs.tsx";
-import * as $ParallaxImage from "./islands/ParallaxImage.tsx";
+import * as $InstallmentCalculator from "./islands/InstallmentCalculator.tsx";
+import * as $RoiCalculator from "./islands/RoiCalculator.tsx";
 import * as $StatCounter from "./islands/StatCounter.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
@@ -17,14 +37,34 @@ const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
+    "./routes/api/contact.ts": $api_contact,
+    "./routes/api/features.ts": $api_features,
     "./routes/api/joke.ts": $api_joke,
+    "./routes/api/packages.ts": $api_packages,
+    "./routes/blog.tsx": $blog,
+    "./routes/case-studies/[slug].tsx": $case_studies_slug_,
+    "./routes/case-studies/index.tsx": $case_studies_index,
+    "./routes/contact.tsx": $contact,
+    "./routes/docs.tsx": $docs,
     "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
+    "./routes/legal/privacy.tsx": $legal_privacy,
+    "./routes/legal/sla.tsx": $legal_sla,
+    "./routes/legal/terms.tsx": $legal_terms,
+    "./routes/platform.tsx": $platform,
+    "./routes/pricing.tsx": $pricing,
+    "./routes/pricing/configurator.tsx": $pricing_configurator,
+    "./routes/services.tsx": $services,
+    "./routes/solutions.tsx": $solutions,
+    "./routes/why-headless.tsx": $why_headless,
   },
   islands: {
+    "./islands/Configurator.tsx": $Configurator,
+    "./islands/ContactForm.tsx": $ContactForm,
     "./islands/Counter.tsx": $Counter,
     "./islands/FeatureTabs.tsx": $FeatureTabs,
-    "./islands/ParallaxImage.tsx": $ParallaxImage,
+    "./islands/InstallmentCalculator.tsx": $InstallmentCalculator,
+    "./islands/RoiCalculator.tsx": $RoiCalculator,
     "./islands/StatCounter.tsx": $StatCounter,
   },
   baseUrl: import.meta.url,

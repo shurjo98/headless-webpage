@@ -3,21 +3,40 @@ export default function Footer() {
   const sections = [
     {
       title: "Product",
-      links: ["Features", "Pricing", "Docs", "API Status"],
+      links: [
+        { label: "Features", href: "/#features" },
+        { label: "Pricing",  href: "/pricing" },
+        { label: "Docs",     href: "/docs" },
+        { label: "API Status", href: "https://status.yourcompany.com" },
+      ],
     },
     {
       title: "Company",
-      links: ["About", "Careers", "Blog", "Contact"],
+      links: [
+        { label: "About",   href: "/about" },
+        { label: "Careers", href: "/careers" },
+        { label: "Blog",    href: "/blog" },
+        { label: "Contact", href: "/contact" },
+      ],
     },
     {
       title: "Resources",
-      links: ["Help Center", "Community", "Tutorials", "Partners"],
+      links: [
+        { label: "Help Center", href: "/help" },
+        { label: "Community",   href: "/community" },
+        { label: "Tutorials",   href: "/tutorials" },
+        { label: "Partners",    href: "/partners" },
+      ],
     },
     {
       title: "Legal",
-      links: ["Terms of Service", "Privacy Policy", "Cookie Policy"],
+      links: [
+        { label: "Terms of Service", href: "/legal/terms" },
+        { label: "Privacy Policy",   href: "/legal/privacy" },
+        { label: "Service Level Agreement", href: "/legal/sla" },
+      ],
     },
-  ];
+  ] as const;
 
   return (
     <footer className="bg-surface-100 text-neutral-900 pt-16 pb-10">
@@ -26,13 +45,13 @@ export default function Footer() {
         <div className="flex flex-col">
           <a href="/" className="inline-block mb-4">
             <img
-              src="/images/logo.png"   // ← your FM logo here
+              src="/images/logo.png"   /* ← your FM logo */
               alt="FM Logo"
               className="h-10 w-auto ml-4"
             />
           </a>
           <p className="text-neutral-600 text-sm max-w-xs">
-            Fast & Modern
+            Fast &amp; Modern
           </p>
         </div>
 
@@ -41,15 +60,13 @@ export default function Footer() {
           <div key={title} className="space-y-3 text-sm">
             <h4 className="font-semibold">{title}</h4>
             <ul className="space-y-2">
-              {links.map((link) => (
-                <li key={link}>
+              {links.map(({ label, href }) => (
+                <li key={label}>
                   <a
-                    href={`/${link
-                      .toLowerCase()
-                      .replace(/\s+/g, "")}`}
+                    href={href}
                     className="block hover:text-primary-600 transition-colors"
                   >
-                    {link}
+                    {label}
                   </a>
                 </li>
               ))}

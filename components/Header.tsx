@@ -31,7 +31,7 @@ export default function Header() {
         {/* Desktop menu */}
         <ul class="hidden lg:flex items-center gap-8 text-lg">
           <li>
-            <a href="/why" class={linkBase}>Why HeadlessPro</a>
+            <a href="/why-headless" class={linkBase}>Why Headless</a>
           </li>
           <li>
             <a href="/platform" class={linkBase}>Platform</a>
@@ -50,12 +50,12 @@ export default function Header() {
           </li>
           <li>
             <a
-              href="/signup"
+              href="/contact"
               class="ml-4 inline-block bg-primary-500 hover:bg-primary-600  
                      text-white text-lg font-semibold px-8 py-4 rounded-lg  
                      shadow-md transition ease-in-out duration-150"
             >
-              Start Free Trial
+             Discovery Call
             </a>
           </li>
         </ul>

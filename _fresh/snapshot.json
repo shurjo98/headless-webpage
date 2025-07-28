@@ -1,0 +1,63 @@
+{
+  "build_id": "be87459054ca843babc2ad58890bac2626993f56",
+  "files": {
+    "island-roicalculator.js": [
+      "chunk-MEABNXAK.js",
+      "chunk-DQ6WAFCB.js",
+      "chunk-V66ALGLP.js"
+    ],
+    "island-statcounter.js": [
+      "chunk-MEABNXAK.js",
+      "chunk-DQ6WAFCB.js",
+      "chunk-V66ALGLP.js"
+    ],
+    "main.js": [
+      "chunk-HBXSMTIJ.js",
+      "chunk-GI7LLYGM.js",
+      "chunk-V66ALGLP.js"
+    ],
+    "deserializer.js": [],
+    "signals.js": [
+      "chunk-GI7LLYGM.js",
+      "chunk-DQ6WAFCB.js",
+      "chunk-V66ALGLP.js"
+    ],
+    "island-configurator.js": [
+      "chunk-MEABNXAK.js",
+      "chunk-DQ6WAFCB.js",
+      "chunk-V66ALGLP.js"
+    ],
+    "island-contactform.js": [
+      "chunk-MEABNXAK.js",
+      "chunk-DQ6WAFCB.js",
+      "chunk-V66ALGLP.js"
+    ],
+    "island-counter.js": [
+      "chunk-HBXSMTIJ.js",
+      "chunk-GI7LLYGM.js",
+      "chunk-MEABNXAK.js",
+      "chunk-DQ6WAFCB.js",
+      "chunk-V66ALGLP.js"
+    ],
+    "chunk-HBXSMTIJ.js": [],
+    "chunk-GI7LLYGM.js": [],
+    "island-featuretabs.js": [
+      "chunk-MEABNXAK.js",
+      "chunk-DQ6WAFCB.js",
+      "chunk-V66ALGLP.js"
+    ],
+    "island-installmentcalculator.js": [
+      "chunk-MEABNXAK.js",
+      "chunk-DQ6WAFCB.js",
+      "chunk-V66ALGLP.js"
+    ],
+    "chunk-MEABNXAK.js": [
+      "chunk-V66ALGLP.js"
+    ],
+    "chunk-DQ6WAFCB.js": [
+      "chunk-V66ALGLP.js"
+    ],
+    "chunk-V66ALGLP.js": [],
+    "metafile.json": []
+  }
+}

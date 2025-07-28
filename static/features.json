@@ -1,0 +1,61 @@
+{
+  "web": [
+    { "id": "home",            "title": "Home",                 "desc": "This is the start page",      "img": "https://images.unsplash.com/photo-1541591708423-9001fe827349?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",  "price": 200 },
+    { "id": "category",        "title": "Category (PLP)",       "desc": "Product listing page",        "img": "https://images.unsplash.com/photo-1663090859594-b545c8893988?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",  "price": 200 },
+    { "id": "product",         "title": "Product (PDP)",        "desc": "Product detail page",         "img": "https://images.unsplash.com/photo-1677155699495-bca80823ba03?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",  "price": 200 },
+    { "id": "cart",            "title": "Cart",                 "desc": "Shopping cart",               "img": "https://images.unsplash.com/photo-1677161842229-0b8324c1e461?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "price": 200 },
+    { "id": "checkout",        "title": "Checkout",             "desc": "Secure payment process",      "img": "https://images.unsplash.com/photo-1541591708423-9001fe827349?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "price": 200 },
+    { "id": "login",           "title": "Login",                "desc": "User login screen",           "img": "https://images.unsplash.com/photo-1605604867760-76b873919924?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",    "price": 200 },
+    { "id": "register",        "title": "Register",             "desc": "Create account",              "img": "https://images.unsplash.com/photo-1541591708423-9001fe827349?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",      "price": 200 },
+    { "id": "account",         "title": "My Account",           "desc": "Manage profile/orders",       "img": "https://images.unsplash.com/photo-1541591708423-9001fe827349?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",   "price": 200 },
+    { "id": "order_history",   "title": "Order History",        "desc": "Purchase history",            "img": "https://images.unsplash.com/photo-1605604867760-76b873919924?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",  "price": 200 },
+    { "id": "404",             "title": "404 Page",             "desc": "Not-found page",              "img": "https://images.unsplash.com/photo-1571380401583-72ca84994796?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",    "price": 200 },
+
+    { "id": "search",          "title": "Search Results",       "desc": "Sitewide search",             "img": "https://images.unsplash.com/photo-1730212426715-f0189e690149?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",  "price": 300 },
+    { "id": "wishlist",        "title": "Wishlist",             "desc": "Save products",               "img": "https://images.unsplash.com/photo-1541591708423-9001fe827349?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",      "price": 300 },
+    { "id": "blog",            "title": "Blog",                 "desc": "CMS-powered blog",            "img": "https://images.unsplash.com/photo-1695639541844-10e622641add?q=80&w=2232&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",   "price": 300 },
+    { "id": "content_pages",   "title": "Content Pages",        "desc": "About / FAQ / Shipping",      "img": "https://images.unsplash.com/photo-1720048170570-549fd09d1d38?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",      "price": 300 },
+    { "id": "password_reset",  "title": "Password Reset",       "desc": "Forgot password",             "img": "https://images.unsplash.com/photo-1636032204208-fdd9d7b11394?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",  "price": 300 },
+
+    { "id": "multi_locale",    "title": "Multi-locale Selector","desc": "Change region/language",      "img": "https://images.unsplash.com/photo-1648905704296-4dfef2280350?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",    "price": 400 },
+    { "id": "b2b_portal",      "title": "B2B Portal",           "desc": "Quote & net-terms",           "img": "https://images.unsplash.com/photo-1537954406021-d821481dc0d9?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",  "price": 400 },
+    { "id": "store_finder",    "title": "Store Finder",         "desc": "Physical locations",          "img": "https://images.unsplash.com/photo-1623081514510-0364177a9b86?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "price": 400 },
+    { "id": "returns_portal",  "title": "Returns Portal",       "desc": "Self-serve returns",          "img": "https://images.unsplash.com/photo-1726066012801-14d892021339?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",    "price": 400 },
+    { "id": "gift_cards",      "title": "Gift Cards",           "desc": "Buy & redeem cards",          "img": "https://images.unsplash.com/photo-1599317193916-642a55564630?q=80&w=2231&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "price": 400 },
+    { "id": "loyalty",         "title": "Loyalty Dashboard",    "desc": "Customer rewards",            "img": "https://images.unsplash.com/photo-1581291519195-ef11498d1cf2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",    "price": 400 },
+
+    { "id": "cms_preview",     "title": "CMS Preview Mode",     "desc": "Preview drafts",              "img": "https://images.unsplash.com/photo-1706666304557-e239fd2972b4?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",   "price": 600 },
+    { "id": "ab_test",         "title": "A/B Test Variants",    "desc": "Experiment engine",           "img": "https://images.unsplash.com/photo-1643061506831-48f6027da033?q=80&w=986&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",  "price": 600 },
+    { "id": "personalized_landing", "title": "Personalized Landing", "desc": "Targeted pages",       "img": "https://images.unsplash.com/photo-1736323507366-26af768ccc99?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",    "price": 600 },
+    { "id": "multi_brand",     "title": "Multi-brand Switcher", "desc": "Switch brands",               "img": "https://images.unsplash.com/photo-1643061506278-f8aa851bbd13?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",  "price": 600 },
+    { "id": "accessibility",   "title": "Accessibility Statement","desc": "Compliance info",          "img": "https://images.unsplash.com/photo-1595340738625-3f9214663e93?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",    "price": 600 },
+    { "id": "legal_center",    "title": "Legal Centre",         "desc": "Privacy / GDPR / CCPA",       "img": "https://images.unsplash.com/photo-1662904123936-fa6d0f8cd0cd?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",      "price": 600 }
+  ],
+
+  "mobile": [
+    { "id": "splash",          "title": "Splash Screen",        "desc": "App intro",                   "img": "https://images.unsplash.com/photo-1556639033-fdffa0eb17f7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",    "price": 200 },
+    { "id": "signin",          "title": "Sign In / Sign Up",    "desc": "Mobile auth",                 "img": "https://images.unsplash.com/photo-1587355760421-b9de3226a046?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",    "price": 200 },
+    { "id": "mobile_home",     "title": "Home",                 "desc": "Mobile dashboard",            "img": "http://lorempixel.com/400/250/city",      "price": 200 },
+    { "id": "browse",          "title": "Browse List",          "desc": "Category list",               "img": "http://lorempixel.com/400/250/abstract",  "price": 200 },
+    { "id": "mobile_product",  "title": "Product Detail",       "desc": "PDP (mobile)",                "img": "http://lorempixel.com/400/250/business",  "price": 200 },
+    { "id": "mobile_cart",     "title": "Cart",                 "desc": "Mobile cart",                 "img": "http://lorempixel.com/400/250/food",      "price": 200 },
+    { "id": "mobile_checkout", "title": "Checkout",             "desc": "Payment flow",                "img": "http://lorempixel.com/400/250/transport", "price": 200 },
+    { "id": "mobile_orders",   "title": "Orders",               "desc": "Order history",               "img": "http://lorempixel.com/400/250/sports",    "price": 200 },
+    { "id": "profile",         "title": "Profile",              "desc": "Manage account",              "img": "http://lorempixel.com/400/250/people",    "price": 200 },
+
+    { "id": "mobile_wishlist", "title": "Wishlist",             "desc": "Save products",               "img": "http://lorempixel.com/400/250/animals",   "price": 300 },
+    { "id": "mobile_search",   "title": "Search",               "desc": "Keyword search",              "img": "http://lorempixel.com/400/250/technics",  "price": 300 },
+    { "id": "notifications",   "title": "Push-Notification Hub","desc": "Message centre",              "img": "http://lorempixel.com/400/250/nightlife", "price": 300 },
+    { "id": "help",            "title": "Help Centre",          "desc": "Support section",             "img": "http://lorempixel.com/400/250/abstract",  "price": 300 },
+
+    { "id": "qr_scanner",      "title": "QR / Barcode Scanner", "desc": "Scan items",                  "img": "http://lorempixel.com/400/250/business",  "price": 400 },
+    { "id": "store_locator",   "title": "Store-Locator Map",    "desc": "Nearby stores",               "img": "http://lorempixel.com/400/250/transport", "price": 400 },
+    { "id": "rewards",         "title": "Loyalty & Rewards",    "desc": "Earn points",                 "img": "http://lorempixel.com/400/250/fashion",   "price": 400 },
+    { "id": "gift_wallet",     "title": "Gift-Card Wallet",     "desc": "Manage gift cards",           "img": "http://lorempixel.com/400/250/animals",   "price": 400 },
+
+    { "id": "theming",         "title": "Multi-tenant Theming", "desc": "Brand styling",               "img": "http://lorempixel.com/400/250/nature",    "price": 600 },
+    { "id": "chat",            "title": "In-app Chat Support",  "desc": "Live chat",                   "img": "http://lorempixel.com/400/250/people",    "price": 600 },
+    { "id": "ar_tryon",        "title": "AR Try-on",            "desc": "Augmented reality",           "img": "http://lorempixel.com/400/250/technics",  "price": 600 },
+    { "id": "sso",             "title": "Enterprise SSO",       "desc": "Single sign-on",              "img": "http://lorempixel.com/400/250/business",  "price": 600 }
+  ]
+}

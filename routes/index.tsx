@@ -9,109 +9,95 @@ import FeatureTabs from "../islands/FeatureTabs.tsx"; // ← our island
 function HeroSection() {
   return (
     <section class="relative w-full h-screen bg-primary-50 overflow-hidden">
-      {/* Base background blob */}
-      <div class="absolute inset-0 bg-abstract opacity-20 pointer-events-none">
+      {/* Background blob */}
+      <div class="absolute inset-0 bg-abstract opacity-20 pointer-events-none"></div>
+
+      {/* Grid: 1 col on mobile, 3 cols on lg+ */}
+      <div class="relative z-20 grid grid-cols-1 lg:grid-cols-3 items-center h-full">
+        
+        {/* ─── 1. Phone (always shown) ─────────────────── */}
+        <div class="flex justify-center lg:justify-start px-4 sm:px-6 md:px-8">
+          <img
+            src="/images/phone.png"
+            alt="Storefront on device"
+            class="w-3/4 sm:w-2/3 md:w-1/2 lg:max-w-xs animate-float"
+          />
+        </div>
+
+        {/* ─── 2. Bubbles & CTAs (always centered) ────── */}
+        <div class="flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 space-y-6">
+          <div class="bg-primary-600 text-white px-6 py-4 sm:px-8 sm:py-6 rounded-[2rem] shadow-lg animate-fadeIn">
+            <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+              Launch Once. Grow Everywhere.
+            </h1>
+          </div>
+          <div class="bg-primary-600 text-white px-5 py-3 sm:px-6 sm:py-4 rounded-[2rem] shadow-lg animate-fadeIn delay-500">
+            <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium leading-relaxed tracking-wide">
+              <span class="font-semibold">All from one</span> <span class="italic opacity-90">headless engine</span>
+            </p>
+          </div>
+          <div class="bg-primary-600 text-white px-5 py-3 sm:px-6 sm:py-4 rounded-[2rem] shadow-lg animate-fadeIn delay-700">
+            <p class="text-lg sm:text-xl md:text-2xl leading-relaxed">
+              Sell on web, mobile, social & marketplaces
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4 sm:mt-6 animate-popIn delay-[900ms]">
+            <a
+              href="/contact"
+      class="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-8 rounded-full transition"
+            >
+              Get a Quote
+            </a>
+            <a
+              href="/signup"
+              class="inline-block border border-white/70 text-white/90 font-semibold px-8 py-3 sm:px-10 sm:py-4 rounded-full hover:bg-white/10 transition text-base sm:text-lg"
+            >
+              Free Trial
+            </a>
+          </div>
+          {/* Scroll-down arrow */}
+          <div class="mt-8">
+            <svg
+              class="w-6 h-6 sm:w-8 sm:h-8 text-primary-600 animate-bounceArrow"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+        </div>
+
+        {/* ─── 3. Dashboard (lg+ only) ─────────────────── */}
+        <div class="hidden lg:flex justify-center px-4 sm:px-6 md:px-8">
+          <img
+            src="/images/dashboard.png"
+            alt="Analytics dashboard"
+            class="w-1/3 xl:w-1/4 animate-drift delay-500"
+          />
+        </div>
       </div>
 
-      {/* Phone: center on xs, offset on sm/md, sized per breakpoint */}
-      <img
-        src="/images/phone.png"
-        className={`absolute transition-all ease-in-out
-           left-1/2 -translate-x-1/2
-           top-1/2 -translate-y-1/2
-           w-3/4 sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3
-           sm:top-12 sm:left-12 sm:translate-x-0 sm:translate-y-0
-           md:translate-x-0 md:-translate-y-1/4
-           animate-float`}
-        alt="Storefront on device"
-      />
-
-      {/* Dashboard: visible sm+, hidden xs */}
-      <img
-        src="/images/dashboard.png"
-        className="hidden sm:block absolute
-          bottom-8 right-8
-          w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5
-          animate-drift delay-500"
-        alt="Analytics dashboard"
-      />
-
-      {/* Globe: always visible, sizes by breakpoint, spin on md+ */}
+      {/* Decorative icons */}
       <img
         src="/images/globe.png"
-        className="absolute
-          top-4 right-4
-          w-12 sm:w-16 md:w-20 lg:w-24
-          md:animate-spinSlow
-          opacity-80"
         alt="Global reach"
+        class="absolute top-4 right-4 w-12 sm:w-16 md:w-20 lg:w-24 md:animate-spinSlow opacity-80"
       />
-
-      {/* Micro-icons: appear at md+ with safe spacing */}
       <img
         src="/images/cart.png"
-        className="hidden md:block absolute top-8 left-8 w-10 lg:w-12 opacity-40 animate-float delay-1200"
         alt="Cart icon"
+        class="hidden lg:block absolute top-12 left-12 w-10 xl:w-12 opacity-40 animate-float delay-[1200ms]"
       />
       <img
         src="/images/code.png"
-        className="hidden md:block absolute bottom-20 left-10 w-8 lg:w-10 opacity-35 animate-drift delay-2000"
         alt="Code icon"
+        class="hidden lg:block absolute bottom-24 left-14 w-8 xl:w-10 opacity-35 animate-drift delay-[2000ms]"
       />
-
-      {/* Bubble Text Container */}
-
-      <div class="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 space-y-6">
-        {/* Primary Heading Bubble */}
-        <div class="bg-primary-600 text-white px-6 py-4 sm:px-8 sm:py-6 rounded-[2rem] max-w-xs sm:max-w-md md:max-w-lg animate-fadeIn">
-          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center leading-tight">
-            Launch Once. Grow Everywhere.
-          </h1>
-        </div>
-
-        {/* Tertiary Message Bubble */}
-        <div class="bg-primary-600 text-white px-5 py-3 sm:px-6 sm:py-4 rounded-[2rem] max-w-xs sm:max-w-md md:max-w-lg animate-fadeIn delay-1000 shadow-lg">
-          <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-center font-medium leading-relaxed tracking-wide">
-            <span class="font-semibold">All from one</span>{" "}
-            <span class="italic opacity-90">headless engine</span>
-          </p>
-        </div>
-
-        {/* Secondary Message Bubble */}
-        <div class="bg-primary-600 text-white px-5 py-3 sm:px-6 sm:py-4 rounded-[2rem] max-w-xs sm:max-w-md md:max-w-lg animate-fadeIn delay-500">
-          <p class="text-lg sm:text-xl md:text-2xl text-center">
-            Sell on web, mobile, social & marketplaces
-          </p>
-        </div>
-
-        {/* Call‑to‑Action Button */}
-        <a
-          href="/signup"
-          class="mt-4 sm:mt-6 inline-block bg-white text-primary-600 font-semibold px-8 py-3 sm:px-10 sm:py-4 rounded-full animate-popIn delay-1500 shadow-lg text-base sm:text-lg"
-        >
-          Get A Quote
-        </a>
-      </div>
-      {/* Scroll-down arrow */}
-      <div class="absolute bottom-4 w-full flex justify-center pointer-events-none">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-6 h-6 sm:w-8 sm:h-8 text-primary-600 animate-bounceArrow"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
-      </div>
     </section>
   );
 }
+
 
 export default function Home() {
   return (
@@ -152,10 +138,10 @@ export default function Home() {
               purchase journey feels tailored.
             </p>
             <a
-              href="/learn-more"
+              href="/why-headless"
               className="inline-block mt-4 font-medium text-primary-600 hover:underline"
             >
-              Learn more →
+              Why headless?
             </a>
           </div>
           {/* Image column */}

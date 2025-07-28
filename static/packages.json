@@ -1,0 +1,81 @@
+[
+  {
+    "key":   "starter",
+    "label": "Starter Commerce Kit",
+    "desc":  "Everything you need to launch a headless store",
+    "priceWeb": 20000,
+    "priceApp": 27500,
+
+    "defaults": [
+      "home","category","product","cart","checkout",
+      "login","register","password_reset","content_pages","accessibility",
+
+      "splash","signin","mobile_home","browse","mobile_product",
+      "mobile_cart","mobile_checkout","mobile_orders","profile"
+    ]
+  },
+
+  {
+    "key":   "growth",
+    "label": "Growth Commerce Suite",
+    "desc":  "Drive engagement, retention & content-led growth",
+    "priceWeb": 35000,
+    "priceApp": 14000,
+
+    "defaults": [
+      "@starter",                                  
+
+      "account","order_history","wishlist","blog","search",
+      "gift_cards","returns_portal","store_finder",
+      "loyalty","legal_center",
+
+      "mobile_wishlist","rewards","gift_wallet",
+      "notifications","help","mobile_search"
+    ]
+  },
+
+  {
+    "key":   "enterprise",
+    "label": "Enterprise Expansion Pack",
+    "desc":  "International, multi-brand & B2B commerce",
+    "priceWeb": 90000,
+    "priceApp": 35000,
+
+    "defaults": [
+      "@growth",
+
+      "multi_locale","multi_brand","b2b_portal",
+      "personalized_landing","cms_preview","ab_test",
+
+      "sso","theming","chat","notifications"
+    ]
+  },
+
+  {
+    "key":   "compliance",
+    "label": "Global Compliance Pack",
+    "desc":  "Accessibility, legal & localisation tools",
+    "priceWeb": 8500,
+    "priceApp": 21000,
+
+    "defaults": [
+      "accessibility","legal_center","multi_locale","store_finder",
+      "qr_scanner","store_locator","ar_tryon"
+    ]
+  },
+
+  {
+    "key":   "optim",
+    "label": "Optimization Add-On",
+    "desc":  "A/B testing & personalisation",
+    "priceWeb": 7500,
+    "priceApp": 0,
+
+    "compat": ["growth","enterprise"],
+
+    "defaults": [
+      "cms_preview","ab_test","personalized_landing",
+      "wishlist","loyalty","chat","notifications"
+    ]
+  }
+]
