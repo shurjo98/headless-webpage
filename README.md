@@ -412,5 +412,3 @@ tailwind.config.ts
 - **Contributors**: All who have contributed to this project
 
 ---
-
-**Built with ❤️ by the HeadlessPro Team**
