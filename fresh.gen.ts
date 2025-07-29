@@ -4,25 +4,32 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
+import * as $about from "./routes/about.tsx";
 import * as $api_contact from "./routes/api/contact.ts";
 import * as $api_features from "./routes/api/features.ts";
 import * as $api_joke from "./routes/api/joke.ts";
 import * as $api_packages from "./routes/api/packages.ts";
 import * as $blog from "./routes/blog.tsx";
+import * as $careers from "./routes/careers.tsx";
 import * as $case_studies_slug_ from "./routes/case-studies/[slug].tsx";
 import * as $case_studies_index from "./routes/case-studies/index.tsx";
+import * as $community from "./routes/community.tsx";
 import * as $contact from "./routes/contact.tsx";
 import * as $docs from "./routes/docs.tsx";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
+import * as $help from "./routes/help.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $legal_privacy from "./routes/legal/privacy.tsx";
 import * as $legal_sla from "./routes/legal/sla.tsx";
 import * as $legal_terms from "./routes/legal/terms.tsx";
+import * as $partners from "./routes/partners.tsx";
 import * as $platform from "./routes/platform.tsx";
 import * as $pricing from "./routes/pricing.tsx";
 import * as $pricing_configurator from "./routes/pricing/configurator.tsx";
+import * as $resources from "./routes/resources.tsx";
 import * as $services from "./routes/services.tsx";
 import * as $solutions from "./routes/solutions.tsx";
+import * as $tutorials from "./routes/tutorials.tsx";
 import * as $why_headless from "./routes/why-headless.tsx";
 import * as $Configurator from "./islands/Configurator.tsx";
 import * as $ContactForm from "./islands/ContactForm.tsx";
@@ -37,25 +44,32 @@ const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
+    "./routes/about.tsx": $about,
     "./routes/api/contact.ts": $api_contact,
     "./routes/api/features.ts": $api_features,
     "./routes/api/joke.ts": $api_joke,
     "./routes/api/packages.ts": $api_packages,
     "./routes/blog.tsx": $blog,
+    "./routes/careers.tsx": $careers,
     "./routes/case-studies/[slug].tsx": $case_studies_slug_,
     "./routes/case-studies/index.tsx": $case_studies_index,
+    "./routes/community.tsx": $community,
     "./routes/contact.tsx": $contact,
     "./routes/docs.tsx": $docs,
     "./routes/greet/[name].tsx": $greet_name_,
+    "./routes/help.tsx": $help,
     "./routes/index.tsx": $index,
     "./routes/legal/privacy.tsx": $legal_privacy,
     "./routes/legal/sla.tsx": $legal_sla,
     "./routes/legal/terms.tsx": $legal_terms,
+    "./routes/partners.tsx": $partners,
     "./routes/platform.tsx": $platform,
     "./routes/pricing.tsx": $pricing,
     "./routes/pricing/configurator.tsx": $pricing_configurator,
+    "./routes/resources.tsx": $resources,
     "./routes/services.tsx": $services,
     "./routes/solutions.tsx": $solutions,
+    "./routes/tutorials.tsx": $tutorials,
     "./routes/why-headless.tsx": $why_headless,
   },
   islands: {
