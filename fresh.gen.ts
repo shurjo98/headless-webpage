@@ -35,6 +35,7 @@ import * as $Configurator from "./islands/Configurator.tsx";
 import * as $ContactForm from "./islands/ContactForm.tsx";
 import * as $Counter from "./islands/Counter.tsx";
 import * as $FeatureTabs from "./islands/FeatureTabs.tsx";
+import * as $Header from "./islands/Header.tsx";
 import * as $InstallmentCalculator from "./islands/InstallmentCalculator.tsx";
 import * as $RoiCalculator from "./islands/RoiCalculator.tsx";
 import * as $StatCounter from "./islands/StatCounter.tsx";
@@ -77,6 +78,7 @@ const manifest = {
     "./islands/ContactForm.tsx": $ContactForm,
     "./islands/Counter.tsx": $Counter,
     "./islands/FeatureTabs.tsx": $FeatureTabs,
+    "./islands/Header.tsx": $Header,
     "./islands/InstallmentCalculator.tsx": $InstallmentCalculator,
     "./islands/RoiCalculator.tsx": $RoiCalculator,
     "./islands/StatCounter.tsx": $StatCounter,
