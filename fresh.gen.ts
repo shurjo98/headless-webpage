@@ -9,6 +9,7 @@ import * as $api_contact from "./routes/api/contact.ts";
 import * as $api_features from "./routes/api/features.ts";
 import * as $api_joke from "./routes/api/joke.ts";
 import * as $api_packages from "./routes/api/packages.ts";
+import * as $apply_id_ from "./routes/apply/[id].tsx";
 import * as $blog from "./routes/blog.tsx";
 import * as $careers from "./routes/careers.tsx";
 import * as $case_studies_slug_ from "./routes/case-studies/[slug].tsx";
@@ -19,10 +20,15 @@ import * as $docs from "./routes/docs.tsx";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $help from "./routes/help.tsx";
 import * as $index from "./routes/index.tsx";
+import * as $learn_more_b2b_c2c_orchestration from "./routes/learn-more/b2b-c2c-orchestration.tsx";
+import * as $learn_more_omnichannel_storefronts from "./routes/learn-more/omnichannel-storefronts.tsx";
+import * as $learn_more_personalization from "./routes/learn-more/personalization.tsx";
+import * as $learn_more_unified_commerce from "./routes/learn-more/unified-commerce.tsx";
 import * as $legal_privacy from "./routes/legal/privacy.tsx";
 import * as $legal_sla from "./routes/legal/sla.tsx";
 import * as $legal_terms from "./routes/legal/terms.tsx";
 import * as $partners from "./routes/partners.tsx";
+import * as $partners_apply_tier_ from "./routes/partners/apply/[tier].tsx";
 import * as $platform from "./routes/platform.tsx";
 import * as $pricing from "./routes/pricing.tsx";
 import * as $pricing_configurator from "./routes/pricing/configurator.tsx";
@@ -37,6 +43,7 @@ import * as $Counter from "./islands/Counter.tsx";
 import * as $FeatureTabs from "./islands/FeatureTabs.tsx";
 import * as $Header from "./islands/Header.tsx";
 import * as $InstallmentCalculator from "./islands/InstallmentCalculator.tsx";
+import * as $MailSignupForm from "./islands/MailSignupForm.tsx";
 import * as $RoiCalculator from "./islands/RoiCalculator.tsx";
 import * as $StatCounter from "./islands/StatCounter.tsx";
 import type { Manifest } from "$fresh/server.ts";
@@ -50,6 +57,7 @@ const manifest = {
     "./routes/api/features.ts": $api_features,
     "./routes/api/joke.ts": $api_joke,
     "./routes/api/packages.ts": $api_packages,
+    "./routes/apply/[id].tsx": $apply_id_,
     "./routes/blog.tsx": $blog,
     "./routes/careers.tsx": $careers,
     "./routes/case-studies/[slug].tsx": $case_studies_slug_,
@@ -60,10 +68,17 @@ const manifest = {
     "./routes/greet/[name].tsx": $greet_name_,
     "./routes/help.tsx": $help,
     "./routes/index.tsx": $index,
+    "./routes/learn-more/b2b-c2c-orchestration.tsx":
+      $learn_more_b2b_c2c_orchestration,
+    "./routes/learn-more/omnichannel-storefronts.tsx":
+      $learn_more_omnichannel_storefronts,
+    "./routes/learn-more/personalization.tsx": $learn_more_personalization,
+    "./routes/learn-more/unified-commerce.tsx": $learn_more_unified_commerce,
     "./routes/legal/privacy.tsx": $legal_privacy,
     "./routes/legal/sla.tsx": $legal_sla,
     "./routes/legal/terms.tsx": $legal_terms,
     "./routes/partners.tsx": $partners,
+    "./routes/partners/apply/[tier].tsx": $partners_apply_tier_,
     "./routes/platform.tsx": $platform,
     "./routes/pricing.tsx": $pricing,
     "./routes/pricing/configurator.tsx": $pricing_configurator,
@@ -80,6 +95,7 @@ const manifest = {
     "./islands/FeatureTabs.tsx": $FeatureTabs,
     "./islands/Header.tsx": $Header,
     "./islands/InstallmentCalculator.tsx": $InstallmentCalculator,
+    "./islands/MailSignupForm.tsx": $MailSignupForm,
     "./islands/RoiCalculator.tsx": $RoiCalculator,
     "./islands/StatCounter.tsx": $StatCounter,
   },

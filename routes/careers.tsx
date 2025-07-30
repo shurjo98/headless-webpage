@@ -2,6 +2,8 @@ import { Head } from "$fresh/runtime.ts";
 // routes/careers.tsx (same for about.tsx, etc.)
 import { Button } from "../components/ui/button.tsx";
 import { Card, CardContent } from "../components/ui/card.tsx";
+import MailSignupForm from "../islands/MailSignupForm.tsx";
+
 
 // ✅ works out‑of‑the‑box with Deno 2
 import {
@@ -36,8 +38,8 @@ export default function Careers() {
             Build Commerce That Scales the World’s Ambition
           </h1>
           <p class="text-lg text-slate-700 mb-8">
-            We’re a crew of builders, dreamers, and doers chasing
-            one mission:{" "}
+            We’re a crew of builders, dreamers, and doers chasing one mission:
+            {" "}
             <em>
               untangle commerce so brands can move at the speed of culture.
             </em>
@@ -68,7 +70,6 @@ export default function Careers() {
         </div>
       </section>
 
-
       {/* ─── DEI STATEMENT ────────────────────────────────────── */}
       <section class="bg-gradient-to-r from-emerald-100 to-teal-50 py-20 px-4 text-center">
         <div class="container mx-auto max-w-4xl space-y-6">
@@ -85,7 +86,7 @@ export default function Careers() {
       </section>
 
       {/* ─── CURRENT OPENINGS (ATS FEED PLACEHOLDER) ───────────── */}
-      <section class="container mx-auto px-4 py-20">
+      <section id="current-openings" class="container mx-auto px-4 py-20">
         <h2 class="text-2xl font-semibold text-center mb-12">
           Current Openings
         </h2>
@@ -94,18 +95,18 @@ export default function Careers() {
           {[
             {
               title: "Senior Full‑Stack Engineer",
-              location: "Remote • GMT‑5 to +3",
-              id: "fs‑senior",
+              location: "Onsite • GMT‑5 to +3",
+              id: "FS-senior",
             },
             {
               title: "Product Designer",
-              location: "Remote • Americas",
-              id: "pd‑remote",
+              location: "Onsite • Americas",
+              id: "PD",
             },
             {
               title: "Customer Success Manager",
-              location: "Remote • EMEA",
-              id: "cs‑emea",
+              location: "Onsite • EMEA",
+              id: "CS",
             },
           ].map((role) => (
             <Card key={role.id} class="shadow-md hover:shadow-lg transition">
@@ -117,6 +118,8 @@ export default function Careers() {
                 <Button
                   as="a"
                   href={`https://jobs.example.com/${role.id}`}
+                  as="a"
+                  href={`/apply/${role.id}`}
                   size="sm"
                   class="mt-4 md:mt-0"
                 >
@@ -158,28 +161,15 @@ export default function Careers() {
       <section class="py-24 px-4 text-center">
         <div class="container mx-auto max-w-3xl space-y-8">
           <h2 class="text-3xl font-bold">Ready to Build With Us?</h2>
-          <div class="flex justify-center gap-4 flex-wrap">
-            <Button size="lg">Explore Open Roles</Button>
-            <Button size="lg" variant="outline" as="a" href="/talent-community">
+
+          {/* Join Talent Community as plain text */}
+          <div class="text-center mb-8">
+            <p class="text-primary-600 font-medium">
               Join Talent Community
-            </Button>
+                      </p>
           </div>
           {/* Talent sign‑up form (mailing list) */}
-          <form
-            action="https://example.us10.list-manage.com/subscribe/post"
-            method="POST"
-            class="mt-8 flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            {/* Mailchimp / other provider hidden inputs here */}
-            <input
-              type="email"
-              name="EMAIL"
-              placeholder="you@awesome.dev"
-              required
-              class="w-full sm:w-auto flex-1 px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-primary-600"
-            />
-            <Button type="submit">Notify Me</Button>
-          </form>
+          <MailSignupForm />
         </div>
       </section>
     </>
