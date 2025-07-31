@@ -5,6 +5,7 @@
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $about from "./routes/about.tsx";
+import * as $api_checkout from "./routes/api/checkout.ts";
 import * as $api_contact from "./routes/api/contact.ts";
 import * as $api_features from "./routes/api/features.ts";
 import * as $api_joke from "./routes/api/joke.ts";
@@ -14,6 +15,8 @@ import * as $blog from "./routes/blog.tsx";
 import * as $careers from "./routes/careers.tsx";
 import * as $case_studies_slug_ from "./routes/case-studies/[slug].tsx";
 import * as $case_studies_index from "./routes/case-studies/index.tsx";
+import * as $checkout from "./routes/checkout.tsx";
+import * as $checkout_success from "./routes/checkout/success.tsx";
 import * as $community from "./routes/community.tsx";
 import * as $contact from "./routes/contact.tsx";
 import * as $docs from "./routes/docs.tsx";
@@ -53,6 +56,7 @@ const manifest = {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
     "./routes/about.tsx": $about,
+    "./routes/api/checkout.ts": $api_checkout,
     "./routes/api/contact.ts": $api_contact,
     "./routes/api/features.ts": $api_features,
     "./routes/api/joke.ts": $api_joke,
@@ -62,6 +66,8 @@ const manifest = {
     "./routes/careers.tsx": $careers,
     "./routes/case-studies/[slug].tsx": $case_studies_slug_,
     "./routes/case-studies/index.tsx": $case_studies_index,
+    "./routes/checkout.tsx": $checkout,
+    "./routes/checkout/success.tsx": $checkout_success,
     "./routes/community.tsx": $community,
     "./routes/contact.tsx": $contact,
     "./routes/docs.tsx": $docs,

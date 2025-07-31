@@ -87,8 +87,8 @@ const config: Config = {
         bounceSlow: { "0%,100%": { transform: "scale(1)" }, "50%": { transform: "scale(1.02)" } },
         bounceArrow: { "0%,100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(8px)" } },
         float: { "0%,100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(-10px)" } },
-        fadeIn: { from: { opacity: 0, transform: "scale(0.8)" }, to: { opacity: 1, transform: "scale(1)" } },
-        popIn: { from: { opacity: 0, transform: "scale(0.6)" }, to: { opacity: 1, transform: "scale(1)" } },
+        fadeIn: { from: { opacity: "0", transform: "scale(0.8)" }, to: { opacity: "1", transform: "scale(1)" } },
+        popIn: { from: { opacity: "0", transform: "scale(0.6)" }, to: { opacity: "1", transform: "scale(1)" } },
         drift: {
           "0%,100%": { transform: "translateX(0) rotate(0deg)" },
           "25%":     { transform: "translateX(8px) rotate(1deg)" },
