@@ -9,17 +9,20 @@ function HeroSection() {
   return (
     <section class="relative w-full min-h-screen bg-gradient-to-br from-primary-50 via-white to-primary-100 overflow-hidden">
       {/* Background decoration */}
-      <div class="absolute inset-0 bg-abstract opacity-10 pointer-events-none"></div>
-      
+      <div class="absolute inset-0 bg-abstract opacity-10 pointer-events-none">
+      </div>
+
       {/* Floating elements */}
-      <div class="absolute top-20 left-10 w-20 h-20 bg-primary-200 rounded-full opacity-20 animate-float"></div>
-      <div class="absolute top-40 right-20 w-16 h-16 bg-primary-300 rounded-full opacity-30 animate-float delay-1000"></div>
-      <div class="absolute bottom-40 left-20 w-12 h-12 bg-primary-400 rounded-full opacity-25 animate-float delay-2000"></div>
+      <div class="absolute top-20 left-10 w-20 h-20 bg-primary-200 rounded-full opacity-20 animate-float">
+      </div>
+      <div class="absolute top-40 right-20 w-16 h-16 bg-primary-300 rounded-full opacity-30 animate-float delay-1000">
+      </div>
+      <div class="absolute bottom-40 left-20 w-12 h-12 bg-primary-400 rounded-full opacity-25 animate-float delay-2000">
+      </div>
 
       {/* Main content */}
       <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-5rem)]">
-          
           {/* Left column - Content */}
           <div class="text-center lg:text-left space-y-8">
             <div class="space-y-6">
@@ -28,10 +31,14 @@ function HeroSection() {
                 <span class="block text-primary-600">Grow Everywhere.</span>
               </h1>
               <p class="text-lg sm:text-xl lg:text-2xl text-neutral-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light">
-                The complete <span class="font-semibold text-primary-600">headless commerce platform</span> that scales with your business.
+                The complete{" "}
+                <span class="font-semibold text-primary-600">
+                  headless commerce platform
+                </span>{" "}
+                that scales with your business.
               </p>
             </div>
-            
+
             <div class="space-y-4">
               <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
@@ -39,8 +46,18 @@ function HeroSection() {
                   class="inline-flex items-center justify-center px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5"
                 >
                   Get Started Free
-                  <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  <svg
+                    class="ml-2 w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
                   </svg>
                 </a>
                 <a
@@ -50,7 +67,7 @@ function HeroSection() {
                   View Platform
                 </a>
               </div>
-              
+
               <p class="text-sm text-neutral-500 font-medium">
                 No credit card required • 14-day free trial • Cancel anytime
               </p>
@@ -66,7 +83,7 @@ function HeroSection() {
                 class="w-full max-w-md mx-auto lg:mx-0 lg:ml-auto animate-float"
               />
             </div>
-            
+
             {/* Floating dashboard preview */}
             <div class="absolute -top-8 -right-8 lg:-right-16 z-20 hidden lg:block">
               <img
@@ -75,10 +92,12 @@ function HeroSection() {
                 class="w-64 h-auto animate-drift delay-500 opacity-90"
               />
             </div>
-            
+
             {/* Decorative elements */}
-            <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-primary-200 rounded-full opacity-60 animate-bounceSlow"></div>
-            <div class="absolute top-1/2 -right-4 w-8 h-8 bg-primary-300 rounded-full opacity-40 animate-float delay-1000"></div>
+            <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-primary-200 rounded-full opacity-60 animate-bounceSlow">
+            </div>
+            <div class="absolute top-1/2 -right-4 w-8 h-8 bg-primary-300 rounded-full opacity-40 animate-float delay-1000">
+            </div>
           </div>
         </div>
       </div>
@@ -87,8 +106,18 @@ function HeroSection() {
       <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
         <div class="flex flex-col items-center space-y-2 text-neutral-400">
           <span class="text-sm font-medium">Scroll to explore</span>
-          <svg class="w-6 h-6 animate-bounceArrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          <svg
+            class="w-6 h-6 animate-bounceArrow"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
           </svg>
         </div>
       </div>
@@ -100,7 +129,7 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      
+
       {/* Commerce Solutions Section */}
       <section class="relative bg-neutral-50 py-16 lg:py-24">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -141,8 +170,18 @@ export default function Home() {
                 class="inline-flex items-center font-semibold text-primary-600 hover:text-primary-700 transition-colors duration-200"
               >
                 Why headless?
-                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <svg
+                  class="ml-2 w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </a>
             </div>
@@ -176,12 +215,22 @@ export default function Home() {
               </p>
 
               <a
-                href="/learn-more"
+                href="/learn-more/personalization"
                 class="inline-flex items-center px-6 py-3 border-2 border-neutral-900 rounded-lg font-semibold hover:bg-neutral-50 transition-all duration-200"
               >
                 Learn more
-                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <svg
+                  class="ml-2 w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </a>
             </div>
@@ -208,12 +257,22 @@ export default function Home() {
               </p>
 
               <a
-                href="/learn-more"
+                href="/learn-more/unified-commerce"
                 class="inline-flex items-center px-6 py-3 border-2 border-white rounded-lg font-semibold hover:bg-white/10 transition-all duration-200"
               >
                 Learn more
-                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <svg
+                  class="ml-2 w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </a>
             </div>
@@ -235,24 +294,28 @@ export default function Home() {
             {/* Left side: checklist */}
             <div class="md:w-1/2 space-y-8">
               <h3 class="text-3xl lg:text-4xl font-display font-bold text-neutral-900">
-                More ways <span class="text-primary-600">HeadlessPro</span> empowers you
+                More ways <span class="text-primary-600">HeadlessPro</span>{" "}
+                empowers you
               </h3>
               <ul class="space-y-6">
                 {[
                   {
                     icon: "/images/recommendations.png",
                     title: "Smart Recommendations",
-                    text: "AI‑driven product suggestions that boost order value.",
+                    text:
+                      "AI‑driven product suggestions that boost order value.",
                   },
                   {
                     icon: "/images/analytics.png",
                     title: "Real‑Time Analytics",
-                    text: "Live dashboards to track revenue, churn, and cohorts.",
+                    text:
+                      "Live dashboards to track revenue, churn, and cohorts.",
                   },
                   {
                     icon: "/images/automation.png",
                     title: "Workflow Automation",
-                    text: "Trigger emails, inventory syncs, and promos automatically.",
+                    text:
+                      "Trigger emails, inventory syncs, and promos automatically.",
                   },
                 ].map((f) => (
                   <li key={f.title} class="flex items-start space-x-4">
@@ -306,58 +369,81 @@ export default function Home() {
             <div class="hidden md:block absolute left-12 top-8 bottom-8 w-0.5 bg-neutral-300" />
 
             <div class="space-y-16">
-              {[{
-                step: 1,
-                title: "Omnichannel storefront production",
-                text: "Empower marketing and dev teams to spin up new storefronts, landing pages, or micro‑sites in minutes—no more heavy lift on back‑end code or dev sprints.",
-                img: "/images/omnichannel-storefront.png",
-              }, {
-                step: 2,
-                title: "B2B & C2C orchestration",
-                text: "Whether selling direct to consumers or to business accounts, manage multi‑tier catalogs, custom pricing, and approval workflows all from one dashboard.",
-                img: "/images/b2b-b2c.png",
-              }].map(({ step, title, text, img }) => (
-                <div
-                  key={step}
-                  class="md:flex md:items-center md:space-x-12"
-                >
-                  {/* Step Number */}
-                  <div class="flex-shrink-0 flex items-center">
-                    <div class="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-primary-600 text-white font-bold text-lg">
-                      {step}
+              {[
+                {
+                  step: 1,
+                  title: "Omnichannel storefront production",
+                  text:
+                    "Empower marketing and dev teams to spin up new storefronts, landing pages, or micro‑sites in minutes—no more heavy lift on back‑end code or dev sprints.",
+                  img: "/images/omnichannel-storefront.png",
+                },
+                {
+                  step: 2,
+                  title: "B2B & C2C orchestration",
+                  text:
+                    "Whether selling direct to consumers or to business accounts, manage multi‑tier catalogs, custom pricing, and approval workflows all from one dashboard.",
+                  img: "/images/b2b-b2c.png",
+                },
+              ].map(({ step, title, text, img }) => {
+                // map step number to slug
+                const slugMap: Record<number, string> = {
+                  1: "omnichannel-storefronts",
+                  2: "b2b-c2c-orchestration",
+                };
+                const slug = slugMap[step];
+
+                return (
+                  <div key={step} class="md:flex md:items-center md:space-x-12">
+                    {/* Step Number */}
+                    <div class="flex-shrink-0 flex items-center">
+                      <div class="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-primary-600 text-white font-bold text-lg">
+                        {step}
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div class="mt-4 md:mt-0 md:flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                      {/* Text */}
+                      <div class="order-2 md:order-1">
+                        <h3 class="text-2xl font-display font-semibold text-neutral-900 mb-3">
+                          {title}
+                        </h3>
+                        <p class="text-neutral-600 leading-relaxed mb-6 font-light">
+                          {text}
+                        </p>
+                        <a
+                          href={`/learn-more/${slug}`}
+                          class="inline-flex items-center px-6 py-3 border-2 border-primary-600 rounded-lg font-semibold text-primary-600 hover:bg-primary-50 transition-all duration-200"
+                        >
+                          Learn more
+                          <svg
+                            class="ml-2 w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 5l7 7-7 7"
+                            />
+                          </svg>
+                        </a>
+                      </div>
+
+                      {/* Image */}
+                      <div class="order-1 md:order-2">
+                        <img
+                          src={img}
+                          alt={title}
+                          class="w-full h-48 md:h-40 object-cover rounded-2xl shadow-soft"
+                        />
+                      </div>
                     </div>
                   </div>
-                  {/* Content */}
-                  <div class="mt-4 md:mt-0 md:flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                    {/* Text */}
-                    <div class="order-2 md:order-1">
-                      <h3 class="text-2xl font-display font-semibold text-neutral-900 mb-3">
-                        {title}
-                      </h3>
-                      <p class="text-neutral-600 leading-relaxed mb-6 font-light">
-                        {text}
-                      </p>
-                      <a
-                        href="/learn-more"
-                        class="inline-flex items-center px-6 py-3 border-2 border-primary-600 rounded-lg font-semibold text-primary-600 hover:bg-primary-50 transition-all duration-200"
-                      >
-                        Learn more
-                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </a>
-                    </div>
-                    {/* Image */}
-                    <div class="order-1 md:order-2">
-                      <img
-                        src={img}
-                        alt={title}
-                        class="w-full h-48 md:h-40 object-cover rounded-2xl shadow-soft"
-                      />
-                    </div>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>

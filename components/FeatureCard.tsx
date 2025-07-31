@@ -6,6 +6,7 @@ export type Feature = {
   title: string;
   desc: string;
   price?: number;
+  img?: string;
 };
 
 type Props = {

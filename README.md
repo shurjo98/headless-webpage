@@ -364,7 +364,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Documentation**: Check the `/docs` section of the website
 - **Issues**: Report bugs and feature requests on GitHub
 - **Discussions**: Join community discussions on GitHub
-- **Email**: Contact us at hello@headlesspro.com
+- **Email**: Contact us at lucy@fastandmodern.com
 
 ### Common Issues
 

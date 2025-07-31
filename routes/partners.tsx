@@ -10,7 +10,10 @@ function TierCard({ title, benefits, Icon }: { title: string; benefits: string[]
           <li key={b}>{b}</li>
         ))}
       </ul>
-      <a href="#" class="mt-auto inline-block px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+      <a
+        href={`/partners/apply/${title.toLowerCase().replace(/\s+/g, "-")}`}
+        class="mt-auto inline-block px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
+      >
         Become a Partner
       </a>
     </div>

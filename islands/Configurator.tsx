@@ -225,7 +225,7 @@ export default function Configurator() {
           </div>
         )}
 
-        {/* Step 3 — review */}
+        {/* Step 3 — review */}
         {idx === 3 && (
           <div class="space-y-4">
             <h3 class="text-lg font-semibold">Summary</h3>
@@ -251,10 +251,11 @@ export default function Configurator() {
               onChange={(e) =>
                 setTerm(
                   Number((e.target as HTMLSelectElement).value) as 12 | 24,
-                )}
+                )
+              }
             >
-              <option value={12}>12 months</option>
-              <option value={24}>24 months</option>
+              <option value={12}>12 months</option>
+              <option value={24}>24 months</option>
             </select>
 
             <p class="text-gray-600">
@@ -263,7 +264,30 @@ export default function Configurator() {
               </span>
             </p>
 
-            <button class="w-full bg-primary-600 text-white rounded-full py-3 font-semibold">
+            <button 
+              class="w-full bg-primary-600 text-white rounded-full py-3 font-semibold hover:bg-primary-700 transition-colors"
+              onClick={() => {
+                // Prepare checkout data
+                const checkoutData = {
+                  package: pkgKey,
+                  features: sel.map(f => ({
+                    id: f.id,
+                    title: f.title,
+                    desc: f.desc,
+                    price: f.price,
+                    category: feat.web.some(wf => wf.id === f.id) ? 'web' : 'mobile'
+                  })),
+                  term: term,
+                  total: total
+                };
+                
+                // Encode data for URL
+                const encodedData = encodeURIComponent(JSON.stringify(checkoutData.features));
+                
+                // Redirect to checkout with data
+                window.location.href = `/checkout?package=${pkgKey}&features=${encodedData}&term=${term}`;
+              }}
+            >
               Checkout →
             </button>
           </div>
