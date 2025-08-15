@@ -75,6 +75,9 @@ export default function Header() {
             <a href="/pricing" class={linkBase}>Pricing</a>
           </li>
           <li>
+            <a href="/product-story" class={linkBase}>Product Stories</a>
+          </li>
+          <li>
             <a href="/docs" class={linkBase}>Docs</a>
           </li>
           <li>
