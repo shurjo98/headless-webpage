@@ -54,6 +54,19 @@ HeadlessPro is a **composable commerce platform** built with a **microservices a
 │  │ • 3PL       │  │   Search    │  │ • Analytics │  │ • Refunds   │     │
 │  │   Hooks     │  │             │  │             │  │             │     │
 │  └─────────────┘  └─────────────┘  └─────────────┘  └─────────────┘     │
+│                                                                           │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐     │
+│  │  Social     │  │   TikTok    │  │ Instagram   │  │   Facebook  │     │
+│  │ Commerce    │  │   Commerce  │  │  Commerce   │  │  Commerce   │     │
+│  │  Platform   │  │   API       │  │    API      │  │    API      │     │
+│  │             │  │             │  │             │  │             │     │
+│  │ • Unified   │  │ • Shop      │  │ • Shopping  │  │ • Facebook  │     │
+│  │   Social    │  │   Tab       │  │   Tags      │  │   Shops     │     │
+│  │   API       │  │ • Live      │  │ • Checkout  │  │ • Instagram │     │
+│  │ • Multi-    │  │   Shopping  │  │   API       │  │   Shopping  │     │
+│  │   Platform  │  │ • Product   │  │ • Stories   │  │ • Messenger │     │
+│  │   Sync      │  │   Catalog   │  │   Shopping  │  │   Commerce  │     │
+│  └─────────────┘  └─────────────┘  └─────────────┘  └─────────────┘     │
 └─────────────────────────────────────────────────────────────────────────────┘
                                     │
                                     ▼
@@ -138,6 +151,38 @@ HeadlessPro is a **composable commerce platform** built with a **microservices a
   - Faceted search and filtering
   - Personalized recommendations
 
+### **7. Social Commerce Platform**
+- **Purpose**: Unified social media commerce integration
+- **Features**:
+  - Multi-platform product synchronization
+  - Unified social commerce API
+  - Cross-platform inventory management
+  - Social media analytics integration
+  - Automated social commerce workflows
+
+## 📱 **Social Commerce API Integrations**
+
+### **Facebook Commerce API**
+- **Facebook Shops**: Native shopping experience within Facebook
+- **Instagram Shopping**: Product tagging and shopping from posts
+- **Messenger Commerce**: Conversational commerce via Messenger
+- **Catalog Sync**: Automatic product catalog synchronization
+- **Pixel Integration**: Advanced tracking and analytics
+
+### **TikTok Commerce API**
+- **TikTok Shop**: Native shopping experience within TikTok
+- **Live Shopping**: Real-time product demonstrations and sales
+- **Product Catalog**: Automated product catalog management
+- **Shop Tab**: Dedicated shopping section in TikTok profiles
+- **Live Shopping Events**: Scheduled and on-demand live sales
+
+### **Instagram Commerce API**
+- **Shopping Tags**: Product tagging in posts and stories
+- **Checkout API**: Direct checkout within Instagram
+- **Stories Shopping**: Interactive shopping in Instagram Stories
+- **Product Catalogs**: Automated catalog management
+- **Shopping Insights**: Performance analytics and optimization
+
 ## 🛠️ **Developer Experience (DevEx)**
 
 ### **Development Tools**
@@ -147,6 +192,12 @@ HeadlessPro is a **composable commerce platform** built with a **microservices a
 - **Local Emulator**: Webhook testing environment
 - **Edge Runtime Adapters**: Deno Deploy, Vercel, Cloudflare
 
+### **Social Commerce SDKs**
+- **Facebook SDK**: Complete Facebook Commerce integration
+- **TikTok SDK**: TikTok Shop and Live Shopping APIs
+- **Instagram SDK**: Instagram Shopping and Checkout APIs
+- **Unified Social API**: Cross-platform social commerce management
+
 ### **Quick Start Commands**
 ```bash
 # Spin up a sandbox store
@@ -154,6 +205,9 @@ npx headlesspro@latest init my-store
 
 # Start development API
 cd my-store && hp dev
+
+# Enable social commerce
+hp social enable facebook,tiktok,instagram
 ```
 
 ## 🔒 **Security & Compliance**
@@ -164,11 +218,11 @@ cd my-store && hp dev
 - **PCI DSS**: Payment Card Industry Data Security Standard
 - **ISO 27001**: Information Security Management
 
-### **Security Features**
-- **API Gateway**: Centralized authentication and authorization
-- **Rate Limiting**: DDoS protection and abuse prevention
-- **Data Encryption**: At-rest and in-transit encryption
-- **Audit Logging**: Comprehensive security event tracking
+### **Social Commerce Security**
+- **OAuth 2.0**: Secure social platform authentication
+- **Data Encryption**: End-to-end encryption for social commerce data
+- **API Rate Limiting**: Protection against API abuse
+- **Audit Logging**: Comprehensive social commerce activity tracking
 
 ## 🚀 **Deployment Architecture**
 
@@ -178,11 +232,11 @@ cd my-store && hp dev
 - **Geographic Distribution**: Multi-region deployment
 - **Auto-scaling**: Dynamic resource allocation
 
-### **Microservices Benefits**
-- **Scalability**: Independent service scaling
-- **Resilience**: Fault isolation and graceful degradation
-- **Technology Diversity**: Best tool for each service
-- **Team Autonomy**: Independent development and deployment
+### **Social Commerce Infrastructure**
+- **Multi-Platform Sync**: Real-time synchronization across social platforms
+- **API Gateway**: Centralized social commerce API management
+- **Webhook Processing**: Real-time social commerce event handling
+- **Analytics Pipeline**: Cross-platform social commerce analytics
 
 ## 📈 **Monitoring & Observability**
 
@@ -192,20 +246,21 @@ cd my-store && hp dev
 - **Alerting**: Proactive issue detection
 - **Dashboards**: Customizable monitoring views
 
-### **Logging & Analytics**
-- **Structured Logging**: JSON-formatted log entries
-- **Centralized Logging**: Aggregated log management
-- **Business Analytics**: Customer behavior insights
-- **Performance Analytics**: System optimization data
+### **Social Commerce Analytics**
+- **Cross-Platform Metrics**: Unified analytics across social platforms
+- **Conversion Tracking**: Social commerce conversion attribution
+- **Performance Monitoring**: Social platform API performance
+- **Revenue Analytics**: Social commerce revenue tracking
 
 ## 🔄 **Data Flow**
 
 1. **Client Request** → Frontend application
 2. **API Gateway** → Authentication, routing, rate limiting
 3. **Microservice** → Business logic processing
-4. **Data Layer** → Database operations and caching
-5. **Response** → Formatted data back to client
-6. **Webhooks** → Real-time event notifications
+4. **Social Commerce API** → Multi-platform synchronization
+5. **Data Layer** → Database operations and caching
+6. **Response** → Formatted data back to client
+7. **Webhooks** → Real-time event notifications
 
 ## 🎯 **Key Benefits**
 
@@ -214,17 +269,20 @@ cd my-store && hp dev
 - **Type Safety**: Strongly typed SDKs and schemas
 - **Developer Tools**: CLI, playground, emulators
 - **Flexibility**: Choose your frontend framework
+- **Social Integration**: Easy social commerce implementation
 
 ### **For Businesses**
 - **Composability**: Mix and match services
 - **Scalability**: Handle traffic spikes gracefully
 - **Compliance**: Built-in security standards
 - **Performance**: Edge-first delivery
+- **Social Reach**: Multi-platform social commerce presence
 
 ### **For Operations**
 - **Observability**: Comprehensive monitoring
 - **Reliability**: Fault-tolerant architecture
 - **Security**: Multi-layer protection
 - **Maintainability**: Modular service design
+- **Social Analytics**: Cross-platform performance insights
 
-This architecture enables modern, scalable, and secure e-commerce applications with excellent developer experience and operational efficiency. 
+This architecture enables modern, scalable, and secure e-commerce applications with excellent developer experience, operational efficiency, and comprehensive social commerce capabilities. 

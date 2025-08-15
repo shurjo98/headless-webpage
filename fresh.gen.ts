@@ -35,11 +35,14 @@ import * as $partners_apply_tier_ from "./routes/partners/apply/[tier].tsx";
 import * as $platform from "./routes/platform.tsx";
 import * as $pricing from "./routes/pricing.tsx";
 import * as $pricing_configurator from "./routes/pricing/configurator.tsx";
+import * as $product_story_admin_dashboard_index from "./routes/product-story/admin-dashboard/index.tsx";
+import * as $product_story_index from "./routes/product-story/index.tsx";
 import * as $resources from "./routes/resources.tsx";
 import * as $services from "./routes/services.tsx";
 import * as $solutions from "./routes/solutions.tsx";
 import * as $tutorials from "./routes/tutorials.tsx";
 import * as $why_headless from "./routes/why-headless.tsx";
+import * as $AdminDashboard from "./islands/AdminDashboard.tsx";
 import * as $Configurator from "./islands/Configurator.tsx";
 import * as $ContactForm from "./islands/ContactForm.tsx";
 import * as $Counter from "./islands/Counter.tsx";
@@ -88,6 +91,9 @@ const manifest = {
     "./routes/platform.tsx": $platform,
     "./routes/pricing.tsx": $pricing,
     "./routes/pricing/configurator.tsx": $pricing_configurator,
+    "./routes/product-story/admin-dashboard/index.tsx":
+      $product_story_admin_dashboard_index,
+    "./routes/product-story/index.tsx": $product_story_index,
     "./routes/resources.tsx": $resources,
     "./routes/services.tsx": $services,
     "./routes/solutions.tsx": $solutions,
@@ -95,6 +101,7 @@ const manifest = {
     "./routes/why-headless.tsx": $why_headless,
   },
   islands: {
+    "./islands/AdminDashboard.tsx": $AdminDashboard,
     "./islands/Configurator.tsx": $Configurator,
     "./islands/ContactForm.tsx": $ContactForm,
     "./islands/Counter.tsx": $Counter,
