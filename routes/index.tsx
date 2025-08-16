@@ -361,7 +361,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Orchestration Process Steps */}
+      {/* Orchestration Process Steps (simple + beginner friendly) */}
       <section class="py-16 lg:py-24 bg-neutral-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
           <div class="relative">
@@ -369,81 +369,117 @@ export default function Home() {
             <div class="hidden md:block absolute left-12 top-8 bottom-8 w-0.5 bg-neutral-300" />
 
             <div class="space-y-16">
-              {[
-                {
-                  step: 1,
-                  title: "Omnichannel storefront production",
-                  text:
-                    "Empower marketing and dev teams to spin up new storefronts, landing pages, or micro‑sites in minutes—no more heavy lift on back‑end code or dev sprints.",
-                  img: "/images/omnichannel-storefront.png",
-                },
-                {
-                  step: 2,
-                  title: "B2B & C2C orchestration",
-                  text:
-                    "Whether selling direct to consumers or to business accounts, manage multi‑tier catalogs, custom pricing, and approval workflows all from one dashboard.",
-                  img: "/images/b2b-b2c.png",
-                },
-              ].map(({ step, title, text, img }) => {
-                // map step number to slug
-                const slugMap: Record<number, string> = {
-                  1: "omnichannel-storefronts",
-                  2: "b2b-c2c-orchestration",
-                };
-                const slug = slugMap[step];
-
-                return (
-                  <div key={step} class="md:flex md:items-center md:space-x-12">
-                    {/* Step Number */}
-                    <div class="flex-shrink-0 flex items-center">
-                      <div class="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-primary-600 text-white font-bold text-lg">
-                        {step}
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div class="mt-4 md:mt-0 md:flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                      {/* Text */}
-                      <div class="order-2 md:order-1">
-                        <h3 class="text-2xl font-display font-semibold text-neutral-900 mb-3">
-                          {title}
-                        </h3>
-                        <p class="text-neutral-600 leading-relaxed mb-6 font-light">
-                          {text}
-                        </p>
-                        <a
-                          href={`/learn-more/${slug}`}
-                          class="inline-flex items-center px-6 py-3 border-2 border-primary-600 rounded-lg font-semibold text-primary-600 hover:bg-primary-50 transition-all duration-200"
-                        >
-                          Learn more
-                          <svg
-                            class="ml-2 w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </a>
-                      </div>
-
-                      {/* Image */}
-                      <div class="order-1 md:order-2">
-                        <img
-                          src={img}
-                          alt={title}
-                          class="w-full h-48 md:h-40 object-cover rounded-2xl shadow-soft"
-                        />
-                      </div>
-                    </div>
+              {/* ========== STEP 1 ========== */}
+              <div class="md:flex md:items-center md:space-x-12">
+                {/* Step number circle */}
+                <div class="flex-shrink-0 flex items-center">
+                  <div class="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-primary-600 text-white font-bold text-lg">
+                    1
                   </div>
-                );
-              })}
+                </div>
+
+                {/* Content row: text (left) + image (right) */}
+                <div class="mt-4 md:mt-0 md:flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                  {/* Text block */}
+                  <div class="order-2 md:order-1">
+                    <h3 class="text-2xl font-display font-semibold text-neutral-900 mb-3">
+                      Omnichannel storefront production
+                    </h3>
+                    <p class="text-neutral-600 leading-relaxed mb-6 font-light">
+                      Empower marketing and dev teams to spin up new
+                      storefronts, landing pages, or micro-sites in minutes—no
+                      more heavy lift on back-end code or dev sprints.
+                    </p>
+
+                    {/* BUTTON: App design case study (MOBILE) */}
+                    {/* Fresh routes: routes/case-studies/mobie.tsx → /case-studies/mobie */}
+                    <a
+                      href="/case-studies/mobile"
+                      class="inline-flex items-center px-6 py-3 border-2 border-neutral-900 rounded-lg font-semibold text-neutral-900 hover:bg-neutral-900 hover:text-white transition-all duration-200"
+                    >
+                      App design case study
+                      <svg
+                        class="ml-2 w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+
+                  {/* Image */}
+                  <div class="order-1 md:order-2">
+                    <img
+                      src="/images/omnichannel-storefront.png"
+                      alt="Omnichannel storefront production"
+                      class="w-full h-48 md:h-40 object-cover rounded-2xl shadow-soft"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* ========== STEP 2 ========== */}
+              <div class="md:flex md:items-center md:space-x-12">
+                {/* Step number circle */}
+                <div class="flex-shrink-0 flex items-center">
+                  <div class="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-primary-600 text-white font-bold text-lg">
+                    2
+                  </div>
+                </div>
+
+                {/* Content row: text (left) + image (right) */}
+                <div class="mt-4 md:mt-0 md:flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                  {/* Text block */}
+                  <div class="order-2 md:order-1">
+                    <h3 class="text-2xl font-display font-semibold text-neutral-900 mb-3">
+                      B2B &amp; C2C orchestration
+                    </h3>
+                    <p class="text-neutral-600 leading-relaxed mb-6 font-light">
+                      Whether selling direct to consumers or to business
+                      accounts, manage multi-tier catalogs, custom pricing, and
+                      approval workflows from one dashboard.
+                    </p>
+
+                    {/* BUTTON: Web design case study */}
+                    {/* Change /case-studies/web to wherever your web case study lives. */}
+                    <a
+                      href="/case-studies/web"
+                      class="inline-flex items-center px-6 py-3 border-2 border-neutral-900 rounded-lg font-semibold text-neutral-900 hover:bg-neutral-900 hover:text-white transition-all duration-200"
+                    >
+                      Web design case study
+                      <svg
+                        class="ml-2 w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+
+                  {/* Image */}
+                  <div class="order-1 md:order-2">
+                    <img
+                      src="/images/b2b-b2c.png"
+                      alt="B2B & C2C orchestration"
+                      class="w-full h-48 md:h-40 object-cover rounded-2xl shadow-soft"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

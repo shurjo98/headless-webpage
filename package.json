@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@material-tailwind/html": "^3.0.0-beta.7"
+  }
+}

@@ -1,0 +1,786 @@
+// routes/case-studies/fastbites.tsx
+import { asset, Head } from "$fresh/runtime.ts";
+import AOSProvider from "../../islands/AOSProvider.tsx";
+import ParallaxMarquee from "../../islands/ParallaxMarquee.tsx";
+import SnapCarousel from "../../islands/SnapCarousel.tsx";
+import ParallaxPosterRail from "../../islands/ParallaxPosterRail.tsx";
+
+/* ----------------------------------------------------------------
+   Gallery images for the carousel (order is intentional)
+----------------------------------------------------------------- */
+const ROW = [
+  { src: asset("/fastbites/screen-1-home.png"), alt: "Home" },
+  { src: asset("/fastbites/screen-2-login.png"), alt: "Login" },
+  { src: asset("/fastbites/screen-3-browse.png"), alt: "Browse" },
+  { src: asset("/fastbites/screen-4-detail.png"), alt: "Product Detail" },
+  { src: asset("/fastbites/screen-5-checkout.png"), alt: "Checkout" },
+  { src: asset("/fastbites/screen-6-complete.png"), alt: "Order Complete" },
+];
+
+// routes/case-studies/fastbites.tsx (near other data)
+const MODERNA_ROW = Array.from({ length: 5 }, (_, i) => ({
+  src: asset(`/morden/${i + 1}.png`),
+  alt: `Moderna ${i + 1}`,
+}));
+
+const STRUCTA_ROW = Array.from({ length: 5 }, (_, i) => ({
+  src: asset(`/structa/${i + 1}.png`),
+  alt: `Structa ${i + 1}`,
+}));
+
+{/* ============== 6.5) MODERNA (luxury rail) ============== */}
+
+/* ----------------------------------------------------------------
+   Page
+----------------------------------------------------------------- */
+export default function FastBitesCase() {
+  return (
+    <>
+      <AOSProvider
+        autoTargets={[
+          "#aos-scope h1",
+          "#aos-scope h2",
+          "#aos-scope h3",
+          "#aos-scope p",
+          "#aos-scope figure",
+          "#aos-scope img",
+          "#aos-scope article",
+        ]}
+        distancePx={28}
+        durationMs={900}
+        delayStepMs={90}
+        rootMargin="0px 0px -12% 0px"
+        threshold={0.15}
+      />
+
+      <Head>
+        <title>App Design — Case Study</title>
+        <meta
+          name="description"
+          content="A one-hand, 60-second ordering flow. Principles, system, and screens for a warm, fast, trustworthy food-ordering app."
+        />
+        <style>
+          {`
+            @media (prefers-reduced-motion: reduce) {
+              * { animation: none !important; transition: none !important; }
+            }
+            .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+            .no-scrollbar::-webkit-scrollbar { display: none; }
+          `}
+        </style>
+      </Head>
+
+      {/* Scope all animations to this container */}
+      <main id="aos-scope" class="bg-white text-black">
+        {
+          /* ----------------------------------------------------------
+           1) Intro band (full-bleed) — lean copy + hero image
+        ----------------------------------------------------------- */
+        }
+        <section class="relative isolate w-screen -mx-[calc(50vw-50%)] overflow-hidden bg-black text-dark">
+          {/* soft glow */}
+          <div class="pointer-events-none absolute inset-0">
+            <div class="absolute -top-24 left-1/2 h-[520px] w-[640px] -translate-x-1/2 rounded-full bg-white/[0.06] blur-3xl" />
+            <div class="absolute -bottom-40 -right-20 h-[380px] w-[380px] rounded-full bg-white/[0.04] blur-2xl" />
+          </div>
+
+          <div class="relative mx-auto grid max-w-7xl items-center gap-10 px-6 md:grid-cols-12 md:px-8 py-20">
+            <div class="md:col-span-5">
+              <p class="text-[11px] uppercase tracking-[0.22em] text-white/60">
+                Case Study
+              </p>
+              <h1 class="mt-2 text-4xl md:text-6xl font-black tracking-tight">
+                One-hand. Sixty seconds.
+              </h1>
+              <p class="mt-5 text-white/70">
+                We designed a calm, premium flow where decisions are obvious and
+                checkout is effortless.
+              </p>
+            </div>
+
+            <div class="md:col-span-7">
+              <figure class="relative overflow-hidden rounded-[2rem] shadow-[0_30px_100px_-20px_rgba(0,0,0,0.6)]">
+                <img
+                  src={asset("/fastbites/hero.png")}
+                  alt="FastBites overview"
+                  class="w-full h-auto object-contain"
+                  loading="eager"
+                  decoding="async"
+                />
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        {
+          /* ----------------------------------------------------------
+           2) Principles (calm, light section)
+        ----------------------------------------------------------- */
+        }
+        <section class="px-6 md:px-8 py-16">
+          <div class="mx-auto max-w-7xl">
+            <h2 class="text-3xl md:text-5xl font-black tracking-tight text-center">
+              Design principles
+            </h2>
+            <ul class="mx-auto mt-10 grid max-w-3xl gap-6 sm:grid-cols-2">
+              <li class="rounded-xl bg-neutral-100 p-5">
+                <p class="font-semibold">Glance → Decide → Checkout</p>
+                <p class="text-neutral-700">One idea per screen.</p>
+              </li>
+              <li class="rounded-xl bg-neutral-100 p-5">
+                <p class="font-semibold">Thumb-first ergonomics</p>
+                <p class="text-neutral-700">Primary actions live in reach.</p>
+              </li>
+              <li class="rounded-xl bg-neutral-100 p-5">
+                <p class="font-semibold">Honest appetites</p>
+                <p class="text-neutral-700">
+                  Food on dark; chrome stays quiet.
+                </p>
+              </li>
+              <li class="rounded-xl bg-neutral-100 p-5">
+                <p class="font-semibold">Friction where it protects</p>
+                <p class="text-neutral-700">
+                  Ask for login at the right moment.
+                </p>
+              </li>
+              <li class="rounded-xl bg-neutral-100 p-5 sm:col-span-2">
+                <p class="font-semibold">System, not pages</p>
+                <p class="text-neutral-700">
+                  Tokens, components, motion rules.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        {
+          /* ----------------------------------------------------------
+           3) Design Intelligence (full-bleed black + gradient glass cards)
+        ----------------------------------------------------------- */
+        }
+        <section
+          id="design-intelligence"
+          class="relative isolate w-screen -mx-[calc(50vw-50%)] overflow-hidden bg-black text-dark"
+        >
+          {/* soft radial glow accents */}
+          <div class="pointer-events-none absolute inset-0">
+            <div class="absolute -top-32 left-1/2 h-[520px] w-[640px] -translate-x-1/2 rounded-full bg-white/[0.06] blur-3xl" />
+            <div class="absolute -bottom-40 -right-20 h-[380px] w-[380px] rounded-full bg-white/[0.04] blur-2xl" />
+          </div>
+
+          <div class="relative mx-auto max-w-7xl px-6 md:px-8 py-24">
+            <p class="text-[11px] font-semibold tracking-[0.22em] text-white/55 uppercase">
+              Why it feels effortless
+            </p>
+            <h2 class="mt-3 text-4xl md:text-5xl font-black tracking-tight">
+              Intelligent ways to design experiences.
+            </h2>
+            <p class="mt-4 max-w-2xl text-white/70">
+              Furniture, burger, and coffee previews show the range. These
+              choices make the system feel calm, fast, and premium.
+            </p>
+
+            <ul class="mt-14 grid gap-6 md:grid-cols-3">
+              {/* Card 1 – warm wood / furniture */}
+              <li class="group relative overflow-hidden rounded-2xl bg-white/[0.03] p-6 backdrop-blur-sm hover:ring-white/20 transition">
+                <div
+                  aria-hidden
+                  class="absolute inset-0 -z-10 bg-gradient-to-br from-amber-400/20 via-orange-400/10 to-rose-500/20"
+                />
+                <div class="flex items-start gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-black/20">
+                    <span class="text-xl">🛋️</span>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-semibold">Contextual Design</h3>
+                    <p class="mt-2 text-sm text-white/70">
+                      Showroom-calm for furniture, bold for burgers, warm for
+                      coffee.
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              {/* Card 2 – brand storytelling */}
+              <li class="group relative overflow-hidden rounded-2xl bg-white/[0.03] p-6 backdrop-blur-sm hover:ring-white/20 transition">
+                <div
+                  aria-hidden
+                  class="absolute inset-0 -z-10 bg-gradient-to-br from-fuchsia-500/20 via-purple-500/10 to-indigo-500/20"
+                />
+                <div class="flex items-start gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-black/20">
+                    <span class="text-xl">🍔</span>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-semibold">Visual Storytelling</h3>
+                    <p class="mt-2 text-sm text-white/70">
+                      Content forward, chrome quiet. Contrast where it guides.
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              {/* Card 3 – calm teal usability */}
+              <li class="group relative overflow-hidden rounded-2xl bg-white/[0.03] p-6 backdrop-blur-sm hover:ring-white/20 transition">
+                <div
+                  aria-hidden
+                  class="absolute inset-0 -z-10 bg-gradient-to-br from-teal-400/20 via-emerald-400/10 to-cyan-400/20"
+                />
+                <div class="flex items-start gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-black/20">
+                    <span class="text-xl">☕</span>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-semibold">Seamless Usability</h3>
+                    <p class="mt-2 text-sm text-white/70">
+                      Thumb-first targets and single-purpose screens reduce
+                      thinking.
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              {/* Card 4 – performance */}
+              <li class="group relative overflow-hidden rounded-2xl bg-white/[0.03] p-6 backdrop-blur-sm hover:ring-white/20 transition">
+                <div
+                  aria-hidden
+                  class="absolute inset-0 -z-10 bg-gradient-to-br from-sky-500/20 via-blue-500/10 to-indigo-600/20"
+                />
+                <div class="flex items-start gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-black/20">
+                    <span class="text-xl">⚡</span>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-semibold">
+                      Performance by default
+                    </h3>
+                    <p class="mt-2 text-sm text-white/70">
+                      Lightweight assets and calm motion feel instantaneous.
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              {/* Card 5 – motion */}
+              <li class="group relative overflow-hidden rounded-2xl bg-white/[0.03] p-6 backdrop-blur-sm hover:ring-white/20 transition">
+                <div
+                  aria-hidden
+                  class="absolute inset-0 -z-10 bg-gradient-to-br from-violet-500/20 via-fuchsia-500/10 to-pink-500/20"
+                />
+                <div class="flex items-start gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-black/20">
+                    <span class="text-xl">✨</span>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-semibold">Motion with intent</h3>
+                    <p class="mt-2 text-sm text-white/70">
+                      Consistent easing explains state changes without
+                      distraction.
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              {/* Card 6 – accessibility */}
+              <li class="group relative overflow-hidden rounded-2xl bg-white/[0.03] p-6 backdrop-blur-sm hover:ring-white/20 transition">
+                <div
+                  aria-hidden
+                  class="absolute inset-0 -z-10 bg-gradient-to-br from-emerald-500/20 via-lime-400/10 to-amber-300/20"
+                />
+                <div class="flex items-start gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-black/20
+                  ">
+                    <span class="text-xl">♿️</span>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-semibold">Accessible by default</h3>
+                    <p class="mt-2 text-sm text-white/70">
+                      Readable type, contrast, large targets, sensible focus
+                      order.
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        {
+          /* ----------------------------------------------------------
+           4) Tall parallax marquee (premium scroll moment)
+        ----------------------------------------------------------- */
+        }
+        <ParallaxMarquee
+          src={asset("/fastbites/hero.png")} // replace with your large image if needed
+          alt="Signature showcase"
+          strength={0.35} // 0.2 subtle — 0.5 stronger
+          minHeight="260svh" // extra tall
+        >
+          {/* Minimal headline; one CTA max */}
+          <div class="max-w-xl">
+            <p class="text-[11px] uppercase tracking-[0.22em] text-white/55">
+              FastBites
+            </p>
+            <h2 class="mt-2 text-5xl md:text-7xl font-black tracking-tight">
+              Craft you can taste.
+            </h2>
+            <a
+              href="#screens"
+              class="mt-8 inline-flex items-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-white/90"
+            >
+              Browse screens
+            </a>
+          </div>
+        </ParallaxMarquee>
+
+        {
+          /* ----------------------------------------------------------
+           5) Horizontal screens carousel (full-bleed)
+        ----------------------------------------------------------- */
+        }
+        <section
+          id="screens"
+          class="relative isolate w-screen -mx-[calc(300vh-100%)] bg-neutral-950 text-dark py-20 md:py-24"
+        >
+          <div class="mx-auto max-w-7xl px-6 md:px-8">
+            <div class="mb-6 md:mb-10">
+              <p class="text-[11px] uppercase tracking-[0.22em] text-dark/55">
+                Screens
+              </p>
+              <h2 class="mt-2 text-3xl md:text-5xl font-black tracking-tight">
+                See it in motion.
+              </h2>
+              <p class="mt-3 text-dark/65 max-w-2xl">
+                Home, login, browse, detail, checkout, and completion — all
+                tuned for speed and clarity.
+              </p>
+            </div>
+            <SnapCarousel items={ROW} />
+          </div>
+        </section>
+
+        {
+          /* ----------------------------------------------------------
+           6) Design System (light, structured)
+        ----------------------------------------------------------- */
+        }
+        <section
+          id="design-system"
+          class="mx-auto max-w-7xl px-6 md:px-8 py-16 text-neutral-900"
+        >
+          <h2 class="text-4xl md:text-6xl font-black tracking-tight">
+            Design system.
+          </h2>
+
+          {/* equal-height two-column layout */}
+          <div class="mt-8 grid gap-10 md:grid-cols-2 items-stretch">
+            {/* LEFT: accordions */}
+            <div class="h-full min-h-[640px] md:min-h-[720px]">
+              <div class="h-full rounded-[2rem] bg-neutral-100 px-6 py-10 md:px-12 flex flex-col">
+                <p class="text-sm font-semibold uppercase tracking-[0.18em] text-neutral-500">
+                  Foundations
+                </p>
+
+                {/* Color */}
+                <details
+                  open
+                  class="[&_summary::-webkit-details-marker]:hidden border-b border-neutral-200 py-6 group"
+                >
+                  <summary class="flex items-center justify-between cursor-pointer select-none">
+                    <div class="flex items-center gap-3">
+                      <span class="grid h-9 w-9 place-items-center rounded-lg bg-white text-lg">
+                        🎨
+                      </span>
+                      <h3 class="text-xl font-semibold">Color</h3>
+                    </div>
+                    <svg
+                      class="h-5 w-5 text-neutral-500 transition-transform group-open:rotate-180"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6 15l6-6 6 6"
+                      />
+                    </svg>
+                  </summary>
+                  <p class="mt-4 text-neutral-700 leading-relaxed">
+                    Coffee warmth, energetic oranges, and calm neutrals.
+                  </p>
+                </details>
+
+                {/* Type */}
+                <details class="[&_summary::-webkit-details-marker]:hidden border-b border-neutral-200 py-6 group">
+                  <summary class="flex items-center justify-between cursor-pointer select-none">
+                    <div class="flex items-center gap-3">
+                      <span class="grid h-9 w-9 place-items-center rounded-lg bg-white text-lg">
+                        🔤
+                      </span>
+                      <h3 class="text-xl font-semibold">Type</h3>
+                    </div>
+                    <svg
+                      class="h-5 w-5 text-neutral-500 transition-transform group-open:rotate-180"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6 15l6-6 6 6"
+                      />
+                    </svg>
+                  </summary>
+                  <p class="mt-4 text-neutral-700 leading-relaxed">
+                    Bold headings with highly legible UI text (e.g., Manrope +
+                    Inter).
+                  </p>
+                </details>
+
+                {/* Elevation & shape */}
+                <details class="[&_summary::-webkit-details-marker]:hidden border-b border-neutral-200 py-6 group">
+                  <summary class="flex items-center justify-between cursor-pointer select-none">
+                    <div class="flex items-center gap-3">
+                      <span class="grid h-9 w-9 place-items-center rounded-lg bg-white text-lg">
+                        🧊
+                      </span>
+                      <h3 class="text-xl font-semibold">
+                        Elevation &amp; shape
+                      </h3>
+                    </div>
+                    <svg
+                      class="h-5 w-5 text-neutral-500 transition-transform group-open:rotate-180"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6 15l6-6 6 6"
+                      />
+                    </svg>
+                  </summary>
+                  <p class="mt-4 text-neutral-700 leading-relaxed">
+                    12–16px radii; one ambient shadow; no heavy chrome.
+                  </p>
+                </details>
+
+                <p class="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-neutral-500">
+                  Why it wins
+                </p>
+
+                {/* It’s a system. */}
+                <details
+                  open
+                  class="[&_summary::-webkit-details-marker]:hidden border-b border-neutral-200 py-6 group"
+                >
+                  <summary class="flex items-center justify-between cursor-pointer select-none">
+                    <div class="flex items-center gap-3">
+                      <span class="grid h-9 w-9 place-items-center rounded-lg bg-white text-lg">
+                        🧩
+                      </span>
+                      <h3 class="text-xl font-semibold">It’s a system.</h3>
+                    </div>
+                    <svg
+                      class="h-5 w-5 text-neutral-500 transition-transform group-open:rotate-180"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6 15l6-6 6 6"
+                      />
+                    </svg>
+                  </summary>
+                  <p class="mt-4 text-neutral-700 leading-relaxed">
+                    Same tokens &amp; components port to web, native, and kiosk.
+                  </p>
+                </details>
+
+                {/* Respects the thumb. */}
+                <details class="[&_summary::-webkit-details-marker]:hidden border-b border-neutral-200 py-6 group">
+                  <summary class="flex items-center justify-between cursor-pointer select-none">
+                    <div class="flex items-center gap-3">
+                      <span class="grid h-9 w-9 place-items-center rounded-lg bg-white text-lg">
+                        👍
+                      </span>
+                      <h3 class="text-xl font-semibold">Respects the thumb.</h3>
+                    </div>
+                    <svg
+                      class="h-5 w-5 text-neutral-500 transition-transform group-open:rotate-180"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6 15l6-6 6 6"
+                      />
+                    </svg>
+                  </summary>
+                  <p class="mt-4 text-neutral-700 leading-relaxed">
+                    Primary actions sit in the natural reach zone.
+                  </p>
+                </details>
+
+                {/* Measurable by design. */}
+                <details class="[&_summary::-webkit-details-marker]:hidden py-6 group">
+                  <summary class="flex items-center justify-between cursor-pointer select-none">
+                    <div class="flex items-center gap-3">
+                      <span class="grid h-9 w-9 place-items-center rounded-lg bg-white text-lg">
+                        📈
+                      </span>
+                      <h3 class="text-xl font-semibold">
+                        Measurable by design.
+                      </h3>
+                    </div>
+                    <svg
+                      class="h-5 w-5 text-neutral-500 transition-transform group-open:rotate-180"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6 15l6-6 6 6"
+                      />
+                    </svg>
+                  </summary>
+                  <p class="mt-4 text-neutral-700 leading-relaxed">
+                    Built for A/B: add-to-cart, completion, time-to-order.
+                  </p>
+                </details>
+              </div>
+            </div>
+
+            {/* RIGHT: image fills the same height */}
+            <div class="h-full min-h-[640px] md:min-h-[720px]">
+              <figure class="h-full overflow-hidden rounded-[2rem] shadow-2xl bg-white flex items-center justify-center">
+                <img
+                  src={asset("/fastbites/screen-6-complete.png")}
+                  alt="FastBites screen"
+                  class="max-h-full max-w-full object-contain"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="moderna"
+          class="relative isolate w-screen -mx-[calc(50vw-50%)] bg-black text-dark py-20 md:py-28"
+        >
+          <div class="relative mx-auto max-w-7xl px-6 md:px-8">
+            <div class="mb-8">
+              <p class="text-[11px] uppercase tracking-[0.22em] text-white/55">
+                App Showcase
+              </p>
+              <h2 class="mt-2 text-3xl md:text-5xl font-black tracking-tight">
+                Moderna
+              </h2>
+              <p class="mt-3 max-w-2xl text-white/70">
+                Oversized, glossy screens on a rich parallax backdrop.
+              </p>
+            </div>
+            <ParallaxPosterRail
+              items={MODERNA_ROW}
+              backdrop="violet"
+              strength={0.26}
+            />
+          </div>
+        </section>
+
+        {/* STRUCTA — vertical chapter stack */}
+        <section
+          id="structa-chapters"
+          class="relative isolate w-screen -mx-[calc(50vw-50%)] bg-neutral-950 text-dark"
+        >
+          <div class="mx-auto max-w-7xl px-6 md:px-8 py-10">
+            <p class="text-[11px] uppercase tracking-[0.22em] text-dark/55">
+              Structa
+            </p>
+            <h2 class="mt-2 text-3xl md:text-5xl font-black tracking-tight">
+              Lorem Epsum
+            </h2>
+          </div>
+
+          {/* own scroll area = one page per snap; feels like the page */}
+          <div class="h-[100svh] overflow-y-auto snap-y snap-mandatory no-scrollbar">
+            {[
+              {
+                src: asset("/structa/1.png"),
+                title: "Home",
+                desc:
+                  "Welcoming hero with layered depth and generous whitespace to invite exploration.",
+              },
+              {
+                src: asset("/structa/2.png"),
+                title: "New Arrivals",
+                desc:
+                  "Carousel-led showcase that spotlights fresh drops with clean product focus.",
+              },
+              {
+                src: asset("/structa/3.png"),
+                title: "Explore",
+                desc:
+                  "Grid-first browsing with clear filters—content forward, chrome quiet.",
+              },
+              {
+                src: asset("/structa/4.png"),
+                title: "Profile",
+                desc:
+                  "Calm settings stack with large tap targets and clear hierarchy.",
+              },
+              {
+                src: asset("/structa/5.png"),
+                title: "Order Status",
+                desc:
+                  "Timeline-style progress for quick scanning and low anxiety.",
+              },
+            ].map((s, i) => (
+              <article
+                key={i}
+                class="snap-start min-h-[100svh] flex flex-col items-center justify-center px-6 py-16"
+              >
+                <h3 class="text-2xl md:text-4xl font-semibold tracking-tight mb-3 text-dark/90">
+                  {s.title}
+                </h3>
+                {/* one-line explanation */}
+                <p class="mb-8 max-w-xl text-sm md:text-base text-white/70">
+                  {s.desc}
+                </p>
+
+                <figure class="relative overflow-hidden rounded-[2.4rem] bg-white/[0.04] backdrop-blur-[2px] shadow-[0_80px_240px_-60px_rgba(0,0,0,0.85)]">
+                  <div class="w-[92vw] sm:w-[720px] md:w-[960px] lg:w-[1200px] xl:w-[1400px] aspect-[3/4] bg-black">
+                    <img
+                      src={s.src}
+                      alt={s.title}
+                      class="h-full w-full object-contain"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  {/* glossy strip */}
+                  <div class="pointer-events-none absolute inset-x-0 -top-1/3 h-1/2 bg-gradient-to-b from-white/25 via-white/10 to-transparent" />
+                </figure>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* ========= END / LUXURY CALL-TO-ACTION ========= */}
+        <section
+          id="endcap"
+          class="relative isolate w-screen -mx-[calc(50vw-50%)] overflow-hidden bg-neutral-950 text-dark"
+        >
+          {/* soft radial glows */}
+          <div class="pointer-events-none absolute inset-0">
+            <div class="absolute -top-40 left-1/2 h-[680px] w-[880px] -translate-x-1/2 rounded-full bg-white/[0.06] blur-3xl" />
+            <div class="absolute -bottom-48 right-10 h-[520px] w-[520px] rounded-full bg-gradient-to-t from-fuchsia-400/15 via-purple-400/10 to-transparent blur-3xl" />
+            <div class="absolute -bottom-40 left-10 h-[420px] w-[420px] rounded-full bg-gradient-to-t from-emerald-400/15 via-teal-400/10 to-transparent blur-3xl" />
+          </div>
+
+          <div class="relative mx-auto max-w-7xl px-6 md:px-8 py-24 md:py-40 text-center">
+            <h2 class="mt-3 mb-3 text-4xl md:text-6xl font-black tracking-tight">
+              Let’s make it feel inevitable.
+            </h2>
+            <p class="mt-5 mx-auto max-w-2xl text-white/70">
+              Premium interfaces that get out of the way—calm visuals, fast
+              flows, and a system you can scale.
+            </p>
+
+            <div class="mt-12 flex items-center justify-center gap-6">
+              {/* Primary – calm white pill */}
+              <a
+                href="mailto:lucy@fastandmodern.com"
+                class="group inline-flex items-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-black
+           transition hover:bg-white/90 focus:outline-none"
+              >
+                Start a project
+                <svg
+                  class="ml-2 h-4 w-4 opacity-60 transition-transform group-hover:translate-x-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+
+              {/* Secondary – quiet text link */}
+              <a
+                href="#design-system"
+                class="group inline-flex items-center text-sm font-medium text-white/70 hover:text-white
+           focus:outline-none rounded-full px-2 py-1"
+              >
+                See our approach
+                <svg
+                  class="ml-1 h-4 w-4 opacity-60 transition-transform group-hover:translate-x-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            {/* subtle divider */}
+            <div class="mx-auto mt-16 h-px max-w-4xl bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+
+            {/* tiny meta / footer */}
+          </div>
+
+          {/* optional scroll-to-top button */}
+          <div class="pointer-events-none absolute bottom-6 right-6">
+            <a
+              href="#aos-scope"
+              class="pointer-events-auto grid h-10 w-10 place-items-center rounded-full bg-white/10  backdrop-blur-sm transition hover:bg-white/15"
+              aria-label="Back to top"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 15l7-7 7 7"
+                />
+              </svg>
+            </a>
+          </div>
+        </section>
+      </main>
+    </>
+  );
+}
