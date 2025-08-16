@@ -1,4 +1,11 @@
 {
+  {
+  "tasks": {
+    "dev": "deno run -A --watch=static/,routes/ dev.ts",
+    "start": "deno run -A main.ts",
+    "build": "deno run -A _fresh/build.ts"
+  }
+}, 
   "lock": false,
   "tasks": {
     "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
