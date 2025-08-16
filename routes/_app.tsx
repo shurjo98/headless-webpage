@@ -3,6 +3,8 @@ import { AppProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
 import Header from "../islands/Header.tsx";
 import Footer from "../components/Footer.tsx";
+import AOSProvider from "../islands/AOSProvider.tsx";
+
 
 export default function App({ Component }: AppProps) {
   return (
@@ -52,6 +54,7 @@ export default function App({ Component }: AppProps) {
       <div class="min-h-screen flex flex-col">
         <Header />
         <main class="flex-1">
+           <AOSProvider />
           <Component />
         </main>
         <Footer />
