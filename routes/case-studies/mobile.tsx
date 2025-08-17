@@ -9,22 +9,29 @@ import ParallaxPosterRail from "../../islands/ParallaxPosterRail.tsx";
    Gallery images for the carousel (order is intentional)
 ----------------------------------------------------------------- */
 const ROW = [
-  { src: asset("/fastbites/screen-1-home.png"), alt: "Home" },
-  { src: asset("/fastbites/screen-2-login.png"), alt: "Login" },
-  { src: asset("/fastbites/screen-3-browse.png"), alt: "Browse" },
-  { src: asset("/fastbites/screen-4-detail.png"), alt: "Product Detail" },
-  { src: asset("/fastbites/screen-5-checkout.png"), alt: "Checkout" },
-  { src: asset("/fastbites/screen-6-complete.png"), alt: "Order Complete" },
+  { src: asset("/mobile/fastbites/screen-1-home.png"), alt: "Home" },
+  { src: asset("/mobile/fastbites/screen-2-login.png"), alt: "Login" },
+  { src: asset("/mobile/fastbites/screen-3-browse.png"), alt: "Browse" },
+  {
+    src: asset("/mobile/fastbites/screen-4-detail.png"),
+    alt: "Product Detail",
+  },
+  { src: asset("/mobile/fastbites/screen-5-checkout.png"), alt: "Checkout" },
+  {
+    src: asset("/mobile/fastbites/screen-6-complete.png"),
+    alt: "Order Complete",
+  },
 ];
 
 // routes/case-studies/fastbites.tsx (near other data)
-const MODERNA_ROW = Array.from({ length: 5 }, (_, i) => ({
-  src: asset(`/morden/${i + 1}.png`),
-  alt: `Moderna ${i + 1}`,
+// use the folder name you actually have
+const MORDEN_ROW = Array.from({ length: 5 }, (_, i) => ({
+  src: asset(`/mobile/morden/${i + 1}.png`),
+  alt: `Morden ${i + 1}`,
 }));
 
 const STRUCTA_ROW = Array.from({ length: 5 }, (_, i) => ({
-  src: asset(`/structa/${i + 1}.png`),
+  src: asset(`/mobile/structa/${i + 1}.png`),
   alt: `Structa ${i + 1}`,
 }));
 
@@ -72,6 +79,57 @@ export default function FastBitesCase() {
 
       {/* Scope all animations to this container */}
       <main id="aos-scope" class="bg-white text-black">
+        {/* PAGE INTRO — goes before the mobile HERO */}
+        <section id="intro-mobile" class="relative w-full bg-neutral-50">
+          <div class="mx-auto max-w-7xl px-6 md:px-8 py-16 md:py-20 text-center">
+            <p class="text-[11px] uppercase tracking-[0.22em] text-neutral-500">
+              Case Studies
+            </p>
+            <h1 class="mt-2 text-4xl md:text-6xl font-black tracking-tight text-neutral-900">
+              Mobile Design UI Case Studies
+            </h1>
+            <p class="mt-4 text-neutral-600 max-w-3xl mx-auto">
+              Three mobile concepts—Furniture, Burger (FastBites), and
+              Coffee—built for speed, clarity, and trust. Quiet chrome, bold
+              type, and thumb-first ergonomics.
+            </p>
+
+            {/* quick in-page navigation */}
+            <nav class="mt-8 flex flex-wrap items-center justify-center gap-3">
+              <a
+                href="#screens"
+                class="inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold bg-neutral-900 text-white hover:bg-neutral-800 transition"
+              >
+                FastBites (Burger)
+              </a>
+              <a
+                href="#design-system"
+                class="inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold border border-neutral-300 text-neutral-800 hover:border-neutral-400 transition"
+              >
+                Design System
+              </a>
+              <a
+                href="#design-intelligence"
+                class="inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold border border-neutral-300 text-neutral-800 hover:border-neutral-400 transition"
+              >
+                Design Intelligence
+              </a>
+              <a
+                href="#morden"
+                class="inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold border border-neutral-300 text-neutral-800 hover:border-neutral-400 transition"
+              >
+                Morden
+              </a>
+              <a
+                href="#structa"
+                class="inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold border border-neutral-300 text-neutral-800 hover:border-neutral-400 transition"
+              >
+                Structa
+              </a>
+            </nav>
+          </div>
+        </section>
+
         {
           /* ----------------------------------------------------------
            1) Intro band (full-bleed) — lean copy + hero image
@@ -101,7 +159,7 @@ export default function FastBitesCase() {
             <div class="md:col-span-7">
               <figure class="relative overflow-hidden rounded-[2rem] shadow-[0_30px_100px_-20px_rgba(0,0,0,0.6)]">
                 <img
-                  src={asset("/fastbites/hero.png")}
+                  src={asset("/mobile/fastbites/hero.png")}
                   alt="FastBites overview"
                   class="w-full h-auto object-contain"
                   loading="eager"
@@ -169,13 +227,13 @@ export default function FastBitesCase() {
           </div>
 
           <div class="relative mx-auto max-w-7xl px-6 md:px-8 py-24">
-            <p class="text-[11px] font-semibold tracking-[0.22em] text-white/55 uppercase">
+            <p class="mt-2 text-5xl md:text-7xl font-black tracking-tigh">
               Why it feels effortless
             </p>
-            <h2 class="mt-3 text-4xl md:text-5xl font-black tracking-tight">
+            <h2 class="mt-3 text-2xl md:text-6xl font-black tracking-tight">
               Intelligent ways to design experiences.
             </h2>
-            <p class="mt-4 max-w-2xl text-white/70">
+            <p class="mt-4 max-w-5xl text-white/70">
               Furniture, burger, and coffee previews show the range. These
               choices make the system feel calm, fast, and premium.
             </p>
@@ -189,10 +247,10 @@ export default function FastBitesCase() {
                 />
                 <div class="flex items-start gap-4">
                   <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-black/20">
-                    <span class="text-xl">🛋️</span>
+                    <span class="text-2xl">🛋️</span>
                   </div>
                   <div>
-                    <h3 class="text-lg font-semibold">Contextual Design</h3>
+                    <h3 class="text-2xl font-semibold">Contextual Design</h3>
                     <p class="mt-2 text-sm text-white/70">
                       Showroom-calm for furniture, bold for burgers, warm for
                       coffee.
@@ -212,7 +270,7 @@ export default function FastBitesCase() {
                     <span class="text-xl">🍔</span>
                   </div>
                   <div>
-                    <h3 class="text-lg font-semibold">Visual Storytelling</h3>
+                    <h3 class="text-2xl font-semibold">Visual Storytelling</h3>
                     <p class="mt-2 text-sm text-white/70">
                       Content forward, chrome quiet. Contrast where it guides.
                     </p>
@@ -231,7 +289,7 @@ export default function FastBitesCase() {
                     <span class="text-xl">☕</span>
                   </div>
                   <div>
-                    <h3 class="text-lg font-semibold">Seamless Usability</h3>
+                    <h3 class="text-2xl font-semibold">Seamless Usability</h3>
                     <p class="mt-2 text-sm text-white/70">
                       Thumb-first targets and single-purpose screens reduce
                       thinking.
@@ -251,7 +309,7 @@ export default function FastBitesCase() {
                     <span class="text-xl">⚡</span>
                   </div>
                   <div>
-                    <h3 class="text-lg font-semibold">
+                    <h3 class="text-2xl font-semibold">
                       Performance by default
                     </h3>
                     <p class="mt-2 text-sm text-white/70">
@@ -272,7 +330,7 @@ export default function FastBitesCase() {
                     <span class="text-xl">✨</span>
                   </div>
                   <div>
-                    <h3 class="text-lg font-semibold">Motion with intent</h3>
+                    <h3 class="text-2xl font-semibold">Motion with intent</h3>
                     <p class="mt-2 text-sm text-white/70">
                       Consistent easing explains state changes without
                       distraction.
@@ -293,7 +351,7 @@ export default function FastBitesCase() {
                     <span class="text-xl">♿️</span>
                   </div>
                   <div>
-                    <h3 class="text-lg font-semibold">Accessible by default</h3>
+                    <h3 class="text-2xl font-semibold">Accessible by default</h3>
                     <p class="mt-2 text-sm text-white/70">
                       Readable type, contrast, large targets, sensible focus
                       order.
@@ -311,7 +369,7 @@ export default function FastBitesCase() {
         ----------------------------------------------------------- */
         }
         <ParallaxMarquee
-          src={asset("/fastbites/hero.png")} // replace with your large image if needed
+          src={asset("/mobile/fastbites/hero.png")} // replace with your large image if needed
           alt="Signature showcase"
           strength={0.35} // 0.2 subtle — 0.5 stronger
           minHeight="260svh" // extra tall
@@ -570,7 +628,7 @@ export default function FastBitesCase() {
             <div class="h-full min-h-[640px] md:min-h-[720px]">
               <figure class="h-full overflow-hidden rounded-[2rem] shadow-2xl bg-white flex items-center justify-center">
                 <img
-                  src={asset("/fastbites/screen-6-complete.png")}
+                  src={asset("/mobile/fastbites/screen-6-complete.png")}
                   alt="FastBites screen"
                   class="max-h-full max-w-full object-contain"
                   loading="lazy"
@@ -582,7 +640,7 @@ export default function FastBitesCase() {
         </section>
 
         <section
-          id="moderna"
+          id="morden"
           class="relative isolate w-screen -mx-[calc(50vw-50%)] bg-black text-dark py-20 md:py-28"
         >
           <div class="relative mx-auto max-w-7xl px-6 md:px-8">
@@ -591,14 +649,14 @@ export default function FastBitesCase() {
                 App Showcase
               </p>
               <h2 class="mt-2 text-3xl md:text-5xl font-black tracking-tight">
-                Moderna
+                Morden
               </h2>
               <p class="mt-3 max-w-2xl text-white/70">
                 Oversized, glossy screens on a rich parallax backdrop.
               </p>
             </div>
             <ParallaxPosterRail
-              items={MODERNA_ROW}
+              items={MORDEN_ROW}
               backdrop="violet"
               strength={0.26}
             />
@@ -623,31 +681,31 @@ export default function FastBitesCase() {
           <div class="h-[100svh] overflow-y-auto snap-y snap-mandatory no-scrollbar">
             {[
               {
-                src: asset("/structa/1.png"),
+                src: asset("/mobile/structa/1.png"),
                 title: "Home",
                 desc:
                   "Welcoming hero with layered depth and generous whitespace to invite exploration.",
               },
               {
-                src: asset("/structa/2.png"),
+                src: asset("/mobile/structa/2.png"),
                 title: "New Arrivals",
                 desc:
                   "Carousel-led showcase that spotlights fresh drops with clean product focus.",
               },
               {
-                src: asset("/structa/3.png"),
+                src: asset("/mobile/structa/3.png"),
                 title: "Explore",
                 desc:
                   "Grid-first browsing with clear filters—content forward, chrome quiet.",
               },
               {
-                src: asset("/structa/4.png"),
+                src: asset("/mobile/structa/4.png"),
                 title: "Profile",
                 desc:
                   "Calm settings stack with large tap targets and clear hierarchy.",
               },
               {
-                src: asset("/structa/5.png"),
+                src: asset("/mobile/structa/5.png"),
                 title: "Order Status",
                 desc:
                   "Timeline-style progress for quick scanning and low anxiety.",

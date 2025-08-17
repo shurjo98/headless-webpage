@@ -16,6 +16,7 @@ import * as $careers from "./routes/careers.tsx";
 import * as $case_studies_slug_ from "./routes/case-studies/[slug].tsx";
 import * as $case_studies_index from "./routes/case-studies/index.tsx";
 import * as $case_studies_mobile from "./routes/case-studies/mobile.tsx";
+import * as $case_studies_web from "./routes/case-studies/web.tsx";
 import * as $checkout from "./routes/checkout.tsx";
 import * as $checkout_success from "./routes/checkout/success.tsx";
 import * as $community from "./routes/community.tsx";
@@ -79,6 +80,7 @@ const manifest = {
     "./routes/case-studies/[slug].tsx": $case_studies_slug_,
     "./routes/case-studies/index.tsx": $case_studies_index,
     "./routes/case-studies/mobile.tsx": $case_studies_mobile,
+    "./routes/case-studies/web.tsx": $case_studies_web,
     "./routes/checkout.tsx": $checkout,
     "./routes/checkout/success.tsx": $checkout_success,
     "./routes/community.tsx": $community,
