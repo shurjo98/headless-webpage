@@ -64,7 +64,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 class="font-semibold text-neutral-900 mb-1">Phone</h3>
-                      <p class="text-neutral-600 font-light">+1 (555) 123-4567</p>
+                      <p class="text-neutral-600 font-light">+1 (929) 578-3968</p>
                     </div>
                   </div>
 
@@ -77,7 +77,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 class="font-semibold text-neutral-900 mb-1">Office</h3>
-                      <p class="text-neutral-600 font-light">San Francisco, CA</p>
+                      <p class="text-neutral-600 font-light"> No. 18 Zhongguancun Street<br />
+    Haidian District, Beijing, China 100080</p>
                     </div>
                   </div>
                 </div>
