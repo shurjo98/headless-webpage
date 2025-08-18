@@ -7,6 +7,8 @@ import FeatureTabs from "../islands/FeatureTabs.tsx";
 import Reveal from "../islands/Reveal.tsx";
 import TiltCard from "../islands/TiltCard.tsx";
 import AnimateOnView from "../islands/AnimateOnView.tsx";
+import EndcapCTA from "../components/EndcapCTA.tsx";
+
 
 function HeroSection() {
   return (
@@ -569,6 +571,17 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      {/* ========= END / LUXURY CALL-TO-ACTION ========= */}
+
+      <EndcapCTA
+        title="Ready when you are."
+        description="Launch Once, Grow Everywhere."
+        primaryHref="/contact"
+        primaryLabel="Contact us"
+        secondaryHref="/case-studies"
+        secondaryLabel="See case studies"
+      />
     </>
   );
 }
