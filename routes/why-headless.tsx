@@ -101,7 +101,7 @@ export default function WhyHeadless() {
           {[
             ["Speed & SEO", "First‑Contentful‑Paint <1 s and Core Web Vitals that rank."],
             ["Design Freedom", "No template limits—craft unique, immersive experiences."],
-            ["Channel Agility", "Deploy to web, app, kiosk, voice, or AR from one API."],
+            ["Channel Agility", "Deploy to web or apps from one API."],
             ["Future‑Proof Stack", "Swap providers without a full re‑platform."],
             ["Developer Happiness", "Modern tooling, CI/CD, version control—not plugin spaghetti."],
             ["Lower TCO", "Reduce plugin fees and maintenance overhead long‑term."]

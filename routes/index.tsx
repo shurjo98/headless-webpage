@@ -492,27 +492,31 @@ export default function Home() {
       </section>
 
       {/* More ways HeadlessPro empowers you */}
-      <section class="py-16 lg:py-24 bg-gradient-to-r from-primary-50 to-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="md:flex md:items-center md:space-x-12">
-            {/* Left side: checklist */}
-            <div class="md:w-1/2 space-y-8">
-              <h3 class="text-3xl lg:text-4xl font-display font-bold text-neutral-900">
-                More ways <span class="text-primary-600">Headless Engine</span>
-                {" "}
+      {/* ===== Apple-style “More ways … empowers you” ===== */}
+      <section class="py-20 lg:py-28 bg-gradient-to-r from-neutral-50 to-white">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <div class="md:grid md:grid-cols-2 md:gap-16 md:items-start">
+            {/* Left: title + features */}
+            <div class="space-y-8">
+              <h3 class="text-4xl lg:text-5xl font-semibold tracking-tight text-neutral-900">
+                More ways{" "}
+                <span class="bg-gradient-to-r from-[#0A84FF] to-[#64D2FF] bg-clip-text text-transparent">
+                  Headless Engine
+                </span>{" "}
                 empowers you
               </h3>
+
               <ul class="space-y-6">
                 {[
                   {
                     icon: "/images/recommendations.png",
                     title: "Smart Recommendations",
                     text:
-                      "AI‑driven product suggestions that boost order value.",
+                      "AI-driven product suggestions that boost order value.",
                   },
                   {
                     icon: "/images/analytics.png",
-                    title: "Real‑Time Analytics",
+                    title: "Real-Time Analytics",
                     text:
                       "Live dashboards to track revenue, churn, and cohorts.",
                   },
@@ -523,44 +527,51 @@ export default function Home() {
                       "Trigger emails, inventory syncs, and promos automatically.",
                   },
                 ].map((f) => (
-                  <li key={f.title} class="flex items-start space-x-40">
-                    <img
-                      src={f.icon}
-                      alt=""
-                      class="w-10 h-10 mt-1 flex-shrink-0"
-                    />
-                    <div>
-                      <h4 class="text-xl font-semibold text-neutral-900">
+                  <li key={f.title} class="group flex items-start gap-5">
+                    {/* Icon chip (glass, subtle shadow) */}
+                    <div class="grid place-items-center h-12 w-12 rounded-2xl
+                       bg-white/70 backdrop-blur-xl ring-1 ring-black/5
+                       shadow-[inset_0_1px_0_rgba(255,255,255,.7),0_10px_30px_-12px_rgba(0,0,0,.25)]
+                       transition-transform motion-safe:group-hover:-translate-y-0.5 flex-none">
+                      <img src={f.icon} alt="" class="h-6 w-6" />
+                    </div>
+
+                    <div class="space-y-1">
+                      <h4 class="text-xl font-semibold tracking-tight text-neutral-900">
                         {f.title}
                       </h4>
-                      <p class="text-neutral-600 font-light">{f.text}</p>
+                      <p class="text-neutral-600">{f.text}</p>
                     </div>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Right side: floating icons */}
-            <div class="hidden md:block md:w-1/2 relative h-64">
-              {[
-                {
-                  icon: "/images/recommendations.png",
-                  top: "10%",
-                  left: "20%",
-                },
-                { icon: "/images/analytics.png", top: "30%", left: "70%" },
-                { icon: "/images/automation.png", top: "65%", left: "40%" },
-              ].map((f, i) => (
-                <div
-                  key={i}
-                  class="absolute"
-                  style={{ top: f.top, left: f.left }}
-                >
-                  <div class="p-4 bg-white rounded-full shadow-soft animate-float">
-                    <img src={f.icon} alt="" class="w-12 h-12" />
+            {/* Right: airy floating chips (decorative) */}
+            <div class="relative mt-14 md:mt-0 h-90 md:h-auto">
+              <div class="hidden md:block relative h-full">
+                {[
+                  {
+                    icon: "/images/recommendations.png",
+                    top: "12%",
+                    left: "18%",
+                  },
+                  { icon: "/images/automation.png", top: "46%", left: "56%" },
+                  { icon: "/images/analytics.png", top: "22%", left: "78%" },
+                ].map((f, i) => (
+                  <div
+                    key={i}
+                    class="absolute"
+                    style={{ top: f.top, left: f.left }}
+                  >
+                    <div class="p-4 rounded-2xl bg-white/70 backdrop-blur-xl ring-1 ring-black/5
+                          shadow-[inset_0_1px_0_rgba(255,255,255,.7),0_12px_40px_-18px_rgba(0,0,0,.28)]
+                          motion-safe:animate-[float_6s_ease-in-out_infinite]">
+                      <img src={f.icon} alt="" class="h-20 w-20" />
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>

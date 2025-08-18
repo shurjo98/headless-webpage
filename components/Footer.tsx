@@ -7,7 +7,7 @@ export default function Footer() {
         { label: "Features", href: "/#features" },
         { label: "Pricing", href: "/pricing" },
         { label: "Docs", href: "/docs" },
-        { label: "API Status", href: "https://status.headlesspro.com" },
+        { label: "API Status", href: "/API_Status" },
       ],
     },
     {
