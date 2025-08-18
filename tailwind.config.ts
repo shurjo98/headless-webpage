@@ -5,6 +5,8 @@ import typography from "@tailwindcss/typography";
 import forms from "@tailwindcss/forms";
 import flowbite from "flowbite/plugin";
 
+
+
 const config: Config = {
   content: [
     "./routes/**/*.{ts,tsx}",

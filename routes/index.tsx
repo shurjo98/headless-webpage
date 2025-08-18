@@ -8,13 +8,17 @@ import Reveal from "../islands/Reveal.tsx";
 import TiltCard from "../islands/TiltCard.tsx";
 import AnimateOnView from "../islands/AnimateOnView.tsx";
 import EndcapCTA from "../components/EndcapCTA.tsx";
+import AOSProvider from "../islands/AOSProvider.tsx";
 
 
 function HeroSection() {
+
+  
+  
   return (
     <section class="relative w-full min-h-screen bg-gradient-to-br from-primary-50 via-white to-primary-100 overflow-hidden">
       {/* Background decoration */}
-      <div class="absolute inset-0 bg-abstract opacity-10 pointer-events-none">
+      <div class="absolute top-20 left-10 w-20 h-20 bg-primary-200 rounded-full opacity-20 motion-safe:animate-float">
       </div>
 
       {/* Floating elements */}
@@ -97,8 +101,26 @@ function HeroSection() {
 }
 
 export default function Home() {
+  
   return (
     <>
+    <AOSProvider
+          autoTargets={[
+            "#aos-scope h1",
+            "#aos-scope h2",
+            "#aos-scope h3",
+            "#aos-scope p",
+            "#aos-scope figure",
+            "#aos-scope img",
+            "#aos-scope article",
+          ]}
+          distancePx={28}
+          durationMs={900}
+          delayStepMs={90}
+          rootMargin="0px 0px -12% 0px"
+          threshold={0.15}
+        />
+    
       <HeroSection />
 
       {/* Commerce Solutions Section */}
