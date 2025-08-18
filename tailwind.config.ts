@@ -1,15 +1,16 @@
 // tailwind.config.ts
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
-// Optional official plugins (work fine with Deno):
-import typography from "npm:@tailwindcss/typography";
-import forms from "npm:@tailwindcss/forms";
+import typography from "@tailwindcss/typography";
+import forms from "@tailwindcss/forms";
+import flowbite from "flowbite/plugin";
 
 const config: Config = {
   content: [
     "./routes/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./islands/**/*.{ts,tsx}",
+    "./node_modules/flowbite/**/*.js", // let Tailwind scan Flowbite
   ],
   theme: {
     extend: {
@@ -45,7 +46,7 @@ const config: Config = {
 
         // 🔵 Alias Material Tailwind’s “blue-gray” to Tailwind’s slate values
         "blue-gray": {
-          50:  "#f8fafc",
+          50: "#f8fafc",
           100: "#f1f5f9",
           200: "#e2e8f0",
           300: "#cbd5e1",
@@ -61,10 +62,9 @@ const config: Config = {
       },
 
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        serif: ["Playfair Display", "Georgia", "serif"],
-        mono: ["JetBrains Mono", "monospace"],
-        display: ["Playfair Display", "serif"],
+        sans: ["'Yeseva One'", "serif"],
+        display: ["'Yeseva One'", "serif"], // ⬅️ use this for headings
+        brand: ["'Yeseva One'", "serif"], // (optional alias)
       },
 
       fontSize: {
@@ -101,19 +101,43 @@ const config: Config = {
       },
 
       keyframes: {
-        spinSlow: { from: { transform: "rotate(0deg)" }, to: { transform: "rotate(360deg)" } },
-        bounceSlow: { "0%,100%": { transform: "scale(1)" }, "50%": { transform: "scale(1.02)" } },
-        bounceArrow: { "0%,100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(8px)" } },
-        float: { "0%,100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(-10px)" } },
-        fadeIn: { from: { opacity: "0", transform: "scale(0.8)" }, to: { opacity: "1", transform: "scale(1)" } },
-        popIn: { from: { opacity: "0", transform: "scale(0.6)" }, to: { opacity: "1", transform: "scale(1)" } },
+        spinSlow: {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
+        },
+        bounceSlow: {
+          "0%,100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.02)" },
+        },
+        bounceArrow: {
+          "0%,100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(8px)" },
+        },
+        float: {
+          "0%,100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        fadeIn: {
+          from: { opacity: "0", transform: "scale(0.8)" },
+          to: { opacity: "1", transform: "scale(1)" },
+        },
+        popIn: {
+          from: { opacity: "0", transform: "scale(0.6)" },
+          to: { opacity: "1", transform: "scale(1)" },
+        },
         drift: {
           "0%,100%": { transform: "translateX(0) rotate(0deg)" },
           "25%": { transform: "translateX(8px) rotate(1deg)" },
           "75%": { transform: "translateX(-8px) rotate(-1deg)" },
         },
-        slideIn: { from: { transform: "translateX(-100%)" }, to: { transform: "translateX(0)" } },
-        slideUp: { from: { transform: "translateY(24px)", opacity: "0" }, to: { transform: "translateY(0)", opacity: "1" } },
+        slideIn: {
+          from: { transform: "translateX(-100%)" },
+          to: { transform: "translateX(0)" },
+        },
+        slideUp: {
+          from: { transform: "translateY(24px)", opacity: "0" },
+          to: { transform: "translateY(0)", opacity: "1" },
+        },
       },
       animation: {
         spinSlow: "spinSlow 30s linear infinite",
@@ -133,6 +157,7 @@ const config: Config = {
   plugins: [
     typography,
     forms,
+    flowbite,
     plugin(({ addUtilities }) => {
       addUtilities({
         ".text-shadow-neon": {

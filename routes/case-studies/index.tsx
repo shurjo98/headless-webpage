@@ -39,7 +39,7 @@ export default function CaseStudiesIndex() {
   return (
     <>
       <Head>
-        <title>Case Studies | YourCompany</title>
+        <title>Case Studies</title>
         <meta
           name="description"
           content="Real results from our headless commerce builds, migrations, and growth projects."

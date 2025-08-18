@@ -12,7 +12,9 @@
 │   ├── FloatingHeadline.tsx
 │   ├── Footer.tsx
 │   ├── Header.tsx
+│   ├── InfoCard.tsx
 │   ├── InstallmentBanner.tsx
+│   ├── ProductCard.tsx
 │   ├── RoiCalculator.tsx
 │   ├── Stepper.tsx
 │   └── ui
@@ -26,7 +28,10 @@
 ├── fresh.config.ts
 ├── fresh.gen.ts
 ├── islands
+│   ├── AOSProvider.tsx
 │   ├── AdminDashboard.tsx
+│   ├── AnimateOnView.tsx
+│   ├── Carousel.tsx
 │   ├── CaseCarousel.tsx
 │   ├── Configurator.tsx
 │   ├── ContactForm.tsx
@@ -35,11 +40,16 @@
 │   ├── Header.tsx
 │   ├── InstallmentCalculator.tsx
 │   ├── MailSignupForm.tsx
+│   ├── ParallaxMarquee.tsx
+│   ├── ParallaxPosterRail.tsx
 │   ├── Reveal.tsx
 │   ├── RoiCalculator.tsx
-│   └── StatCounter.tsx
+│   ├── SnapCarousel.tsx
+│   ├── StatCounter.tsx
+│   └── TiltCard.tsx
 ├── main.ts
 ├── package-lock.json
+├── package.json
 ├── routes
 │   ├── _404.tsx
 │   ├── _app.tsx
@@ -56,8 +66,9 @@
 │   ├── careers.tsx
 │   ├── case-studies
 │   │   ├── [slug].tsx
-│   │   ├── fastbites.tsx
-│   │   └── index.tsx
+│   │   ├── index.tsx
+│   │   ├── mobile.tsx
+│   │   └── web.tsx
 │   ├── checkout
 │   │   └── success.tsx
 │   ├── checkout.tsx
@@ -91,20 +102,15 @@
 │   │   └── index.tsx
 │   ├── resources.tsx
 │   ├── services.tsx
+│   ├── shop.tsx
 │   ├── solutions.tsx
 │   ├── tutorials.tsx
 │   └── why-headless.tsx
 ├── static
-│   ├── fastbites
-│   │   ├── hero.png
-│   │   ├── screen-1-home.png
-│   │   ├── screen-2-login.png
-│   │   ├── screen-3-browse.png
-│   │   ├── screen-4-detail.png
-│   │   ├── screen-5-checkout.png
-│   │   └── screen-6-complete.png
 │   ├── favicon.ico
 │   ├── features.json
+│   ├── gen
+│   │   └── tailwind.css
 │   ├── images
 │   │   ├── Agentic_Commerce_Orchestrator_Design.png
 │   │   ├── ChatGPT Image Jul 27, 2025, 07_55_13 PM.png
@@ -112,21 +118,70 @@
 │   │   ├── automation.png
 │   │   ├── b2b-b2c.png
 │   │   ├── cart.png
+│   │   ├── case-studies-portrait.jpg
 │   │   ├── catalog_management.png
 │   │   ├── code.png
+│   │   ├── create_coupon_simple_centered.png
+│   │   ├── customer_list_clean.png
 │   │   ├── dashboard.png
 │   │   ├── globe.png
+│   │   ├── inventory_table.png
 │   │   ├── logo.png
+│   │   ├── loyalty_comp_filters.png
+│   │   ├── loyalty_comp_header.png
+│   │   ├── loyalty_kpi_revenue.png
+│   │   ├── ml_churn_risk_card_clear.png
 │   │   ├── omnichannel-storefront.png
 │   │   ├── personalized-shopping.png
 │   │   ├── phone.png
+│   │   ├── pricing configurator
+│   │   ├── product_catalog_grid.png
+│   │   ├── recent_orders_polished.png
 │   │   ├── recommendations.png
 │   │   ├── supply-chain.png
-│   │   └── unified-commerce.png
+│   │   ├── unified-commerce.png
+│   │   └── web_channel_sales_card_v2.png
 │   ├── logo.svg
+│   ├── mobile
+│   │   ├── fastbites
+│   │   │   ├── hero.png
+│   │   │   ├── screen-1-home.png
+│   │   │   ├── screen-2-login.png
+│   │   │   ├── screen-3-browse.png
+│   │   │   ├── screen-4-detail.png
+│   │   │   ├── screen-5-checkout.png
+│   │   │   └── screen-6-complete.png
+│   │   ├── morden
+│   │   │   ├── 1.png
+│   │   │   ├── 2.png
+│   │   │   ├── 3.png
+│   │   │   ├── 4.png
+│   │   │   └── 5.png
+│   │   └── structa
+│   │       ├── 1.png
+│   │       ├── 2.png
+│   │       ├── 3.png
+│   │       ├── 4.png
+│   │       └── 5.png
 │   ├── packages.json
-│   └── styles.css
-├── styles.css
+│   ├── styles.css
+│   └── web
+│       ├── page_1
+│       │   ├── 1.png
+│       │   ├── 2.png
+│       │   ├── 3.png
+│       │   ├── 4.png
+│       │   ├── 5.png
+│       │   └── 6.png
+│       ├── page_2
+│       │   ├── 1.png
+│       │   ├── 2.png
+│       │   ├── 3.png
+│       │   └── 4.png
+│       └── page_3
+│           ├── 1.png
+│           ├── 2.png
+│           └── 3.png
 └── tailwind.config.ts
 
-23 directories, 107 files
+32 directories, 153 files

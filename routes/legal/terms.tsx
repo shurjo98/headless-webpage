@@ -89,12 +89,6 @@ export default function Terms() {
           We may update these Terms. Material changes will be notified at least
           30 days in advance.
         </p>
-
-        <h2>11. Contact</h2>
-        <p>
-          Questions? Email 
-          <a href="mailto:legal@yourcompany.com">legal@yourcompany.com</a>.
-        </p>
       </main>
     </>
   );
