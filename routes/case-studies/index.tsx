@@ -1,6 +1,7 @@
 import { h } from "preact";
 import { Head } from "$fresh/runtime.ts";
 
+
 /* ─── Shared data (you can move this to lib/caseStudies.ts later) ─── */
 export const studies = [
   {
