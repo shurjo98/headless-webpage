@@ -10,11 +10,7 @@ import AnimateOnView from "../islands/AnimateOnView.tsx";
 import EndcapCTA from "../components/EndcapCTA.tsx";
 import AOSProvider from "../islands/AOSProvider.tsx";
 
-
 function HeroSection() {
-
-  
-  
   return (
     <section class="relative w-full min-h-screen bg-gradient-to-br from-primary-50 via-white to-primary-100 overflow-hidden">
       {/* Background decoration */}
@@ -101,26 +97,25 @@ function HeroSection() {
 }
 
 export default function Home() {
-  
   return (
     <>
-    <AOSProvider
-          autoTargets={[
-            "#aos-scope h1",
-            "#aos-scope h2",
-            "#aos-scope h3",
-            "#aos-scope p",
-            "#aos-scope figure",
-            "#aos-scope img",
-            "#aos-scope article",
-          ]}
-          distancePx={28}
-          durationMs={900}
-          delayStepMs={90}
-          rootMargin="0px 0px -12% 0px"
-          threshold={0.15}
-        />
-    
+      <AOSProvider
+        autoTargets={[
+          "#aos-scope h1",
+          "#aos-scope h2",
+          "#aos-scope h3",
+          "#aos-scope p",
+          "#aos-scope figure",
+          "#aos-scope img",
+          "#aos-scope article",
+        ]}
+        distancePx={28}
+        durationMs={900}
+        delayStepMs={90}
+        rootMargin="0px 0px -12% 0px"
+        threshold={0.15}
+      />
+
       <HeroSection />
 
       {/* Commerce Solutions Section */}
@@ -399,100 +394,98 @@ export default function Home() {
 
       {/* ===== FM Lab — Case Studies (centered header, image follows) ===== */}
       <section class="py-20 lg:py-28">
-        <div class="mt-10 lg:mt-14 relative overflow-hidden shadow-card-2 ring-1 ring-white/10 bg-body-light-3 min-h-[420px] sm:min-h-[560px] lg:min-h-[520px]">
-          {/* Background image */}
-          <img
-            src="/images/case-studies-portrait.jpg"
-            alt="FM Lab mobile and web storefront design"
-            class="block w-full h-full object-cover"
-            loading="lazy"
-            decoding="async"
-          />
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          {/* Frosted card */}
+          <div class="group relative isolate overflow-hidden rounded-[28px]
+             ring-1 ring-white/10
+             shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_30px_70px_-30px_rgba(0,0,0,0.45)]
+             min-h-[420px] sm:min-h-[560px] lg:min-h-[520px]
+             transition-transform duration-500 will-change-transform
+             motion-safe:hover:scale-[1.01]">
+            {/* Background image */}
+            <img
+              src="/images/case-studies-portrait.jpg"
+              alt="FM Lab mobile and web storefront design"
+              class="absolute inset-0 -z-10 h-full w-full object-cover
+               transition-transform duration-700 ease-[cubic-bezier(.2,.6,.2,1)]
+               motion-safe:group-hover:scale-[1.03]"
+              loading="lazy"
+              decoding="async"
+            />
 
-          {/* Blur + legibility overlays */}
-          <div class="absolute inset-0 z-10">
-            <div class="absolute inset-0 backdrop-blur-md bg-black/10"></div>
-            <div class="absolute inset-0 bg-gradient-to-b from-black/45 via-black/20 to-transparent">
-            </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent">
-            </div>
-          </div>
-
-          {/* Content overlay as a 3-row grid: top label / center hero / bottom CTAs */}
-          <div class="absolute inset-0 z-20 grid grid-rows-[auto_1fr_auto] items-center text-center px-4 sm:px-6 py-6 sm:py-10">
-            {/* Top label (anchored, small on mobile) */}
-            <div class="row-start-1">
-              <p class="text-4xl 2lg:text-base tracking-[0.2em] font-semibold text-white/70">
-                CASE STUDIES
-              </p>
-            </div>
-
-            {/* Center hero (logo + headline + subcopy) */}
-            <div class="row-start-2 flex flex-col items-center justify-center gap-3 sm:gap-4">
-              <h2 class="text-2xl sm:text-4xl lg:text-5xl font-display font-bold leading-tight text-white">
-                <span class="inline-flex items-center gap-2 sm:gap-3 align-middle">
-                  <img
-                    src="/images/logo.png"
-                    alt="FM"
-                    class="h-10 sm:h-12 lg:h-14 w-auto drop-shadow"
-                  />
-                  <span>Lab</span>
-                </span>
-              </h2>
-
-              <h3 class="text-lg sm:text-2xl font-semibold inline-block
-                    bg-gradient-to-r from-white via-primary-100 to-primary-400
-                    bg-clip-text text-transparent drop-shadow-[0_1px_1px_rgba(0,0,0,0.35)]">
-                Design That Sells
-              </h3>
-
-              <p class="max-w-[48ch] text-lg lg:text-base text-white/85 px-2">
-                FM Lab turns minimal UI and motion into measurable lift across
-                mobile and web storefronts.
-              </p>
-            </div>
-
-            {/* Bottom CTAs (anchored) */}
-            <div class="row-start-3">
-              <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-                {/* Liquid-glass outline button */}
-                <a
-                  href="/case-studies/mobile"
-                  class="group relative inline-flex rounded-full"
-                >
-                  <span class="relative inline-flex items-center justify-center rounded-full
-                          px-6 sm:px-7 py-2.5 sm:py-3 text-white
-                          border border-white/50
-                          backdrop-blur-md bg-white/0
-                          shadow-[inset_0_1px_0_0_rgba(255,255,255,.35)]
-                          before:absolute before:inset-0 before:rounded-full
-                          before:bg-gradient-to-b before:from-white/20 before:to-transparent
-                          before:opacity-50
-                          hover:border-white/70 hover:before:opacity-80
-                          transition">
-                    Mobile case study
-                  </span>
-                </a>
-
-                {/* Gradient-border button (pink → purple) */}
-                <a
-                  href="/case-studies/web"
-                  class="group relative inline-flex rounded-full"
-                >
-                  <span class="relative inline-flex items-center justify-center rounded-full
-                          px-6 sm:px-7 py-2.5 sm:py-3 text-white
-                          border border-white/50
-                          backdrop-blur-md bg-white/0
-                          shadow-[inset_0_1px_0_0_rgba(255,255,255,.35)]
-                          before:absolute before:inset-0 before:rounded-full
-                          before:bg-gradient-to-b before:from-white/20 before:to-transparent
-                          before:opacity-50
-                          hover:border-white/70 hover:before:opacity-80
-                          transition">
-                    Website case study
-                  </span>
-                </a>
+            {/* Frost + gradients (legibility) */}
+            <div class="absolute inset-0 -z-10">
+              {/* Blur layer only when supported (keeps Safari happy) */}
+              <div class="absolute inset-0 supports-[backdrop-filter]:backdrop-blur-xl supports-[backdrop-filter]:bg-white/5 bg-black/20">
               </div>
+              {/* Top glossy edge */}
+              <div class="pointer-events-none absolute inset-x-0 top-0 h-24
+                    bg-gradient-to-b from-white/30 via-white/10 to-transparent">
+              </div>
+              {/* Bottom fade for text contrast */}
+              <div class="pointer-events-none absolute inset-x-0 bottom-0 h-40
+                    bg-gradient-to-t from-black/50 via-black/20 to-transparent">
+              </div>
+            </div>
+
+            {/* Content — centered */}
+            {/* Content — Apple typography & colors */}
+            <div class="absolute inset-0 z-20 grid place-items-center px-4">
+              <div class="flex flex-col items-center text-center gap-5 max-w-[50ch]">
+                {/* Logo row stays as-is */}
+                <h2 class="text-2xl sm:text-4xl lg:text-5xl font-display font-bold leading-tight text-white">
+                  <span class="inline-flex items-center gap-2 sm:gap-3 align-middle">
+                    <img
+                      src="/images/logo.png"
+                      alt="FM"
+                      class="h-10 sm:h-12 lg:h-14 w-auto drop-shadow mr-3"
+                    />{" "}
+                    <span>Lab</span>
+                  </span>
+                </h2>
+
+                {/* Headline: tight, semi-bold, pure white */}
+                <h2 class="text-[clamp(28px,5vw,54px)] font-semibold tracking-tight leading-[1.06] text-white">
+                  Design That Sells
+                </h2>
+
+                {/* Body: slightly softer white, comfy line-height */}
+                <p class="text-[clamp(16px,2.1vw,20px)] font-medium leading-relaxed text-white/85">
+                  FM Lab turns minimal UI and motion into measurable lift across
+                  mobile and web storefronts.
+                </p>
+
+                {/* CTAs: primary = filled white, secondary = glass */}
+                <div class="mt-2 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+                  {/* Primary */}
+                  <a
+                    href="/case-studies/mobile"
+                    class="inline-flex rounded-full px-6 sm:px-7 py-2.5 sm:py-3
+                bg-white text-neutral-900 font-semibold
+                ring-1 ring-black/5
+                shadow-[inset_0_1px_0_rgba(255,255,255,.6),0_6px_20px_-8px_rgba(0,0,0,.25)]
+                hover:bg-white/95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A84FF] transition hover:bg-sky-700"
+                  >
+                    Mobile case study
+                  </a>
+
+                  {/* Secondary */}
+                  <a
+                    href="/case-studies/web"
+                    class="inline-flex rounded-full px-6 sm:px-7 py-2.5 sm:py-3
+                text-white font-semibold
+                ring-1 ring-white/50 bg-white/10 backdrop-blur-xl
+                hover:bg-white/14 hover:ring-white/70
+                focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A84FF] transition hover:bg-sky-700"
+                  >
+                    Website case study
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Subtle focus ring on hover (Apple-esque) */}
+            <div class="pointer-events-none absolute inset-0 rounded-[28px] ring-1 ring-white/0 group-hover:ring-white/20 transition">
             </div>
           </div>
         </div>
