@@ -27,7 +27,7 @@ export default function FeatureTabs() {
         "Real‑time preview on mobile & web",
         "Theme versioning & rollback",
       ],
-      img: "/images/catalog_management.png",
+      img: "/images/storefront_design.png",
     },
     {
       label: "Analytics & insights",
@@ -39,45 +39,45 @@ export default function FeatureTabs() {
         "Custom report builder",
         "Event‑level data streams",
       ],
-      img: "/images/catalog_management.png",
+      img: "/images/analytics_insights.png",
     },
 
-     {
-    label: "Campaign automation",
-    title: "Automate personalized campaigns at scale.",
-    description:
-      "Design, schedule, and trigger targeted campaigns across channels based on real‑time customer behavior and lifecycle stage.",
-    items: [
-      "Behavioral triggers & dynamic segmentation",
-      "A/B testing with performance analytics",
-      "Cross‑channel orchestration (email, SMS, push)",
-    ],
-    img: "/images/catalog_management.png",
-  },
-  {
-    label: "Order fulfillment",
-    title: "Streamline order fulfillment end‑to‑end.",
-    description:
-      "Manage picking, packing, shipping, and returns from a single dashboard—speed up delivery and reduce errors.",
-    items: [
-      "Real‑time inventory sync across warehouses",
-      "Batch label printing & carrier integrations",
-      "Automated return & exchange workflows",
-    ],
-    img: "/images/catalog_management.png",
-  },
-  {
-    label: "Workflow automation",
-    title: "Automate back‑office workflows.",
-    description:
-      "Define custom approval chains, notifications, and third‑party integrations to eliminate manual handoffs and keep everything on track.",
-    items: [
-      "Rule‑based approval & routing",
-      "Webhook & API connector library",
-      "Audit logs & process reporting",
-    ],
-    img: "/images/catalog_management.png",
-  },
+    {
+      label: "Campaign automation",
+      title: "Automate personalized campaigns at scale.",
+      description:
+        "Design, schedule, and trigger targeted campaigns across channels based on real‑time customer behavior and lifecycle stage.",
+      items: [
+        "Behavioral triggers & dynamic segmentation",
+        "A/B testing with performance analytics",
+        "Cross‑channel orchestration (email, SMS, push)",
+      ],
+      img: "/images/campaign_automation.png",
+    },
+    {
+      label: "Order fulfillment",
+      title: "Streamline order fulfillment end‑to‑end.",
+      description:
+        "Manage picking, packing, shipping, and returns from a single dashboard—speed up delivery and reduce errors.",
+      items: [
+        "Real‑time inventory sync across warehouses",
+        "Batch label printing & carrier integrations",
+        "Automated return & exchange workflows",
+      ],
+      img: "/images/order_fulfillment_small.png",
+    },
+    {
+      label: "Workflow automation",
+      title: "Automate back‑office workflows.",
+      description:
+        "Define custom approval chains, notifications, and third‑party integrations to eliminate manual handoffs and keep everything on track.",
+      items: [
+        "Rule‑based approval & routing",
+        "Webhook & API connector library",
+        "Audit logs & process reporting",
+      ],
+      img: "/images/workflow_automation.png",
+    },
   ];
 
   const [active, setActive] = useState(features[0].label);
@@ -107,11 +107,13 @@ export default function FeatureTabs() {
         </div>
 
         <div className="flex flex-col md:flex-row bg-white rounded-2xl overflow-hidden shadow-lg">
-          <div className="md:w-1/2 h-64 md:h-auto">
+          <div className="md:w-1/2 min-h-[360px] flex items-center justify-center p-6 bg-surface-100">
             <img
               src={current.img}
               alt={current.label}
-              className="w-full h-full object-cover"
+              className="max-h-[280px] w-auto object-contain drop-shadow"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="md:w-1/2 p-10">
@@ -122,9 +124,7 @@ export default function FeatureTabs() {
               {current.description}
             </p>
             <ul className="list-disc list-inside space-y-2 text-gray-600">
-              {current.items.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
+              {current.items.map((item) => <li key={item}>{item}</li>)}
             </ul>
           </div>
         </div>

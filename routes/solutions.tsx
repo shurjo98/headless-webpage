@@ -32,13 +32,6 @@ export default function Solutions() {
           >
             Book Discovery Call →
           </a>
-          <a
-            href="/signup"
-            class="inline-block border border-white text-white/90 font-semibold
-                   px-8 py-4 rounded-full hover:bg-white/10 transition"
-          >
-            Start Free Trial →
-          </a>
         </div>
       </section>
 
@@ -76,13 +69,7 @@ export default function Solutions() {
                 </li>
               ))}
             </ul>
-            <a
-              href="/contact?vertical=d2c"
-              class="mt-auto inline-block bg-primary-600 text-white font-semibold
-                     px-6 py-3 rounded-full shadow hover:bg-primary-700 transition"
-            >
-              Talk retail →
-            </a>
+      
           </article>
 
           {/* B2B / Wholesale */}
@@ -112,13 +99,7 @@ export default function Solutions() {
                 </li>
               ))}
             </ul>
-            <a
-              href="/contact?vertical=b2b"
-              class="mt-auto inline-block bg-primary-600 text-white font-semibold
-                     px-6 py-3 rounded-full shadow hover:bg-primary-700 transition"
-            >
-              Talk B2B →
-            </a>
+        
           </article>
 
           {/* Subscription / SaaS */}
@@ -148,13 +129,7 @@ export default function Solutions() {
                 </li>
               ))}
             </ul>
-            <a
-              href="/contact?vertical=saas"
-              class="mt-auto inline-block bg-primary-600 text-white font-semibold
-                     px-6 py-3 rounded-full shadow hover:bg-primary-700 transition"
-            >
-              Talk subscriptions →
-            </a>
+        
           </article>
         </div>
       </section>
@@ -181,7 +156,7 @@ export default function Solutions() {
       </section>
 
       {/* ── Final hybrid CTA strip ────────────────────── */}
-      <section class="py-20 bg-primary-700 text-center text-white px-4 md:px-6">
+      {/* <section class="py-20 bg-primary-700 text-center text-white px-4 md:px-6">
         <p class="mb-6 tracking-wide">
           Ready to see it in action?
         </p>
@@ -201,7 +176,7 @@ export default function Solutions() {
             Book Discovery Call →
           </a>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

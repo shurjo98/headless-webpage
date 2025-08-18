@@ -396,7 +396,7 @@ export default function WebCaseStudies() {
             </p>
             <h2
               id="pricing-heading"
-              class="mt-2 text-4xl md:text-6xl font-black tracking-tight"
+              class="mt-2 text-4xl md:text-6xl text-white tracking-tight"
             >
               Pricing that scales with you.
             </h2>

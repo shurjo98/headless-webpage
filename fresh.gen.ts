@@ -4,6 +4,7 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
+import * as $_middleware from "./routes/_middleware.ts";
 import * as $about from "./routes/about.tsx";
 import * as $api_checkout from "./routes/api/checkout.ts";
 import * as $api_contact from "./routes/api/contact.ts";
@@ -19,6 +20,7 @@ import * as $case_studies_mobile from "./routes/case-studies/mobile.tsx";
 import * as $case_studies_web from "./routes/case-studies/web.tsx";
 import * as $checkout from "./routes/checkout.tsx";
 import * as $checkout_success from "./routes/checkout/success.tsx";
+import * as $coming_soon from "./routes/coming-soon.tsx";
 import * as $community from "./routes/community.tsx";
 import * as $contact from "./routes/contact.tsx";
 import * as $docs from "./routes/docs.tsx";
@@ -47,6 +49,7 @@ import * as $tutorials from "./routes/tutorials.tsx";
 import * as $why_headless from "./routes/why-headless.tsx";
 import * as $AOSProvider from "./islands/AOSProvider.tsx";
 import * as $AdminDashboard from "./islands/AdminDashboard.tsx";
+import * as $AnimateOnView from "./islands/AnimateOnView.tsx";
 import * as $Carousel from "./islands/Carousel.tsx";
 import * as $CaseCarousel from "./islands/CaseCarousel.tsx";
 import * as $Configurator from "./islands/Configurator.tsx";
@@ -62,12 +65,14 @@ import * as $Reveal from "./islands/Reveal.tsx";
 import * as $RoiCalculator from "./islands/RoiCalculator.tsx";
 import * as $SnapCarousel from "./islands/SnapCarousel.tsx";
 import * as $StatCounter from "./islands/StatCounter.tsx";
+import * as $TiltCard from "./islands/TiltCard.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
+    "./routes/_middleware.ts": $_middleware,
     "./routes/about.tsx": $about,
     "./routes/api/checkout.ts": $api_checkout,
     "./routes/api/contact.ts": $api_contact,
@@ -83,6 +88,7 @@ const manifest = {
     "./routes/case-studies/web.tsx": $case_studies_web,
     "./routes/checkout.tsx": $checkout,
     "./routes/checkout/success.tsx": $checkout_success,
+    "./routes/coming-soon.tsx": $coming_soon,
     "./routes/community.tsx": $community,
     "./routes/contact.tsx": $contact,
     "./routes/docs.tsx": $docs,
@@ -116,6 +122,7 @@ const manifest = {
   islands: {
     "./islands/AOSProvider.tsx": $AOSProvider,
     "./islands/AdminDashboard.tsx": $AdminDashboard,
+    "./islands/AnimateOnView.tsx": $AnimateOnView,
     "./islands/Carousel.tsx": $Carousel,
     "./islands/CaseCarousel.tsx": $CaseCarousel,
     "./islands/Configurator.tsx": $Configurator,
@@ -131,6 +138,7 @@ const manifest = {
     "./islands/RoiCalculator.tsx": $RoiCalculator,
     "./islands/SnapCarousel.tsx": $SnapCarousel,
     "./islands/StatCounter.tsx": $StatCounter,
+    "./islands/TiltCard.tsx": $TiltCard,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

@@ -6,7 +6,11 @@
         "start": "deno run -A main.ts",
         "preview": "deno run -A main.ts",
         "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
-        "update": "deno run -A -r https://fresh.deno.dev/update ."
+        "update": "deno run -A -r https://fresh.deno.dev/update .",
+        "_fresh": "deno run -A --watch=static/,routes/,islands/,components/,lib/,sections/ dev.ts",
+        "_tw": "tailwindcss -c tailwind.config.ts -i ./static/styles.css -o ./static/gen/tailwind.css --watch",
+        "start": "deno task _fresh"
+
   },
   "lint": {
     "rules": {

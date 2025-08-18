@@ -74,12 +74,6 @@ export default function SLA() {
           <li>Beta or preview features marked “as‑is.”</li>
         </ul>
 
-        <h2>6. Contact</h2>
-        <p>
-          To report an incident, email 
-          <a href="mailto:support@yourcompany.com">support@yourcompany.com</a> or
-          open a ticket in the customer portal.
-        </p>
       </main>
     </>
   );

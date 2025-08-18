@@ -147,7 +147,7 @@ export default function FastBitesCase() {
               <p class="text-[11px] uppercase tracking-[0.22em] text-white/60">
                 Case Study
               </p>
-              <h1 class="mt-2 text-4xl md:text-6xl font-black tracking-tight">
+              <h1 class="mt-2 text-4xl md:text-6xl text-white tracking-tight">
                 One-hand. Sixty seconds.
               </h1>
               <p class="mt-5 text-white/70">
@@ -227,10 +227,10 @@ export default function FastBitesCase() {
           </div>
 
           <div class="relative mx-auto max-w-7xl px-6 md:px-8 py-24">
-            <p class="mt-2 text-5xl md:text-7xl font-black tracking-tigh">
+            <p class="mt-2 text-5xl md:text-7xl text-white tracking-tight">
               Why it feels effortless
             </p>
-            <h2 class="mt-3 text-2xl md:text-6xl font-black tracking-tight">
+            <h2 class="mt-3 text-2xl md:text-6xl text-white tracking-tight">
               Intelligent ways to design experiences.
             </h2>
             <p class="mt-4 max-w-5xl text-white/70">
@@ -351,7 +351,9 @@ export default function FastBitesCase() {
                     <span class="text-xl">♿️</span>
                   </div>
                   <div>
-                    <h3 class="text-2xl font-semibold">Accessible by default</h3>
+                    <h3 class="text-2xl font-semibold">
+                      Accessible by default
+                    </h3>
                     <p class="mt-2 text-sm text-white/70">
                       Readable type, contrast, large targets, sensible focus
                       order.
@@ -379,7 +381,7 @@ export default function FastBitesCase() {
             <p class="text-[11px] uppercase tracking-[0.22em] text-white/55">
               FastBites
             </p>
-            <h2 class="mt-2 text-5xl md:text-7xl font-black tracking-tight">
+            <h2 class="mt-2 text-5xl md:text-7xl text-white tracking-tight">
               Craft you can taste.
             </h2>
             <a
@@ -644,22 +646,42 @@ export default function FastBitesCase() {
           class="relative isolate w-screen -mx-[calc(50vw-50%)] bg-black text-dark py-20 md:py-28"
         >
           <div class="relative mx-auto max-w-7xl px-6 md:px-8">
-            <div class="mb-8">
+            <div class="mb-8 text-white">
               <p class="text-[11px] uppercase tracking-[0.22em] text-white/55">
                 App Showcase
               </p>
               <h2 class="mt-2 text-3xl md:text-5xl font-black tracking-tight">
                 Morden
               </h2>
-              <p class="mt-3 max-w-2xl text-white/70">
-                Oversized, glossy screens on a rich parallax backdrop.
-              </p>
+            
             </div>
-            <ParallaxPosterRail
-              items={MORDEN_ROW}
-              backdrop="violet"
-              strength={0.26}
-            />
+
+            {/* Grid — always visible, no inner scroll */}
+            <ul class="grid gap-4 md:gap-6
+             grid-cols-2 sm:grid-cols-3 md:grid-cols-5
+             place-items-center">
+              {MORDEN_ROW.map((item, i) => (
+                <li key={i} class="w-full flex justify-center">
+                  <figure class="relative overflow-hidden rounded-[1.6rem]
+                   bg-white/[0.03] ring-1 ring-white/10
+                   shadow-[0_30px_100px_-20px_rgba(0,0,0,0.65)]
+                   backdrop-blur-[2px]
+                   w-full max-w-[150px] sm:max-w-[170px] md:max-w-[200px]
+                   aspect-[9/19] grid place-items-center">
+                    {/* subtle glossy strip */}
+                    <span class="pointer-events-none absolute inset-x-0 -top-1/3 h-1/2
+                         bg-gradient-to-b from-white/20 via-white/10 to-transparent" />
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      class="h-full w-full object-contain"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </figure>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
@@ -684,19 +706,19 @@ export default function FastBitesCase() {
                 src: asset("/mobile/structa/1.png"),
                 title: "Home",
                 desc:
-                  "Welcoming hero with layered depth and generous whitespace to invite exploration.",
+                  "Welcome.",
               },
               {
                 src: asset("/mobile/structa/2.png"),
                 title: "New Arrivals",
                 desc:
-                  "Carousel-led showcase that spotlights fresh drops with clean product focus.",
+                  "Clean new product focus.",
               },
               {
                 src: asset("/mobile/structa/3.png"),
                 title: "Explore",
                 desc:
-                  "Grid-first browsing with clear filters—content forward, chrome quiet.",
+                  "Clear filters—content forward, chrome quiet.",
               },
               {
                 src: asset("/mobile/structa/4.png"),
@@ -754,7 +776,7 @@ export default function FastBitesCase() {
           </div>
 
           <div class="relative mx-auto max-w-7xl px-6 md:px-8 py-24 md:py-40 text-center">
-            <h2 class="mt-3 mb-3 text-4xl md:text-6xl font-black tracking-tight">
+            <h2 class="mt-3 mb-3 text-4xl md:text-6xl text-white tracking-tight">
               Let’s make it feel inevitable.
             </h2>
             <p class="mt-5 mx-auto max-w-2xl text-white/70">
