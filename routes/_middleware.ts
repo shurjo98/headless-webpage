@@ -6,7 +6,8 @@ const disabled = new Set<string>([
   "/blog",
   "/platform",
   "/case-studies",
-  '/API_Status'  
+  '/API_Status',
+  '/legal/cookies'  
 ]);
 
 export async function handler(req: Request, ctx: MiddlewareHandlerContext) {
