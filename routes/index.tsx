@@ -190,23 +190,23 @@ export default function Home() {
 
       {/* ===== Feature Showcase (Apple-y) ===== */}
       <section class="py-20 lg:py-28">
-        <div class="container mx-auto px-4 lg:px-8 space-y-16">
+        <div class="container mx-auto px-4 lg:px-8 space-y-16 sm:mb-6">
           {/* Row 1: Three-up — A, C, E */}
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 sm:mb-6">
             {/* Card */}
-            <article class="flex h-full flex-col rounded-[28px] bg-white p-8 ring-1 ring-black/5 shadow-card-1">
+            <article class="flex h-full flex-col rounded-[28px] bg-white p-8 ring-1 ring-black/5 shadow-card-1 sm:mb-6">
               <div class="space-y-3">
                 <h3 class="text-2xl md:text-3xl font-bold leading-tight">
                   See sales across every channel in one view.
                 </h3>
-                <p class="text-neutral-600">
+                <p class="text-neutral-600 sm:mb-6">
                   Amazon, eBay, TikTok Shop, web & mobile clean breakdowns and
                   trends.
                 </p>
               </div>
 
               {/* Screenshot — ALWAYS aligned along the row bottom */}
-              <figure class="shot mt-auto [--zoom:1.10]">
+              <figure class="mt-4 sm:mt-8 shot [--zoom:1.10]">
                 <div class="shot-frame">
                   <img
                     src="/images/web_channel_sales_card_v2.png"
@@ -221,7 +221,7 @@ export default function Home() {
 
             {/* Inventory (same structure; smaller zoom) */}
             <article class="flex h-full flex-col rounded-[28px] bg-white p-8 ring-1 ring-black/5 shadow-card-1">
-              <div class="space-y-3">
+              <div class="space-y-3 mb-10">
                 <h3 class="text-2xl md:text-3xl font-bold leading-tight">
                   Products &amp; inventory at a glance.
                 </h3>
@@ -230,7 +230,7 @@ export default function Home() {
                   in one clean table.
                 </p>
               </div>
-              <figure class="shot mt-auto [--zoom:1.00]">
+              <figure class="shot mt-1 sm:mt-1 [--zoom:1.00]">
                 <div class="shot-frame">
                   <img
                     src="/images/inventory_table.png"
@@ -253,7 +253,7 @@ export default function Home() {
                   Generate codes in seconds—set value, validity, and scope.
                 </p>
               </div>
-              <figure class="shot mt-auto [--zoom:1.08]">
+              <figure class="shot mt-4 sm:mt-6 [--zoom:1.08]">
                 <div class="shot-frame">
                   <img
                     src="/images/create_coupon_simple_centered.png"
@@ -282,7 +282,7 @@ export default function Home() {
                   winbacks.
                 </p>
               </div>
-              <figure class="shot w-full [--zoom:1.12]">
+              <figure class="shot mt-4 sm:mt-4 w-full [--zoom:1.12]">
                 <div class="relative h-[340px] md:h-[400px] lg:h-[460px]">
                   <img
                     src="/images/ml_churn_risk_card_clear.png"
@@ -314,7 +314,7 @@ export default function Home() {
               </div>
 
               {/* screenshot pinned to the bottom, same height */}
-              <figure class="shot mt-auto [--zoom:1.10]">
+              <figure class="shot mt-4 sm:mt-4 [--zoom:1.10]">
                 <div class="shot-frame">
                   <img
                     src="/images/recent_orders_polished.png"
@@ -333,7 +333,7 @@ export default function Home() {
                 <h3 class="text-2xl md:text-3xl font-bold leading-tight">
                   Customer list
                 </h3>
-                <p class="text-neutral-600">
+                <p class="text-neutral-600 mb-10">
                   A clean customer list with avatars, segment chips, and key
                   dates to find and engage the right people fast.
                 </p>
