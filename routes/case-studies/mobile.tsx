@@ -6,7 +6,6 @@ import SnapCarousel from "../../islands/SnapCarousel.tsx";
 import ParallaxPosterRail from "../../islands/ParallaxPosterRail.tsx";
 import EndcapCTA from "../../components/EndcapCTA.tsx";
 
-
 /* ----------------------------------------------------------------
    Gallery images for the carousel (order is intentional)
 ----------------------------------------------------------------- */
@@ -18,11 +17,8 @@ const ROW = [
     src: asset("/mobile/fastbites/screen-4-detail.png"),
     alt: "Product Detail",
   },
-  { src: asset("/mobile/fastbites/screen-5-checkout.png"), alt: "Checkout" },
-  {
-    src: asset("/mobile/fastbites/screen-6-complete.png"),
-    alt: "Order Complete",
-  },
+  { src: asset("/mobile/fastbites/screen-5-checkout.png"), alt: "Checkout" }
+ 
 ];
 
 // routes/case-studies/fastbites.tsx (near other data)
@@ -91,7 +87,7 @@ export default function FastBitesCase() {
               Mobile Design UI Case Studies
             </h1>
             <p class="mt-4 text-neutral-600 max-w-3xl mx-auto">
-              Three mobile concepts—Furniture, Burger (FastBites), and
+              Three mobile concepts—Furniture, Burger (FastBites) and
               Coffee—built for speed, clarity, and trust. Quiet chrome, bold
               type, and thumb-first ergonomics.
             </p>
@@ -400,24 +396,63 @@ export default function FastBitesCase() {
            5) Horizontal screens carousel (full-bleed)
         ----------------------------------------------------------- */
         }
+        {/* 5) FastBites screens — filmstrip (mobile) + grid (desktop) */}
         <section
           id="screens"
-          class="relative isolate w-screen -mx-[calc(300vh-100%)] bg-neutral-950 text-dark py-20 md:py-24"
+          class="relative isolate w-screen -mx-[calc(50vw-50%)] bg-neutral-50 py-16 md:py-20"
         >
           <div class="mx-auto max-w-7xl px-6 md:px-8">
             <div class="mb-6 md:mb-10">
-              <p class="text-[11px] uppercase tracking-[0.22em] text-dark/55">
+              <p class="text-[11px] uppercase tracking-[0.22em] text-neutral-500">
                 Screens
               </p>
-              <h2 class="mt-2 text-3xl md:text-5xl font-black tracking-tight">
-                See it in motion.
+              <h2 class="mt-2 text-3xl md:text-5xl font-black tracking-tight text-neutral-900">
+                FastBites, at a glance.
               </h2>
-              <p class="mt-3 text-dark/65 max-w-2xl">
-                Home, login, browse, detail, checkout, and completion — all
-                tuned for speed and clarity.
+              <p class="mt-3 text-neutral-600 max-w-2xl">
+                Built for speed, clarity and trust.
               </p>
             </div>
-            <SnapCarousel items={ROW} />
+
+            {/* Mobile: horizontal filmstrip with snap */}
+            <div class="md:hidden -mx-6 px-6 overflow-x-auto no-scrollbar snap-x snap-mandatory">
+              <ul class="flex gap-4">
+                {ROW.map((s, i) => (
+                  <li key={i} class="snap-center shrink-0 w-[68vw] sm:w-[56vw]">
+                    <figure class="relative aspect-[9/19] overflow-hidden rounded-2xl
+                           bg-white ring-1 ring-black/10
+                           shadow-[0_18px_50px_-20px_rgba(0,0,0,0.35)]">
+                      <img
+                        src={s.src}
+                        alt={s.alt}
+                        class="h-full w-full object-contain"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </figure>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Desktop: tidy grid (consistent frames/heights) */}
+            <ul class="hidden md:grid grid-cols-3 lg:grid-cols-5 gap-5 lg:gap-6">
+              {ROW.map((s, i) => (
+                <li key={i}>
+                  <figure class="relative aspect-[9/19] overflow-hidden rounded-2xl
+                         bg-white ring-1 ring-black/10
+                         shadow-[0_30px_90px_-28px_rgba(0,0,0,0.35)]">
+                    <img
+                      src={s.src}
+                      alt={s.alt}
+                      class="h-full w-full object-contain"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </figure>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
@@ -655,7 +690,6 @@ export default function FastBitesCase() {
               <h2 class="mt-2 text-3xl md:text-5xl font-black tracking-tight">
                 Morden
               </h2>
-            
             </div>
 
             {/* Grid — always visible, no inner scroll */}
@@ -707,20 +741,17 @@ export default function FastBitesCase() {
               {
                 src: asset("/mobile/structa/1.png"),
                 title: "Home",
-                desc:
-                  "Welcome.",
+                desc: "Welcome.",
               },
               {
                 src: asset("/mobile/structa/2.png"),
                 title: "New Arrivals",
-                desc:
-                  "Clean new product focus.",
+                desc: "Clean new product focus.",
               },
               {
                 src: asset("/mobile/structa/3.png"),
                 title: "Explore",
-                desc:
-                  "Clear filters—content forward, chrome quiet.",
+                desc: "Clear filters—content forward, chrome quiet.",
               },
               {
                 src: asset("/mobile/structa/4.png"),
@@ -766,16 +797,15 @@ export default function FastBitesCase() {
         </section>
 
         {/* ========= END / LUXURY CALL-TO-ACTION ========= */}
-        
-        <EndcapCTA
-        title="Ready when you are."
-        description="Launch Once, Grow Everywhere."
-        primaryHref="/contact"
-        primaryLabel="Contact us"
-        secondaryHref="/case-studies"
-        secondaryLabel="See case studies"
-      />
 
+        <EndcapCTA
+          title="Ready when you are."
+          description="Launch Once, Grow Everywhere."
+          primaryHref="/contact"
+          primaryLabel="Contact us"
+          secondaryHref="/case-studies"
+          secondaryLabel="See case studies"
+        />
       </main>
     </>
   );

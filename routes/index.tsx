@@ -37,7 +37,7 @@ function HeroSection() {
               </h1>
               <p class="text-lg sm:text-xl lg:text-2xl text-neutral-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light">
                 The complete{" "}
-                <span class="font-semibold text-primary-600">
+                <span class="font-semibold text-primary-600 bg-gradient-to-r from-[#0A84FF] to-[#64D2FF] bg-clip-text text-transparent">
                   headless commerce platform
                 </span>{" "}
                 that scales with your business.
@@ -119,275 +119,245 @@ export default function Home() {
       <HeroSection />
 
       {/* Commerce Solutions Section */}
-      <section class="relative bg-neutral-50 py-16 lg:py-24">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight text-neutral-900 flex items-center justify-center flex-wrap gap-4 ">
-            <span class="">Commerce solutions from</span>
-            <img
-              src="/images/logo.png"
-              alt="HeadlessPro Logo"
-              class="inline-block w-24 h-auto md:w-32"
-            />
-          </h2>
-          <p class="mt-6 max-w-3xl mx-auto text-lg sm:text-xl text-neutral-600 leading-relaxed font-light">
-            Our modular platform unites best in class services so you can solve
-            your toughest commerce challenges rapidly, reliably, and at global
-            scale.
-          </p>
-        </div>
-      </section>
-
-      {/* New Release Spotlight */}
-      <section class="bg-white py-16 lg:py-24">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6">
-              <p class="text-sm font-semibold uppercase text-primary-600 tracking-wide">
-                New Release
-              </p>
-              <h3 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-neutral-900 leading-tight">
-                Agentic Commerce Orchestrator
-              </h3>
-              <p class="text-lg text-neutral-600 leading-relaxed font-light">
-                Give your team an always on commerce copilot automatically
-                connecting your catalog, promotions, and customer data so every
-                purchase journey feels tailored.
-              </p>
-              <a
-                href="/why-headless"
-                class="inline-flex items-center font-semibold text-primary-600 hover:text-primary-700 transition-colors duration-200"
-              >
-                Why headless?
-                <svg
-                  class="ml-2 w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </a>
-            </div>
-            <div>
+      <div id="aos-scope">
+        <section class="relative bg-neutral-50 py-16 lg:py-24">
+          <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight text-neutral-900 flex items-center justify-center flex-wrap gap-4 ">
+              <span class="">Headless E-Commerce from</span>
               <img
-                src="/images/Agentic_Commerce_Orchestrator_Design.png"
-                alt="Agentic Commerce Orchestrator"
-                class="w-full h-64 md:h-auto object-cover rounded-2xl shadow-soft"
+                src="/images/logo.png"
+                alt="HeadlessPro Logo"
+                class="inline-block w-24 h-auto md:w-32"
               />
+            </h2>
+            <p class="mt-6 max-w-3xl mx-auto text-lg sm:text-xl text-neutral-600 leading-relaxed font-light">
+              Our modular platform unites best in class services so you can
+              solve your toughest commerce challenges rapidly, reliablyand at
+              global scale.
+            </p>
+          </div>
+        </section>
+
+        {/* New Release Spotlight */}
+        <section class="bg-white py-16 lg:py-24">
+          <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+              <div class="space-y-6">
+                <p class="text-sm font-semibold uppercase text-primary-600 tracking-wide">
+                  New Release
+                </p>
+                <h3 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-neutral-900 leading-tight">
+                  Agentic Commerce Orchestrator
+                </h3>
+                <p class="text-lg text-neutral-600 leading-relaxed font-light">
+                  Give your team an always on commerce copilot automatically
+                  connecting your catalog, promotions, and customer data so
+                  every purchase journey feels tailored.
+                </p>
+                <a
+                  href="/why-headless"
+                  class="inline-flex items-center font-semibold text-primary-600 hover:text-primary-700 transition-colors duration-200"
+                >
+                  Why headless?
+                  <svg
+                    class="ml-2 w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <div>
+                <img
+                  src="/images/Agentic_Commerce_Orchestrator_Design.png"
+                  alt="Agentic Commerce Orchestrator"
+                  class="w-full h-64 md:h-auto object-cover rounded-2xl shadow-soft"
+                />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <FeatureTabs />
 
-      {/* Feature Showcase — Adobe-style editorial tiles */}
+      {/* ===== Feature Showcase (Apple-y) ===== */}
       <section class="py-20 lg:py-28">
-        <div class="container mx-auto px-4 lg:px-8">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {/* === Card A — Omnichannel Sales (dark hero) === */}
-            <Reveal>
-              <TiltCard>
-                <article class="relative overflow-hidden rounded-[28px]
-  bg-primary-dark-3 text-primary-color
-  min-h-[460px] p-8 md:p-10 shadow-card-1 hover:shadow-card-2
-  grid grid-rows-[auto_1fr_auto] gap-0 transition-all">
-                  {/* Header (locks at top) */}
-                  <div>
-                    <h3 class="text-3xl md:text-4xl font-bold leading-tight">
-                      See sales across every channel in one view.
-                    </h3>
-                    <p class="mt-3 max-w-[36ch] text-primary-color/80 line-clamp-2 md:line-clamp-3">
-                      Amazon, eBay, TikTok Shop, web & mobile clean breakdowns
-                      and trends.
-                    </p>
-                  </div>
+        <div class="container mx-auto px-4 lg:px-8 space-y-16">
+          {/* Row 1: Three-up — A, C, E */}
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {/* Card */}
+            <article class="flex h-full flex-col rounded-[28px] bg-white p-8 ring-1 ring-black/5 shadow-card-1">
+              <div class="space-y-3">
+                <h3 class="text-2xl md:text-3xl font-bold leading-tight">
+                  See sales across every channel in one view.
+                </h3>
+                <p class="text-neutral-600">
+                  Amazon, eBay, TikTok Shop, web & mobile clean breakdowns and
+                  trends.
+                </p>
+              </div>
 
-                  {/* Spacer row expands/shrinks so footer never moves */}
-                  <div></div>
+              {/* Screenshot — ALWAYS aligned along the row bottom */}
+              <figure class="shot mt-auto [--zoom:1.10]">
+                <div class="shot-frame">
+                  <img
+                    src="/images/web_channel_sales_card_v2.png"
+                    alt=""
+                    class="shot-img"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </figure>
+            </article>
 
-                  {/* Footer visual (always aligned across cards) */}
-                  <figure class="relative rounded-2xl overflow-hidden ring-1 ring-alpha-light">
-                    <img
-                      src="/images/web_channel_sales_card_v2.png"
-                      alt="Omnichannel"
-                      class="w-full h-[180px] object-cover"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </figure>
-                </article>
-              </TiltCard>
-            </Reveal>
+            {/* Inventory (same structure; smaller zoom) */}
+            <article class="flex h-full flex-col rounded-[28px] bg-white p-8 ring-1 ring-black/5 shadow-card-1">
+              <div class="space-y-3">
+                <h3 class="text-2xl md:text-3xl font-bold leading-tight">
+                  Products &amp; inventory at a glance.
+                </h3>
+                <p class="text-neutral-600">
+                  Track status, stock levels, SKUs, categories, and performance
+                  in one clean table.
+                </p>
+              </div>
+              <figure class="shot mt-auto [--zoom:1.00]">
+                <div class="shot-frame">
+                  <img
+                    src="/images/inventory_table.png"
+                    alt=""
+                    class="shot-img"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </figure>
+            </article>
 
-            {/* === Card B — ML Assistant (solid brand block) === */}
-            <Reveal delay={60}>
-              <TiltCard>
-                <article class="relative overflow-hidden rounded-[28px]
-         bg-primary-dark-3 text-primary-color
-         min-h-[460px] p-8 md:p-10 shadow-card-1 hover:shadow-card-2
-         grid grid-rows-[auto_1fr_auto] gap-y-6 transition-all">
-                  {/* Top: title + copy (clamped) */}
-                  <div>
-                    <h3 class="text-3xl md:text-4xl font-bold leading-tight line-clamp-2">
-                      Meet our Intelligent Churn Assistant.
-                    </h3>
-                    <p class="mt-3 max-w-[36ch] text-primary-color/80 line-clamp-3">
-                      Find customers at risk and trigger coupons, emails, or SMS
-                      winbacks.
-                    </p>
-                  </div>
+            {/* Create coupon */}
+            <article class="flex h-full flex-col rounded-[28px] bg-white p-8 ring-1 ring-black/5 shadow-card-1">
+              <div class="space-y-3">
+                <h3 class="text-2xl md:text-3xl font-bold leading-tight">
+                  Create discount / coupon
+                </h3>
+                <p class="text-neutral-600">
+                  Generate codes in seconds—set value, validity, and scope.
+                </p>
+              </div>
+              <figure class="shot mt-auto [--zoom:1.08]">
+                <div class="shot-frame">
+                  <img
+                    src="/images/create_coupon_simple_centered.png"
+                    alt=""
+                    class="shot-img"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </figure>
+            </article>
+          </div>
 
-                  {/* Middle: flexible spacer keeps footer at bottom */}
-                  <div></div>
+          {/* Spotlight: B — Churn Assistant */}
+          <div class="relative overflow-hidden rounded-[32px] ring-1 ring-black/5 bg-gradient-to-br from-neutral-50 via-white to-neutral-50 p-8 md:p-12">
+            <div class="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
+              <div class="space-y-4">
+                <p class="text-sm font-semibold uppercase tracking-wide text-primary-600">
+                  Intelligent
+                </p>
+                <h3 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold leading-tight">
+                  Meet our Intelligent Churn Assistant.
+                </h3>
+                <p class="text-lg text-neutral-600">
+                  Find customers at risk and trigger coupons, emails, or SMS
+                  winbacks.
+                </p>
+              </div>
+              <figure class="shot w-full [--zoom:1.12]">
+                <div class="relative h-[340px] md:h-[400px] lg:h-[460px]">
+                  <img
+                    src="/images/ml_churn_risk_card_clear.png"
+                    alt="Churn Assistant UI"
+                    class="shot-img"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </figure>
+            </div>
+            {/* subtle center halo */}
+            <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,.06)_0%,transparent_60%)]">
+            </div>
+          </div>
 
-                  {/* Bottom: visual (no margins; card padding + gap handle spacing) */}
-                  <figure class="rounded-2xl overflow-hidden ring-1 ring-alpha-light">
-                    <img
-                      src="/images/ml_churn_risk_card_clear.png"
-                      alt="Churn UI"
-                      class="w-full h-[180px] object-cover"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </figure>
-                </article>
-              </TiltCard>
-            </Reveal>
+          {/* Duo band: D & F */}
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+            {/* Recent orders */}
+            <article class="min-w-0 flex h-full flex-col rounded-[28px] bg-white p-8 ring-1 ring-black/5 shadow-card-1">
+              <div class="space-y-3">
+                <h3 class="text-2xl md:text-3xl font-bold leading-tight">
+                  Recent orders
+                </h3>
+                <p class="text-neutral-600">
+                  Track fulfillment at a glance—linkable order IDs, clear status
+                  chips, and totals for quick action.
+                </p>
+              </div>
 
-            {/* === Card C — Products & Inventory (same structure as A/B) === */}
-            <Reveal delay={120}>
-              <TiltCard>
-                <article class="relative overflow-hidden rounded-[28px] bg-body-light-3 text-body-light-12 min-h-[420px] p-8 md:p-10 pb-44 shadow-card-1 hover:shadow-card-2 transition-all">
-                  <h3 class="text-3xl md:text-4xl font-bold leading-tight">
-                    Products &amp; inventory at a glance.
-                  </h3>
+              {/* screenshot pinned to the bottom, same height */}
+              <figure class="shot mt-auto [--zoom:1.10]">
+                <div class="shot-frame">
+                  <img
+                    src="/images/recent_orders_polished.png"
+                    alt="Recent orders list"
+                    class="shot-img"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </figure>
+            </article>
 
-                  <p class="mt-4 max-w-[42ch] text-body-light-10 line-clamp-2 md:line-clamp-3">
-                    Track status, stock levels, SKUs, categories, and
-                    performance in one clean table.
-                  </p>
+            {/* Customer list */}
+            <article class="min-w-0 flex h-full flex-col rounded-[28px] bg-white p-8 ring-1 ring-black/5 shadow-card-1">
+              <div class="space-y-3">
+                <h3 class="text-2xl md:text-3xl font-bold leading-tight">
+                  Customer list
+                </h3>
+                <p class="text-neutral-600">
+                  A clean customer list with avatars, segment chips, and key
+                  dates to find and engage the right people fast.
+                </p>
+              </div>
 
-                  {/* Visual (bottom framed image like A/B) */}
-                  <div class="relative mt-10 inset-x-6 bottom-6 rounded-2xl overflow-hidden ring-1 ring-alpha-light">
-                    {/* Replace src with your asset path */}
-                    <img
-                      src="/images/inventory_table.png"
-                      alt="Inventory table showing product, SKU, category, status, inventory, units sold"
-                      class="w-full h-44 object-cover"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
-                </article>
-              </TiltCard>
-            </Reveal>
-
-            {/* === Card D — Recent Orders (light, big list feel) === */}
-            <Reveal>
-              <TiltCard>
-                <article class="rounded-[28px] bg-body-light-2 text-body-light-12
-         min-h-[460px] p-8 md:p-10 shadow-card-1 hover:shadow-card-2
-         grid grid-rows-[auto_1fr_auto] gap-y-6 transition-all">
-                  {/* Top: title + copy (clamped) */}
-                  <div>
-                    <h3 class="text-2xl md:text-3xl font-bold leading-tight">
-                      Recent orders
-                    </h3>
-                    <p class="mt-3 max-w-[42ch] text-body-light-10 line-clamp-3">
-                      Track fulfillment at a glance—linkable order IDs, clear
-                      status chips, and totals for quick action.
-                    </p>
-                  </div>
-
-                  {/* Middle: spacer keeps footer locked to bottom */}
-                  <div></div>
-
-                  {/* Bottom: visual (fixed height for perfect alignment) */}
-                  <figure class="rounded-2xl overflow-hidden ring-1 ring-alpha-light">
-                    <img
-                      src="/images/recent_orders_polished.png"
-                      alt="Recent orders"
-                      class="w-full h-[180px] object-cover"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </figure>
-                </article>
-              </TiltCard>
-            </Reveal>
-
-            {/* === Card E — Gen content / Marketing (brand purple tile) === */}
-            <Reveal delay={60}>
-              <TiltCard>
-                <article class="rounded-[28px] bg-primary-dark-8 text-primary-color
-         min-h-[460px] p-8 md:p-10 shadow-card-1 hover:shadow-card-2
-         grid grid-rows-[auto_1fr_auto] gap-y-6 transition-all">
-                  {/* Top: title + copy (clamped) */}
-                  <div>
-                    <h3 class="text-2xl md:text-3xl font-bold leading-tight line-clamp-2">
-                      Create discount / coupon
-                    </h3>
-                    <p class="mt-3 text-primary-color/85 max-w-[40ch] line-clamp-3">
-                      Generate codes in seconds—set value, validity, and scope.
-                    </p>
-                  </div>
-
-                  {/* Middle spacer keeps footer locked to bottom */}
-                  <div></div>
-
-                  {/* Bottom: visual (fixed height for perfect alignment) */}
-                  <figure class="rounded-2xl overflow-hidden ring-1 ring-alpha-light">
-                    <img
-                      src="/images/create_coupon_simple_centered.png"
-                      alt="Create coupon"
-                      class="w-full h-[180px] object-cover"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </figure>
-                </article>
-              </TiltCard>
-            </Reveal>
-
-            {/* === Card F — CRM (light card) === */}
-            <Reveal delay={120}>
-              <TiltCard>
-                <article class="rounded-[28px] bg-body-light-3 text-body-light-12
-         min-h-[460px] p-8 md:p-10 shadow-card-1 hover:shadow-card-2
-         grid grid-rows-[auto_1fr_auto] gap-y-6 transition-all">
-                  {/* Top: title + copy (clamped) */}
-                  <div>
-                    <h3 class="text-2xl md:text-3xl font-bold leading-tight line-clamp-2">
-                      Customer list
-                    </h3>
-                    <p class="mt-3 max-w-[42ch] text-body-light-10 line-clamp-3">
-                      A clean customer list with avatars, segment chips, and key
-                      dates to find and engage the right people fast.
-                    </p>
-                  </div>
-
-                  {/* Middle: spacer keeps footer locked to bottom */}
-                  <div></div>
-
-                  {/* Bottom: visual (fixed height for perfect alignment) */}
-                  <figure class="rounded-2xl overflow-hidden ring-1 ring-alpha-light">
-                    <img
-                      src="/images/customer_list_clean.png"
-                      alt="Customer list"
-                      class="w-full h-[180px] object-cover"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </figure>
-                </article>
-              </TiltCard>
-            </Reveal>
+              {/* screenshot pinned to the bottom, same height */}
+              <figure class="shot mt-5
+               [--zoom:1]            /* mobile: fit */
+               sm:[--zoom:1.04]
+               md:[--zoom:1.18]
+               lg:[--zoom:1.28]
+               xl:[--zoom:1.00]">
+                <div class="shot-frame
+              h-[220px] sm:h-[260px] md:h-[320px] lg:h-[360px] xl:h-[380px]">
+                  <img
+                    src="/images/customer_list_clean.png"
+                    alt="Customer list table"
+                    class="shot-img" /* no mt-12 */
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </figure>
+            </article>
           </div>
         </div>
       </section>
@@ -567,7 +537,7 @@ export default function Home() {
                     <div class="p-4 rounded-2xl bg-white/70 backdrop-blur-xl ring-1 ring-black/5
                           shadow-[inset_0_1px_0_rgba(255,255,255,.7),0_12px_40px_-18px_rgba(0,0,0,.28)]
                           motion-safe:animate-[float_6s_ease-in-out_infinite]">
-                      <img src={f.icon} alt="" class="h-20 w-20" />
+                      <img src={f.icon} alt="" class="h-20 w-" />
                     </div>
                   </div>
                 ))}
