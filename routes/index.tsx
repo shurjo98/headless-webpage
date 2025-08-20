@@ -132,7 +132,7 @@ export default function Home() {
             </h2>
             <p class="mt-6 max-w-3xl mx-auto text-lg sm:text-xl text-neutral-600 leading-relaxed font-light">
               Our modular platform unites best in class services so you can
-              solve your toughest commerce challenges rapidly, reliablyand at
+              solve your toughest commerce challenges rapidly, reliably and at
               global scale.
             </p>
           </div>
