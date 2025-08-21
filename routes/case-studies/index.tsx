@@ -1,6 +1,7 @@
 import { h } from "preact";
 import { Head } from "$fresh/runtime.ts";
 
+
 /* ─── Shared data (you can move this to lib/caseStudies.ts later) ─── */
 export const studies = [
   {
@@ -39,7 +40,7 @@ export default function CaseStudiesIndex() {
   return (
     <>
       <Head>
-        <title>Case Studies | YourCompany</title>
+        <title>Case Studies</title>
         <meta
           name="description"
           content="Real results from our headless commerce builds, migrations, and growth projects."

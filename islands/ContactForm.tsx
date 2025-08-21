@@ -117,14 +117,14 @@ export default function ContactForm() {
       <div class="grid md:grid-cols-2 gap-6">
         <div>
           <label class="block mb-2 text-sm font-semibold text-neutral-900">
-            Name *
+            Name
           </label>
           <input
             type="text"
             name="name"
             value={form.name}
             onInput={handleChange}
-            class="w-full rounded-lg border border-neutral-300 px-4 py-3 focus:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-100 transition-colors"
+            class="placeholder-gray-500	w-full rounded-lg border border-neutral-300 px-4 py-3 focus:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-100 transition-colors"
             placeholder="Your full name"
             required
             disabled={isSubmitting}
@@ -132,15 +132,15 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label class="block mb-2 text-sm font-semibold text-neutral-900">
-            Email *
+          <label class="placeholder-gray-500 block mb-2 text-sm font-semibold text-neutral-900">
+            Email
           </label>
           <input
             type="email"
             name="email"
             value={form.email}
             onInput={handleChange}
-            class="w-full rounded-lg border border-neutral-300 px-4 py-3 focus:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-100 transition-colors"
+            class="placeholder-gray-500 w-full rounded-lg border border-neutral-300 px-4 py-3 focus:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-100 transition-colors"
             placeholder="your.email@company.com"
             required
             disabled={isSubmitting}
@@ -157,7 +157,7 @@ export default function ContactForm() {
           name="company"
           value={form.company}
           onInput={handleChange}
-          class="w-full rounded-lg border border-neutral-300 px-4 py-3 focus:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-100 transition-colors"
+          class="placeholder-gray-500 w-full rounded-lg border border-neutral-300 px-4 py-3 focus:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-100 transition-colors"
           placeholder="Your company name (optional)"
           disabled={isSubmitting}
         />
@@ -165,14 +165,14 @@ export default function ContactForm() {
 
       <div>
         <label class="block mb-2 text-sm font-semibold text-neutral-900">
-          Message *
+          Message
         </label>
         <textarea
           name="message"
           rows={5}
           value={form.message}
           onInput={handleChange}
-          class="w-full rounded-lg border border-neutral-300 px-4 py-3 focus:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-100 transition-colors resize-none"
+          class="placeholder-gray-500 w-full rounded-lg border border-neutral-300 px-4 py-3 focus:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-100 transition-colors resize-none"
           placeholder="Tell us about your project, requirements, or any questions you have..."
           required
           disabled={isSubmitting}

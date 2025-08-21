@@ -4,6 +4,7 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
+import * as $_middleware from "./routes/_middleware.ts";
 import * as $about from "./routes/about.tsx";
 import * as $api_checkout from "./routes/api/checkout.ts";
 import * as $api_contact from "./routes/api/contact.ts";
@@ -15,8 +16,11 @@ import * as $blog from "./routes/blog.tsx";
 import * as $careers from "./routes/careers.tsx";
 import * as $case_studies_slug_ from "./routes/case-studies/[slug].tsx";
 import * as $case_studies_index from "./routes/case-studies/index.tsx";
+import * as $case_studies_mobile from "./routes/case-studies/mobile.tsx";
+import * as $case_studies_web from "./routes/case-studies/web.tsx";
 import * as $checkout from "./routes/checkout.tsx";
 import * as $checkout_success from "./routes/checkout/success.tsx";
+import * as $coming_soon from "./routes/coming-soon.tsx";
 import * as $community from "./routes/community.tsx";
 import * as $contact from "./routes/contact.tsx";
 import * as $docs from "./routes/docs.tsx";
@@ -35,11 +39,19 @@ import * as $partners_apply_tier_ from "./routes/partners/apply/[tier].tsx";
 import * as $platform from "./routes/platform.tsx";
 import * as $pricing from "./routes/pricing.tsx";
 import * as $pricing_configurator from "./routes/pricing/configurator.tsx";
+import * as $product_story_admin_dashboard_index from "./routes/product-story/admin-dashboard/index.tsx";
+import * as $product_story_index from "./routes/product-story/index.tsx";
 import * as $resources from "./routes/resources.tsx";
 import * as $services from "./routes/services.tsx";
+import * as $shop from "./routes/shop.tsx";
 import * as $solutions from "./routes/solutions.tsx";
 import * as $tutorials from "./routes/tutorials.tsx";
 import * as $why_headless from "./routes/why-headless.tsx";
+import * as $AOSProvider from "./islands/AOSProvider.tsx";
+import * as $AdminDashboard from "./islands/AdminDashboard.tsx";
+import * as $AnimateOnView from "./islands/AnimateOnView.tsx";
+import * as $Carousel from "./islands/Carousel.tsx";
+import * as $CaseCarousel from "./islands/CaseCarousel.tsx";
 import * as $Configurator from "./islands/Configurator.tsx";
 import * as $ContactForm from "./islands/ContactForm.tsx";
 import * as $Counter from "./islands/Counter.tsx";
@@ -47,14 +59,20 @@ import * as $FeatureTabs from "./islands/FeatureTabs.tsx";
 import * as $Header from "./islands/Header.tsx";
 import * as $InstallmentCalculator from "./islands/InstallmentCalculator.tsx";
 import * as $MailSignupForm from "./islands/MailSignupForm.tsx";
+import * as $ParallaxMarquee from "./islands/ParallaxMarquee.tsx";
+import * as $ParallaxPosterRail from "./islands/ParallaxPosterRail.tsx";
+import * as $Reveal from "./islands/Reveal.tsx";
 import * as $RoiCalculator from "./islands/RoiCalculator.tsx";
+import * as $SnapCarousel from "./islands/SnapCarousel.tsx";
 import * as $StatCounter from "./islands/StatCounter.tsx";
+import * as $TiltCard from "./islands/TiltCard.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
+    "./routes/_middleware.ts": $_middleware,
     "./routes/about.tsx": $about,
     "./routes/api/checkout.ts": $api_checkout,
     "./routes/api/contact.ts": $api_contact,
@@ -66,8 +84,11 @@ const manifest = {
     "./routes/careers.tsx": $careers,
     "./routes/case-studies/[slug].tsx": $case_studies_slug_,
     "./routes/case-studies/index.tsx": $case_studies_index,
+    "./routes/case-studies/mobile.tsx": $case_studies_mobile,
+    "./routes/case-studies/web.tsx": $case_studies_web,
     "./routes/checkout.tsx": $checkout,
     "./routes/checkout/success.tsx": $checkout_success,
+    "./routes/coming-soon.tsx": $coming_soon,
     "./routes/community.tsx": $community,
     "./routes/contact.tsx": $contact,
     "./routes/docs.tsx": $docs,
@@ -88,13 +109,22 @@ const manifest = {
     "./routes/platform.tsx": $platform,
     "./routes/pricing.tsx": $pricing,
     "./routes/pricing/configurator.tsx": $pricing_configurator,
+    "./routes/product-story/admin-dashboard/index.tsx":
+      $product_story_admin_dashboard_index,
+    "./routes/product-story/index.tsx": $product_story_index,
     "./routes/resources.tsx": $resources,
     "./routes/services.tsx": $services,
+    "./routes/shop.tsx": $shop,
     "./routes/solutions.tsx": $solutions,
     "./routes/tutorials.tsx": $tutorials,
     "./routes/why-headless.tsx": $why_headless,
   },
   islands: {
+    "./islands/AOSProvider.tsx": $AOSProvider,
+    "./islands/AdminDashboard.tsx": $AdminDashboard,
+    "./islands/AnimateOnView.tsx": $AnimateOnView,
+    "./islands/Carousel.tsx": $Carousel,
+    "./islands/CaseCarousel.tsx": $CaseCarousel,
     "./islands/Configurator.tsx": $Configurator,
     "./islands/ContactForm.tsx": $ContactForm,
     "./islands/Counter.tsx": $Counter,
@@ -102,8 +132,13 @@ const manifest = {
     "./islands/Header.tsx": $Header,
     "./islands/InstallmentCalculator.tsx": $InstallmentCalculator,
     "./islands/MailSignupForm.tsx": $MailSignupForm,
+    "./islands/ParallaxMarquee.tsx": $ParallaxMarquee,
+    "./islands/ParallaxPosterRail.tsx": $ParallaxPosterRail,
+    "./islands/Reveal.tsx": $Reveal,
     "./islands/RoiCalculator.tsx": $RoiCalculator,
+    "./islands/SnapCarousel.tsx": $SnapCarousel,
     "./islands/StatCounter.tsx": $StatCounter,
+    "./islands/TiltCard.tsx": $TiltCard,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

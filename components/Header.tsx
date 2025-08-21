@@ -48,6 +48,7 @@ export default function Header() {
           <li>
             <a href="/blog" class={linkBase}>Blog</a>
           </li>
+          
           <li>
             <a
               href="/contact"
@@ -71,6 +72,7 @@ export default function Header() {
             ["Pricing", "/pricing"],
             ["Docs", "/docs"],
             ["Blog", "/blog"],
+            ["Product Stories", "/product-story"],
           ].map(([label, href]) => (
             <li key={href}>
               <a

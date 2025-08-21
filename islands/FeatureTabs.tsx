@@ -2,130 +2,145 @@
 import { h } from "preact";
 import { useState } from "preact/hooks";
 
-export default function FeatureTabs() {
-  const features = [
-    {
-      label: "Catalog management",
-      title: "Unified catalog orchestration, delivery, and performance.",
-      description:
-        "Centralize product data, variants, and pricing in one API‑first hub—then publish to web, mobile, marketplaces, and more, all in real time.",
-      items: [
-        "Central product repository—no more siloed spreadsheets",
-        "Composable APIs—deliver to any front end or channel",
-        "Live inventory sync—avoid oversells and stockouts",
-        "AI‑driven recommendations—surface the right products",
-      ],
-      img: "/images/catalog_management.png",
-    },
-    {
-      label: "Storefront design",
-      title: "Create pixel‑perfect storefronts in minutes.",
-      description:
-        "Drag‑and‑drop a library of pre‑built modules or build your own with our headless UI toolkit—no heavy dev lift needed.",
-      items: [
-        "Library of customizable components",
-        "Real‑time preview on mobile & web",
-        "Theme versioning & rollback",
-      ],
-      img: "/images/catalog_management.png",
-    },
-    {
-      label: "Analytics & insights",
-      title: "Deep‑dive analytics out of the box.",
-      description:
-        "Get pre‑built dashboards for conversion, AOV, churn, and cohort analysis—plus the raw data API to build whatever you need.",
-      items: [
-        "Sales & traffic dashboards",
-        "Custom report builder",
-        "Event‑level data streams",
-      ],
-      img: "/images/catalog_management.png",
-    },
+type Feature = {
+  label: string;
+  title: string;
+  description: string;
+  items: string[];
+  img: string;
+};
 
-     {
-    label: "Campaign automation",
-    title: "Automate personalized campaigns at scale.",
-    description:
-      "Design, schedule, and trigger targeted campaigns across channels based on real‑time customer behavior and lifecycle stage.",
-    items: [
-      "Behavioral triggers & dynamic segmentation",
-      "A/B testing with performance analytics",
-      "Cross‑channel orchestration (email, SMS, push)",
-    ],
-    img: "/images/catalog_management.png",
-  },
-  {
-    label: "Order fulfillment",
-    title: "Streamline order fulfillment end‑to‑end.",
-    description:
-      "Manage picking, packing, shipping, and returns from a single dashboard—speed up delivery and reduce errors.",
-    items: [
-      "Real‑time inventory sync across warehouses",
-      "Batch label printing & carrier integrations",
-      "Automated return & exchange workflows",
-    ],
-    img: "/images/catalog_management.png",
-  },
-  {
-    label: "Workflow automation",
-    title: "Automate back‑office workflows.",
-    description:
-      "Define custom approval chains, notifications, and third‑party integrations to eliminate manual handoffs and keep everything on track.",
-    items: [
-      "Rule‑based approval & routing",
-      "Webhook & API connector library",
-      "Audit logs & process reporting",
-    ],
-    img: "/images/catalog_management.png",
-  },
+export default function FeatureTabs() {
+  const features: Feature[] = [
+    {
+      label: "Catalog",
+      title: "One place for all products",
+      description:
+        "Add products, variants, and prices once. We keep everything in sync across your store and channels.",
+      items: [
+        "No more spreadsheets",
+        "Publish to web, mobile, marketplaces",
+        "Live inventory updates",
+        "Smart product recommendations",
+      ],
+      img: "/images/catalog_management.png",
+    },
+    {
+      label: "Storefront",
+      title: "Build your store visually",
+      description:
+        "Start with ready-made blocks. Drag, drop, and publish—no heavy dev work.",
+      items: [
+        "Customizable sections",
+        "See changes on phone & desktop",
+        "Save versions and roll back",
+      ],
+      img: "/images/storefront_design.png",
+    },
+    {
+      label: "Analytics",
+      title: "Know what’s working",
+      description:
+        "Dashboards for sales, traffic, and customers. Create simple custom reports when you need them.",
+      items: ["Sales & traffic views", "Custom reports", "Event export"],
+      img: "/images/analytics_insights.png",
+    },
+    {
+      label: "Campaigns",
+      title: "Send the right message automatically",
+      description:
+        "Set triggers once—emails, SMS, or push go out based on customer actions.",
+      items: ["Behavior-based triggers", "Easy A/B tests", "Email, SMS, push"],
+      img: "/images/campaign_automation.png",
+    },
+    {
+      label: "Fulfillment",
+      title: "Ship faster with fewer errors",
+      description:
+        "Manage picking, packing, shipping, and returns from one place.",
+      items: ["Inventory sync", "Batch label printing", "Easy returns & exchanges"],
+      img: "/images/order_fulfillment_small.png",
+    },
+    {
+      label: "Workflows",
+      title: "Automate the busywork",
+      description:
+        "Create simple rules and approvals. Connect tools with webhooks and APIs.",
+      items: ["Rule-based steps", "Webhook/API connectors", "Activity logs"],
+      img: "/images/workflow_automation.png",
+    },
   ];
 
   const [active, setActive] = useState(features[0].label);
   const current = features.find((f) => f.label === active)!;
 
   return (
-    <section className="bg-gray-50 py-20">
+    <section className="bg-gray-50 py-16 sm:py-20">
       <div className="container mx-auto px-6">
-        <h3 className="text-4xl font-semibold text-gray-900 mb-10 text-center">
-          Explore all capabilities
+        <h3 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-8 sm:mb-10 text-center">
+          Everything you need to sell
         </h3>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-16">
-          {features.map(({ label }) => (
-            <button
-              key={label}
-              onClick={() => setActive(label)}
-              className={`text-xl font-medium px-4 py-2 rounded-full transition ${
-                active === label
-                  ? "bg-primary-600 text-white"
-                  : "text-gray-700 hover:text-gray-900 hover:bg-gray-200"
-              }`}
-            >
-              {label}
-            </button>
-          ))}
+        {/* Tabs */}
+        <div
+          role="tablist"
+          aria-label="Product capabilities"
+          className="mb-8 sm:mb-12 flex w-full flex-wrap items-center justify-center gap-2.5 sm:gap-3.5"
+        >
+          {features.map(({ label }) => {
+            const isActive = active === label;
+            return (
+              <button
+                key={label}
+                role="tab"
+                aria-selected={isActive}
+                aria-controls={`panel-${label}`}
+                id={`tab-${label}`}
+                onClick={() => setActive(label)}
+                className={`px-4 py-2 rounded-full text-sm sm:text-base font-medium transition
+                  ${isActive
+                    ? "bg-primary-600 text-white shadow-sm"
+                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-200"}`}
+              >
+                {label}
+              </button>
+            );
+          })}
         </div>
 
-        <div className="flex flex-col md:flex-row bg-white rounded-2xl overflow-hidden shadow-lg">
-          <div className="md:w-1/2 h-64 md:h-auto">
-            <img
-              src={current.img}
-              alt={current.label}
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="md:w-1/2 p-10">
-            <h4 className="text-3xl font-bold text-gray-900 mb-4">
+        {/* Card */}
+        <div
+          id={`panel-${current.label}`}
+          role="tabpanel"
+          aria-labelledby={`tab-${current.label}`}
+          className="grid md:grid-cols-2 bg-white rounded-2xl overflow-hidden shadow-lg ring-1 ring-black/5"
+        >
+          {/* Text first on mobile for faster scanning */}
+          <div className="order-1 md:order-none p-6 sm:p-8 lg:p-10">
+            <h4 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
               {current.title}
             </h4>
-            <p className="text-lg text-gray-600 mb-6">
+            <p className="text-base sm:text-lg text-gray-600 mb-5 sm:mb-6">
               {current.description}
             </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-600">
+            <ul className="space-y-2.5 text-gray-700 list-disc pl-5">
               {current.items.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
+          </div>
+
+          {/* Image — normalized ratio so it always fits on mobile */}
+          <div className="p-5 sm:p-6 md:p-6 bg-surface-100 flex items-center justify-center">
+            <div className="relative w-full max-w-[460px] aspect-[4/3] sm:aspect-[4/3]">
+              <img
+                src={current.img}
+                alt={current.label}
+                className="absolute inset-0 h-full w-full object-contain"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
           </div>
         </div>
       </div>

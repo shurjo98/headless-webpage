@@ -81,11 +81,6 @@ export default function Privacy() {
 
         <h2>10. Changes</h2>
         <p>We will post any changes to this policy on this page.</p>
-
-        <h2>11. Contact</h2>
-        <p>
-          Email <a href="mailto:privacy@yourcompany.com">privacy@yourcompany.com</a>.
-        </p>
       </main>
     </>
   );
