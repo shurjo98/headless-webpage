@@ -63,6 +63,9 @@ export default function Header() {
         {/* Desktop Navigation */}
         <ul class="hidden lg:flex items-center space-x-1">
           <li>
+            <a href="/" class={linkBase}>Home</a>
+          </li>
+          <li>
             <a href="/why-headless" class={linkBase}>Why Headless</a>
           </li>
           <li>
@@ -116,6 +119,7 @@ export default function Header() {
         <div class="lg:hidden bg-white border-t border-surface-100 shadow-lg animate-slideIn">
           <div class="px-4 py-2 space-y-1">
             {[
+              ["Home", "/"],
               ["Why Headless", "/why-headless"],
               ["Platform", "/platform"],
               ["Solutions", "/solutions"],

@@ -195,14 +195,14 @@ export default function Home() {
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 sm:mb-6">
             {/* Card */}
             <article class="flex h-full flex-col rounded-[28px] bg-white p-8 ring-1 ring-black/5 shadow-card-1 sm:mb-6">
-              <div class="space-y-3">
+              <div class="space-y-3 flex-1">
                 <h3 class="text-2xl md:text-3xl font-bold leading-tight">
                   Sales across every channel.
                 </h3>
               </div>
 
               {/* Screenshot — ALWAYS aligned along the row bottom */}
-              <figure class="mt-1 sm:mt-8 shot [--zoom:1.10]">
+              <figure class="shot mt-6 [--zoom:1.10] flex-shrink-0">
                 <div class="shot-frame">
                   <img
                     src="/images/web_channel_sales_card_v2.png"
@@ -217,12 +217,12 @@ export default function Home() {
 
             {/* Inventory (same structure; smaller zoom) */}
             <article class="flex h-full flex-col rounded-[28px] bg-white p-8 ring-1 ring-black/5 shadow-card-1 sm:mb-6">
-              <div class="space-y-3">
+              <div class="space-y-3 flex-1">
                 <h3 class="text-2xl md:text-3xl font-bold leading-tight">
                   Inventory at a glance.
                 </h3>
               </div>
-              <figure class="mt-1 sm:mt-8 shot [--zoom:1.00]">
+              <figure class="shot mt-6 [--zoom:1.00] flex-shrink-0">
                 <div class="shot-frame">
                   <img
                     src="/images/product_catalog_grid.png"
@@ -237,12 +237,12 @@ export default function Home() {
 
             {/* Create coupon */}
             <article class="flex h-full flex-col rounded-[28px] bg-white p-8 ring-1 ring-black/5 shadow-card-1 sm:mb-6">
-              <div class="space-y-3">
+              <div class="space-y-3 flex-1">
                 <h3 class="text-2xl md:text-3xl font-bold leading-tight">
                   Create Coupon.
                 </h3>
               </div>
-              <figure class="mt-1 sm:mt-8 shot [--zoom:1.08]">
+              <figure class="shot mt-6 [--zoom:1.08] flex-shrink-0">
                 <div class="shot-frame">
                   <img
                     src="/images/create_coupon_simple_centered.png"
@@ -292,7 +292,7 @@ export default function Home() {
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
             {/* Recent orders */}
             <article class="min-w-0 flex h-full flex-col rounded-[28px] bg-white p-8 ring-1 ring-black/5 shadow-card-1">
-              <div class="space-y-3">
+              <div class="space-y-3 flex-1">
                 <h3 class="text-2xl md:text-3xl font-bold leading-tight">
                   Recent orders
                 </h3>
@@ -302,7 +302,7 @@ export default function Home() {
               </div>
 
               {/* screenshot pinned to the bottom, same height */}
-              <figure class="shot mt-4 sm:mt-4 [--zoom:1.10]">
+              <figure class="shot mt-6 [--zoom:1.10] flex-shrink-0">
                 <div class="shot-frame">
                   <img
                     src="/images/recent_orders_polished.png"
@@ -317,28 +317,22 @@ export default function Home() {
 
             {/* Customer list */}
             <article class="min-w-0 flex h-full flex-col rounded-[28px] bg-white p-8 ring-1 ring-black/5 shadow-card-1">
-              <div class="space-y-3">
+              <div class="space-y-3 flex-1">
                 <h3 class="text-2xl md:text-3xl font-bold leading-tight">
                   Customer list
                 </h3>
-                <p class="text-neutral-600 mb-10">
+                <p class="text-neutral-600">
                   A clean customer to find and engage the right people fast.
                 </p>
               </div>
 
               {/* screenshot pinned to the bottom, same height */}
-              <figure class="shot mt-5
-               [--zoom:1]            /* mobile: fit */
-               sm:[--zoom:1.04]
-               md:[--zoom:1.18]
-               lg:[--zoom:1.28]
-               xl:[--zoom:1.00]">
-                <div class="shot-frame
-              h-[220px] sm:h-[260px] md:h-[320px] lg:h-[360px] xl:h-[380px]">
+              <figure class="shot mt-6 [--zoom:1.00] flex-shrink-0">
+                <div class="shot-frame">
                   <img
                     src="/images/customer_list_clean.png"
                     alt="Customer list table"
-                    class="shot-img" /* no mt-12 */
+                    class="shot-img"
                     loading="lazy"
                     decoding="async"
                   />

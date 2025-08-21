@@ -4,7 +4,6 @@ const disabled = new Set<string>([
   "/pricing/configurator",
   "/docs",
   "/blog",
-  "/platform",
   "/case-studies",
   '/API_Status',
   '/legal/cookies'  

@@ -3117,11 +3117,11 @@ input:checked + .toggle-bg {
 }
 
 .w-full {
-  width: 100%;
+  width: auto;
 }
 
 .w-screen {
-  width: 100vw;
+  width: 99vw;
 }
 
 .min-w-0 {
