@@ -197,16 +197,12 @@ export default function Home() {
             <article class="flex h-full flex-col rounded-[28px] bg-white p-8 ring-1 ring-black/5 shadow-card-1 sm:mb-6">
               <div class="space-y-3">
                 <h3 class="text-2xl md:text-3xl font-bold leading-tight">
-                  See sales across every channel in one view.
+                  Sales across every channel.
                 </h3>
-                <p class="text-neutral-600 sm:mb-6">
-                  Amazon, eBay, TikTok Shop, web & mobile clean breakdowns and
-                  trends.
-                </p>
               </div>
 
               {/* Screenshot — ALWAYS aligned along the row bottom */}
-              <figure class="mt-4 sm:mt-8 shot [--zoom:1.10]">
+              <figure class="mt-1 sm:mt-8 shot [--zoom:1.10]">
                 <div class="shot-frame">
                   <img
                     src="/images/web_channel_sales_card_v2.png"
@@ -220,20 +216,16 @@ export default function Home() {
             </article>
 
             {/* Inventory (same structure; smaller zoom) */}
-            <article class="flex h-full flex-col rounded-[28px] bg-white p-8 ring-1 ring-black/5 shadow-card-1">
-              <div class="space-y-3 mb-10">
+            <article class="flex h-full flex-col rounded-[28px] bg-white p-8 ring-1 ring-black/5 shadow-card-1 sm:mb-6">
+              <div class="space-y-3">
                 <h3 class="text-2xl md:text-3xl font-bold leading-tight">
-                  Products &amp; inventory at a glance.
+                  Inventory at a glance.
                 </h3>
-                <p class="text-neutral-600">
-                  Track status, stock levels, SKUs, categories, and performance
-                  in one clean table.
-                </p>
               </div>
-              <figure class="shot mt-1 sm:mt-1 [--zoom:1.00]">
+              <figure class="mt-1 sm:mt-8 shot [--zoom:1.00]">
                 <div class="shot-frame">
                   <img
-                    src="/images/inventory_table.png"
+                    src="/images/product_catalog_grid.png"
                     alt=""
                     class="shot-img"
                     loading="lazy"
@@ -244,16 +236,13 @@ export default function Home() {
             </article>
 
             {/* Create coupon */}
-            <article class="flex h-full flex-col rounded-[28px] bg-white p-8 ring-1 ring-black/5 shadow-card-1">
+            <article class="flex h-full flex-col rounded-[28px] bg-white p-8 ring-1 ring-black/5 shadow-card-1 sm:mb-6">
               <div class="space-y-3">
                 <h3 class="text-2xl md:text-3xl font-bold leading-tight">
-                  Create discount / coupon
+                  Create Coupon.
                 </h3>
-                <p class="text-neutral-600">
-                  Generate codes in seconds—set value, validity, and scope.
-                </p>
               </div>
-              <figure class="shot mt-4 sm:mt-6 [--zoom:1.08]">
+              <figure class="mt-1 sm:mt-8 shot [--zoom:1.08]">
                 <div class="shot-frame">
                   <img
                     src="/images/create_coupon_simple_centered.png"
@@ -308,8 +297,7 @@ export default function Home() {
                   Recent orders
                 </h3>
                 <p class="text-neutral-600">
-                  Track fulfillment at a glance—linkable order IDs, clear status
-                  chips, and totals for quick action.
+                  Track fulfillment at a glance.
                 </p>
               </div>
 
@@ -334,8 +322,7 @@ export default function Home() {
                   Customer list
                 </h3>
                 <p class="text-neutral-600 mb-10">
-                  A clean customer list with avatars, segment chips, and key
-                  dates to find and engage the right people fast.
+                  A clean customer to find and engage the right people fast.
                 </p>
               </div>
 
