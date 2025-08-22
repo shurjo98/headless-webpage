@@ -5,7 +5,6 @@ import ParallaxMarquee from "../../islands/ParallaxMarquee.tsx";
 import ParallaxPosterRail from "../../islands/ParallaxPosterRail.tsx"; // <-- comment this + usage if the island was removed
 import SnapCarousel from "../../islands/SnapCarousel.tsx";
 import Reveal from "../../islands/Reveal.tsx";
-import EndcapCTA from "../../components/EndcapCTA.tsx";
 
 /* ---------- page_1 images ---------- */
 const PAGE1 = Array.from({ length: 6 }, (_, i) => ({
@@ -145,11 +144,10 @@ export default function WebCaseStudies() {
 
       <AOSProvider
         autoTargets={[
-          "#aos-scope h1",
-          "#aos-scope h2",
-          "#aos-scope p",
-          "#aos-scope li",
-          "#aos-scope figure",
+          "#intro-web h1",
+          "#intro-web p",
+          "#pricing h2",
+          "#pricing p",
         ]}
         distancePx={28}
         durationMs={900}
@@ -158,7 +156,7 @@ export default function WebCaseStudies() {
         threshold={0.15}
       />
 
-      <main id="aos-scope" class="bg-white text-neutral-900">
+      <main id="aos-scope" class="bg-white text-neutral-900 overflow-x-clip">
         {/* PAGE INTRO — goes before HERO */}
         <section id="intro-web" class="relative w-full bg-neutral-50">
           <div class="mx-auto max-w-7xl px-6 md:px-8 py-16 md:py-20 text-center">
@@ -197,19 +195,22 @@ export default function WebCaseStudies() {
           </div>
         </section>
 
-        {/* SONIC — one page per snap (Structa style) */}
         <section
           id="sonic"
           class="mx-auto max-w-7xl px-6 md:px-8 py-16 md:py-24"
         >
-          <h2 class="text-3xl md:text-5xl font-black tracking-tight">Sonic</h2>
-          <p class="mt-3 text-neutral-600 max-w-2xl">
-            Oversized, glossy web screens on a calm backdrop — a trust-first
-            layout that lets the craft breathe.
-          </p>
+          <header class="text-center">
+            <h2 class="text-3xl md:text-5xl font-black tracking-tight">
+              Sonic
+            </h2>
+            <p class="mt-3 text-neutral-600 max-w-3xl mx-auto">
+              A calm, product-first showcase. Tight copy, clear images, no
+              distractions.
+            </p>
+          </header>
 
-          {/* own scroll area = one page per snap; feels like the page */}
-          <div class="mt-8 h-[100svh] overflow-y-auto snap-y snap-mandatory no-scrollbar">
+          {/* simple vertical gallery (no snap, no fancy shadows) */}
+          <div class="mt-10 grid gap-16">
             {[
               {
                 src: PAGE1[0].src,
@@ -221,7 +222,7 @@ export default function WebCaseStudies() {
                 src: PAGE1[1].src,
                 title: "Benefits",
                 blurb:
-                  "Four compact icon blurbs — fast scan, human photo keeps it relatable.",
+                  "Four compact icon blurbs — fast scan; a human photo keeps it relatable.",
               },
               {
                 src: PAGE1[2].src,
@@ -250,80 +251,97 @@ export default function WebCaseStudies() {
             ].map((s, i) => (
               <article
                 key={i}
-                class="snap-start min-h-[100svh] flex flex-col items-center justify-center px-6 py-16"
+                class="flex flex-col items-center text-center"
               >
-                <h3 class="text-2xl md:text-4xl font-semibold tracking-tight text-neutral-900">
+                <h3 class="text-xl md:text-2xl font-semibold tracking-tight text-neutral-900">
                   {s.title}
                 </h3>
-                <p class="mt-2 mb-8 text-neutral-600 text-center max-w-2xl">
+                <p class="mt-2 mb-6 text-neutral-600 max-w-2xl">
                   {s.blurb}
                 </p>
 
-                {/* big glossy frame */}
-                <figure class="relative overflow-hidden rounded-[2.4rem] bg-white/[0.04] backdrop-blur-[2px] shadow-[0_80px_240px_-60px_rgba(0,0,0,0.85)]">
-                  {/* Wide pages look best with a landscape frame; object-contain keeps them crisp */}
-                  <div class="w-[92vw] sm:w-[960px] lg:w-[1200px] xl:w-[1400px] aspect-[16/10] bg-white">
+                {/* clean frame */}
+                <figure class="mx-auto w-full max-w-full sm:max-w-[640px] md:max-w-[960px] lg:max-w-[1200px]">
+                  <div class="aspect-[16/10] rounded-2xl ring-1 ring-black/5 shadow-lg bg-white">
                     <img
                       src={s.src}
                       alt={s.title}
-                      class="h-full w-full object-contain"
+                      class="h-full w-full object-contain rounded-2xl"
                       loading="lazy"
                       decoding="async"
                     />
                   </div>
-                  {/* glossy strip */}
-                  <div class="pointer-events-none absolute inset-x-0 -top-1/3 h-1/2 bg-gradient-to-b from-white/25 via-white/10 to-transparent" />
+                  <figcaption class="sr-only">{s.title}</figcaption>
                 </figure>
               </article>
             ))}
           </div>
         </section>
 
-        {/* PulseRun intro */}
-        {/* Drop this where you want PulseRun to start */}
-        <ParallaxMarquee
-          src={PAGE2[0].src}
-          alt="PulseRun hero"
-          strength={0.28}
-          minHeight="120svh"
-        >
-          <div class="max-w-2xl">
-            <h2 class="mt-4 text-5xl md:text-7xl font-black tracking-tight text-white">
-              PulseRun
-            </h2>
-            <p class="mt-5 text-neutral-300/95 text-lg md:text-xl text-white/90">
-              Built for energy and pace. A calm, high-contrast hero that lets
-              the shoe do the talking.
-            </p>
-          </div>
-        </ParallaxMarquee>
-
-        {/* Optional glossy panels (only if POSTERS filled) */}
-        {POSTERS.length > 0 && (
-          <section class="relative isolate w-screen -mx-[calc(50vw-50%)] bg-neutral-950 text-white py-16 md:py-24">
-            <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_40%_at_50%_10%,rgba(255,255,255,.18),transparent_60%)]" />
-            <div class="relative mx-auto max-w-7xl px-6 md:px-8">
-              <h2 class="text-3xl md:text-5xl font-bold tracking-tight">
-                Highlights
+        {/* PulseRun — static hero (no parallax) */}
+        <section id="pulserun-hero" class="bg-neutral-950 text-white">
+          <div class="mx-auto max-w-7xl px-6 md:px-8 py-16 md:py-24">
+            <header class="max-w-2xl">
+              <h2 class="text-4xl md:text-6xl font-black tracking-tight">
+                PulseRun
               </h2>
-              <p class="mt-3 text-white/70 max-w-2xl">
-                Large, glossy panels that let the craft breathe.
+              <p class="mt-4 text-white/80 text-lg md:text-xl">
+                Built for energy and pace. A calm, high-contrast hero that lets
+                the shoe do the talking.
               </p>
-              <div class="mt-10 flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar">
+            </header>
+
+            {/* centered, crisp image frame */}
+            <figure class="mx-auto w-full max-w-full sm:max-w-[640px] md:max-w-[960px] lg:max-w-[1200px]">
+              <div class="aspect-[16/9] rounded-2xl bg-white/5 ring-1 ring-white/10 overflow-hidden grid place-items-center">
+                <img
+                  src={PAGE2[0].src}
+                  alt="PulseRun hero"
+                  class="h-full w-full object-contain"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <figcaption class="sr-only">PulseRun hero</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        {/* Highlights — simple centered grid (replaces glossy posters) */}
+        {POSTERS.length > 0 && (
+          <section
+            class="bg-neutral-950 text-white"
+            aria-labelledby="pulserun-highlights"
+          >
+            <div class="mx-auto max-w-7xl px-6 md:px-8 pb-16 md:pb-24">
+              <header class="max-w-2xl">
+                <h3
+                  id="pulserun-highlights"
+                  class="text-2xl md:text-4xl font-bold tracking-tight"
+                >
+                  Highlights
+                </h3>
+                <p class="mt-3 text-white/70">
+                  Large, quiet panels that keep attention on the product.
+                </p>
+              </header>
+
+              <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {POSTERS.map((p) => (
                   <figure
                     key={p.src}
-                    class="snap-start shrink-0 w-[84vw] sm:w-[720px] md:w-[960px] lg:w-[1120px] rounded-[2rem] overflow-hidden bg-white ring-1 ring-white/10 shadow-[0_80px_200px_-60px_rgba(0,0,0,0.75)] relative"
+                    class="rounded-2xl bg-white/5 ring-1 ring-white/10 overflow-hidden"
                   >
-                    <img
-                      src={p.src}
-                      alt={p.alt}
-                      class="w-full h-auto object-contain"
-                      loading="lazy"
-                      decoding="async"
-                    />
+                    <div class="aspect-[16/10] grid place-items-center">
+                      <img
+                        src={p.src}
+                        alt={p.alt}
+                        class="h-full w-full object-contain"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
                     <figcaption class="sr-only">{p.alt}</figcaption>
-                    <div class="pointer-events-none absolute inset-x-0 -top-1/3 h-1/2 bg-gradient-to-b from-white/25 via-white/10 to-transparent" />
                   </figure>
                 ))}
               </div>
@@ -331,139 +349,279 @@ export default function WebCaseStudies() {
           </section>
         )}
 
-        {/* Lifestyle / carousel */}
+        {/* Lifestyle — calm gallery (no carousel) */}
         <section class="bg-white" aria-labelledby="pulse-lifestyle">
           <div class="mx-auto max-w-7xl px-6 md:px-8 py-16 md:py-24">
             <h2
               id="pulse-lifestyle"
-              class="text-3xl md:text-5xl font-black tracking-tight"
+              class="text-3xl md:text-5xl font-black tracking-tight text-neutral-900 text-center md:text-left"
             >
               In the wild.
             </h2>
-            <p class="mt-3 text-neutral-700 max-w-2xl">
+            <p class="mt-3 text-neutral-700 max-w-2xl md:mx-0 mx-auto text-center md:text-left">
               See PulseRun off the studio table — worn and moving. Real scenes
               build real trust.
             </p>
-            <div class="mt-8">
-              <SnapCarousel
-                items={[
-                  { src: PAGE2[1].src, alt: "Lifestyle collage" },
-                  { src: PAGE2[2].src, alt: "Editorial product mosaic" },
-                  {
-                    src: PAGE2[3].src,
-                    alt: "Best of the Class hero and features",
-                  },
-                ]}
-              />
+
+            {/* Simple responsive gallery */}
+            <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                { src: PAGE2[1].src, alt: "Lifestyle collage" },
+                { src: PAGE2[2].src, alt: "Editorial product mosaic" },
+                {
+                  src: PAGE2[3].src,
+                  alt: "Best of the Class hero and features",
+                },
+              ].map((item) => (
+                <figure key={item.src} class="group">
+                  <div class="aspect-[4/3] rounded-2xl ring-1 ring-black/5 shadow-md bg-white overflow-hidden grid place-items-center">
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      class="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.01]"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <figcaption class="mt-3 text-sm text-neutral-600">
+                    {item.alt}
+                  </figcaption>
+                </figure>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Optional screen carousel */}
-        {CAROUSEL.length > 0 && (
-          <section class="bg-neutral-950 text-white">
+        {/* In motion — static grid (no carousel) */}
+        {(CAROUSEL?.length ?? 0) > 0 && (
+          <section
+            class="bg-neutral-950 text-white"
+            aria-labelledby="in-motion"
+          >
             <div class="mx-auto max-w-7xl px-6 md:px-8 py-16 md:py-24">
-              <h2 class="text-3xl md:text-5xl font-bold tracking-tight">
-                In motion
-              </h2>
-              <p class="mt-3 text-white/65 max-w-2xl">
-                Key flows shown side by side — fast, legible, consistent.
-              </p>
-              <div class="mt-10">
-                <SnapCarousel items={CAROUSEL} />
+              <header class="max-w-2xl">
+                <h2
+                  id="in-motion"
+                  class="text-3xl md:text-5xl font-black tracking-tight"
+                >
+                  In motion
+                </h2>
+                <p class="mt-3 text-white/70">
+                  Key flows shown side by side — fast, legible, consistent.
+                </p>
+              </header>
+
+              {/* Simple responsive grid */}
+              <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {CAROUSEL.map((p) => (
+                  <figure
+                    key={p.src}
+                    class="rounded-2xl ring-1 ring-white/10 bg-white/5 overflow-hidden"
+                  >
+                    <div class="aspect-[16/9] grid place-items-center">
+                      <img
+                        src={p.src}
+                        alt={p.alt}
+                        class="h-full w-full object-contain"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                    <figcaption class="px-4 py-3 text-sm text-white/70 border-t border-white/10">
+                      {p.alt}
+                    </figcaption>
+                  </figure>
+                ))}
               </div>
             </div>
           </section>
         )}
 
-        <ParallaxPosterRail
-          items={[
-            { src: PAGE2[2].src, alt: "Editorial mosaic" },
-            { src: PAGE2[3].src, alt: "Best of the Class" },
-          ]}
-        />
+        {/* Poster duo — replaces ParallaxPosterRail with a centered grid */}
+        <section class="bg-white" aria-labelledby="poster-highlights">
+          <div class="mx-auto max-w-7xl px-6 md:px-8 py-16 md:py-24">
+            <h2 id="poster-highlights" class="sr-only">Highlights</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
+                { src: PAGE2[2].src, alt: "Editorial mosaic" },
+                { src: PAGE2[3].src, alt: "Best of the Class" },
+              ].map((p) => (
+                <figure
+                  key={p.src}
+                  class="rounded-2xl ring-1 ring-black/5 shadow-md bg-white overflow-hidden"
+                >
+                  <div class="aspect-[16/10]">
+                    <img
+                      src={p.src}
+                      alt={p.alt}
+                      class="h-full w-full object-contain"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <figcaption class="sr-only">{p.alt}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
 
-        {/* PRICING SHOWCASE */}
-        <section
-          id="pricing"
-          class="relative isolate w-screen -mx-[calc(50vw-50%)] bg-neutral-950 text-dark"
-          aria-labelledby="pricing-heading"
-        >
-          {/* soft radial glow for premium feel */}
-          <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_40%_at_50%_0%,rgba(255,255,255,.14),transparent_60%)]" />
-          <div class="relative mx-auto max-w-7xl px-6 md:px-8 py-20 md:py-28">
+        {/* PRICING — simple static grid */}
+        <section id="pricing" class="bg-neutral-950 text-white">
+          <div class="mx-auto max-w-7xl px-6 md:px-8 py-20 md:py-28">
             <p class="text-[11px] uppercase tracking-[0.22em] text-white/55">
               Pricing
             </p>
             <h2
               id="pricing-heading"
-              class="mt-2 text-4xl md:text-6xl text-white tracking-tight"
+              class="mt-2 text-4xl md:text-6xl tracking-tight"
             >
               Pricing that scales with you.
             </h2>
             <p class="mt-4 text-white/70 max-w-2xl">
-              Simple tiers. Clear value. No surprises. Designed for a one-glance
-              decision.
+              Simple tiers. Clear value. No surprises.
             </p>
 
-            {/* quick plan cues (trust-first copy; keeps it human) */}
-            <ul class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-white/85">
-              <li class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-4">
-                <span class="font-semibold">Free</span>{" "}
-                — for individuals shipping ideas.
+        
+
+            {/* optional: static screenshots instead of any carousel */}
+            <div class="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {[PAGE3[0], PAGE3[1], PAGE3[2]].map((p) => (
+                <figure
+                  key={p.src}
+                  class="rounded-2xl bg-white/5 ring-1 ring-white/10 overflow-hidden"
+                >
+                  <div class="aspect-[16/10] grid place-items-center">
+                    <img
+                      src={p.src}
+                      alt={p.alt}
+                      class="h-full w-full object-contain"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <figcaption class="sr-only">{p.alt}</figcaption>
+                </figure>
+              ))}
+            </div>
+
+            {/* trust bullets (kept simple) */}
+            <ul class="mt-10 grid gap-5 sm:grid-cols-3 text-white/75 text-sm">
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5">✅</span>{" "}
+                Transparent monthly/annual pricing.
               </li>
-              <li class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-4">
-                <span class="font-semibold">Plus</span>{" "}
-                — most popular for weekly releases.
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5">✅</span>{" "}
+                Clear comparison—no spec overload.
               </li>
-              <li class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-4">
-                <span class="font-semibold">Business</span>{" "}
-                — control & compliance for teams.
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5">✅</span> Security & FAQ before checkout.
               </li>
             </ul>
-
-            {/* big glossy screens */}
-            <div class="mt-10">
-              <SnapCarousel
-                items={[
-                  { src: PAGE3[0].src, alt: PAGE3[0].alt },
-                  { src: PAGE3[1].src, alt: PAGE3[1].alt },
-                  { src: PAGE3[2].src, alt: PAGE3[2].alt },
-                ]}
-              />
-            </div>
-
-            {/* trust bullets under the screens */}
-            <div class="mt-12 grid gap-5 sm:grid-cols-3 text-white/75 text-sm">
-              <div class="flex items-start gap-3">
-                <span class="mt-0.5">✅</span>
-                <p>Transparent monthly/annual toggle with honest plan cards.</p>
-              </div>
-              <div class="flex items-start gap-3">
-                <span class="mt-0.5">✅</span>
-                <p>Readable comparison table — fast scan, no spec overload.</p>
-              </div>
-              <div class="flex items-start gap-3">
-                <span class="mt-0.5">✅</span>
-                <p>
-                  Security & FAQ appear before the paywall — trust before ask.
-                </p>
-              </div>
-            </div>
           </div>
-          
         </section>
+
         {/* ========= END / LUXURY CALL-TO-ACTION ========= */}
-               
-               <EndcapCTA
-               title="Ready when you are."
-               description="Launch Once, Grow Everywhere."
-               primaryHref="/contact"
-               primaryLabel="Contact us"
-               secondaryHref="/case-studies"
-               secondaryLabel="See case studies"
-             />
+        <section
+          id="endcap"
+          class="relative overflow-hidden bg-neutral-950 text-dark"
+        >
+          {/* soft radial glows */}
+          <div class="pointer-events-none absolute inset-0">
+            <div class="absolute -top-40 left-1/2 h-[680px] w-[880px] -translate-x-1/2 rounded-full bg-white/[0.06] blur-3xl" />
+            <div class="absolute -bottom-48 right-10 h-[520px] w-[520px] rounded-full bg-gradient-to-t from-fuchsia-400/15 via-purple-400/10 to-transparent blur-3xl" />
+            <div class="absolute -bottom-40 left-10 h-[420px] w-[420px] rounded-full bg-gradient-to-t from-emerald-400/15 via-teal-400/10 to-transparent blur-3xl" />
+          </div>
+
+          <div class="relative mx-auto max-w-7xl px-6 md:px-8 py-24 md:py-40 text-center">
+            <h2 class="mt-3 mb-3 text-4xl md:text-6xl font-black tracking-tight">
+              Let’s make it feel inevitable.
+            </h2>
+            <p class="mt-5 mx-auto max-w-2xl text-white/70">
+              Premium interfaces that get out of the way—calm visuals, fast
+              flows, and a system you can scale.
+            </p>
+
+            <div class="mt-12 flex items-center justify-center gap-6">
+              {/* Primary – calm white pill */}
+              <a
+                href="mailto:lucy@fastandmodern.com"
+                class="group inline-flex items-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-black
+           transition hover:bg-white/90 focus:outline-none"
+              >
+                Start a project
+                <svg
+                  class="ml-2 h-4 w-4 opacity-60 transition-transform group-hover:translate-x-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+
+              {/* Secondary – quiet text link */}
+              <a
+                href="#design-system"
+                class="group inline-flex items-center text-sm font-medium text-white/70 hover:text-white
+           focus:outline-none rounded-full px-2 py-1"
+              >
+                See our approach
+                <svg
+                  class="ml-1 h-4 w-4 opacity-60 transition-transform group-hover:translate-x-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            {/* subtle divider */}
+            <div class="mx-auto mt-16 h-px max-w-4xl bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+
+            {/* tiny meta / footer */}
+          </div>
+
+          {/* optional scroll-to-top button */}
+          <div class="pointer-events-none absolute bottom-6 right-6">
+            <a
+              href="#aos-scope"
+              class="pointer-events-auto grid h-10 w-10 place-items-center rounded-full bg-white/10  backdrop-blur-sm transition hover:bg-white/15"
+              aria-label="Back to top"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 15l7-7 7 7"
+                />
+              </svg>
+            </a>
+          </div>
+        </section>
       </main>
     </>
   );
 }
+
+
