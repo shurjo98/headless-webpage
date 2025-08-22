@@ -132,11 +132,11 @@ export default function FeatureTabs() {
 
           {/* Image — normalized ratio so it always fits on mobile */}
           <div className="p-5 sm:p-6 md:p-6 bg-surface-100 flex items-center justify-center">
-            <div className="relative w-full max-w-[460px] aspect-[4/3] sm:aspect-[4/3]">
+            <div className="w-full h-80 sm:h-96 bg-gray-100 rounded-lg overflow-hidden">
               <img
                 src={current.img}
                 alt={current.label}
-                className="absolute inset-0 h-full w-full object-contain"
+                className="w-full h-full object-cover"
                 loading="lazy"
                 decoding="async"
               />
