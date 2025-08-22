@@ -46,12 +46,12 @@ function HeroSection() {
           </div>
 
           {/* Right column - Visual */}
-          <div class="relative">
+          <div class="relative flex justify-center lg:justify-start">
             <div class="relative z-10">
               <img
                 src="/images/phone.png"
                 alt="HeadlessPro mobile app"
-                class="w-full max-w-md mx-auto lg:mx-0 lg:ml-auto animate-float"
+                class="w-full max-w-md animate-float"
               />
             </div>
 
@@ -174,7 +174,7 @@ export default function Home() {
                   </svg>
                 </a>
               </div>
-              <div>
+              <div class="flex justify-center items-center">
                 <img
                   src="/images/Agentic_Commerce_Orchestrator_Design.png"
                   alt="Agentic Commerce Orchestrator"
