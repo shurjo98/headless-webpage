@@ -1,14 +1,8 @@
 // routes/index.tsx
-//single-page homepage (single-page links only) */
-import StatCounter from "../islands/StatCounter.tsx";
-import { h } from "preact";
-import { useState } from "preact/hooks";
-import FeatureTabs from "../islands/FeatureTabs.tsx";
-import Reveal from "../islands/Reveal.tsx";
-import TiltCard from "../islands/TiltCard.tsx";
-import AnimateOnView from "../islands/AnimateOnView.tsx";
-import EndcapCTA from "../components/EndcapCTA.tsx";
+// Email Automation for Ecommerce - Simple One Page Website
 import AOSProvider from "../islands/AOSProvider.tsx";
+import EmailContactForm from "../islands/EmailContactForm.tsx";
+import Header from "../islands/Header.tsx";
 
 /* -----------------------
    Small helper: anchor button (accessible)
@@ -16,11 +10,10 @@ import AOSProvider from "../islands/AOSProvider.tsx";
 function AnchorButton(
   { href, children, className = "" }: {
     href: string;
-    children: any;
+    children: preact.ComponentChildren;
     className?: string;
   },
 ) {
-  // keep it simple and SSR-safe: uses plain anchor with in-page href
   return (
     <a
       href={href}
@@ -34,90 +27,173 @@ function AnchorButton(
 }
 
 /* -----------------------
-   Automation Section 
+   Hero Section - eCommerce Focus
    ----------------------- */
-function AutomationSection() {
+function HeroSection() {
   return (
-    <section id='automation'
-      aria-labelledby="automation-heading"
-      class="bg-gradient-to-tr from-white to-slate-50 py-20 lg:py-28"
-    >
+    <section id="home" class="pt-20 pb-16 bg-gradient-to-b from-neutral-50 to-white">
       <div class="container mx-auto px-4 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left: content */}
-          <div class="space-y-6 max-w-2xl">
-            <p class="text-sm font-semibold uppercase text-primary-600">
-              Automation
+        <div class="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+          <div class="text-center lg:text-left">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 leading-tight mb-6">
+              Save Hours, Grow Revenue:
+              <span class="block text-primary-600">Email Automation for eCommerce</span>
+            </h1>
+            <p class="text-xl text-neutral-600 leading-relaxed mb-8 max-w-lg">
+              From simple welcome emails to AI-powered personalized campaigns. 
+              Automate your customer journey and watch your revenue grow.
             </p>
-            <h2
-              id="automation-heading"
-              class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-neutral-900"
-            >
-              Automate the tedious — focus on growth
-            </h2>
-            <p class="text-lg text-neutral-600 leading-relaxed">
-              Built-in automation that connects catalog, promotions, loyalty and
-              fulfillment. Ship workflows that reduce ops touchpoints and
-              increase LTV — without custom engineering on every release.
-            </p>
-
-            <div class="grid sm:grid-cols-3 gap-4 mt-6">
-              <div class="p-4 rounded-2xl bg-white ring-1 ring-black/5 shadow-sm">
-                <h4 class="font-semibold">Smart Promotions</h4>
-                <p class="text-sm text-neutral-500">
-                  Auto-apply coupons for cart and lifecycle segments.
-                </p>
-              </div>
-              <div class="p-4 rounded-2xl bg-white ring-1 ring-black/5 shadow-sm">
-                <h4 class="font-semibold">Inventory Sync</h4>
-                <p class="text-sm text-neutral-500">
-                  Real-time stock-driven rules across channels.
-                </p>
-              </div>
-              <div class="p-4 rounded-2xl bg-white ring-1 ring-black/5 shadow-sm">
-                <h4 class="font-semibold">Loyalty Triggers</h4>
-                <p class="text-sm text-neutral-500">
-                  Award points and experiences automatically after checkout.
-                </p>
-              </div>
-            </div>
-
-            <div id='#features' class="mt-6 flex gap-4">
-              <AnchorButton
-                href="#features"
-                className="rounded-full bg-primary-600 px-5 py-3 text-white font-semibold shadow-sm"
-              >
-                See automation examples
-              </AnchorButton>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <AnchorButton
                 href="#contact"
-                className="rounded-full bg-white/80 px-5 py-3 text-neutral-900 font-medium ring-1 ring-black/5"
+                className="bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition text-center"
               >
-                Talk to our team
+                Start Automating Today
+              </AnchorButton>
+              <AnchorButton
+                href="#automation-types"
+                className="border border-neutral-300 text-neutral-700 px-8 py-4 rounded-lg font-semibold hover:bg-neutral-50 transition text-center"
+              >
+                See Automation Types
               </AnchorButton>
             </div>
           </div>
+          <div class="flex justify-center">
+            <img
+              src="/images/Home_Page_3.png"
+              alt="Email Automation Platform for eCommerce"
+              class="w-full max-w-lg rounded-lg shadow-xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
-          {/* Right: visual */}
-          <div class="relative flex justify-center lg:justify-end">
-            <div class="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl transform motion-safe:animate-float">
-              <img
-                src="/images/automation_preview.png"
-                alt="Automation preview"
-                class="w-full h-auto object-cover"
-                loading="lazy"
-                decoding="async"
-              />
+/* -----------------------
+   Automation Types & Benefits Section
+   ----------------------- */
+function AutomationTypesSection() {
+  return (
+    <section id="automation-types" class="py-20 bg-white">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">
+            Powerful eCommerce Email Automations
+          </h2>
+          <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
+            Choose from proven automation workflows that drive sales and save you hours every week.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {/* Welcome Series */}
+          <div class="bg-neutral-50 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl">👋</span>
             </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-3">Welcome Series</h3>
+            <p class="text-neutral-600 text-sm">
+              Automatically nurture new subscribers with a sequence of engaging emails that build trust and drive first purchases.
+            </p>
+          </div>
 
-            {/* subtle floating card */}
-            <div class="hidden lg:block absolute -top-8 -left-12 w-64 p-3 rounded-2xl bg-white ring-1 ring-black/5 shadow-lg">
-              <div class="text-xs font-semibold text-neutral-700">
-                Workflow: Winback + Coupon
+          {/* Abandoned Cart */}
+          <div class="bg-neutral-50 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl">🛒</span>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-3">Abandoned Cart Recovery</h3>
+            <p class="text-neutral-600 text-sm">
+              Recover lost sales with perfectly timed reminders that bring customers back to complete their purchase.
+            </p>
+          </div>
+
+          {/* Post-Purchase */}
+          <div class="bg-neutral-50 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl">📦</span>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-3">Post-Purchase Follow-up</h3>
+            <p class="text-neutral-600 text-sm">
+              Delight customers with order confirmations, shipping updates, and review requests that build loyalty.
+            </p>
+          </div>
+
+          {/* Win-Back */}
+          <div class="bg-neutral-50 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl">💝</span>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-3">Win-Back Campaigns</h3>
+            <p class="text-neutral-600 text-sm">
+              Re-engage inactive customers with special offers and personalized recommendations to revive dormant accounts.
+            </p>
+          </div>
+
+          {/* Product Recommendations */}
+          <div class="bg-neutral-50 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl">🎯</span>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-3">AI Product Recommendations</h3>
+            <p class="text-neutral-600 text-sm">
+              Increase average order value with smart product suggestions based on browsing and purchase history.
+            </p>
+          </div>
+
+          {/* VIP Customer */}
+          <div class="bg-neutral-50 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl">⭐</span>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-3">VIP Customer Programs</h3>
+            <p class="text-neutral-600 text-sm">
+              Reward your best customers with exclusive offers, early access, and personalized experiences.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="flex justify-center order-2 lg:order-1">
+            <img
+              src="/images/Home_Page_2.png"
+              alt="Email Automation Dashboard"
+              class="w-full max-w-md rounded-lg shadow-lg"
+            />
+          </div>
+          <div class="order-1 lg:order-2">
+            <h3 class="text-2xl font-bold text-neutral-900 mb-4">
+              Why eCommerce Stores Choose Our Automations
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 bg-primary-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-white text-xs font-bold">✓</span>
+                </div>
+                <div>
+                  <span class="font-semibold text-neutral-900">Save 10+ Hours Per Week</span>
+                  <p class="text-neutral-600 text-sm">Set up once, run forever. No more manual email sending.</p>
+                </div>
               </div>
-              <div class="mt-2 text-sm text-neutral-500">
-                Customer flagged as churn-risk → send coupon → schedule
-                follow-up email.
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 bg-primary-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-white text-xs font-bold">✓</span>
+                </div>
+                <div>
+                  <span class="font-semibold text-neutral-900">Increase Revenue by 30%</span>
+                  <p class="text-neutral-600 text-sm">Recover lost sales and boost customer lifetime value.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 bg-primary-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-white text-xs font-bold">✓</span>
+                </div>
+                <div>
+                  <span class="font-semibold text-neutral-900">Personalized at Scale</span>
+                  <p class="text-neutral-600 text-sm">AI-powered personalization for every customer interaction.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -128,94 +204,154 @@ function AutomationSection() {
 }
 
 /* -----------------------
-   Hero (modified so CTA uses in-page anchors only)
+   Step-by-Step Roadmap Section
    ----------------------- */
-function HeroSection() {
+function RoadmapSection() {
   return (
-    <section
-      id="home"
-      class="relative w-full min-h-screen bg-gradient-to-br from-primary-50 via-white to-primary-100 overflow-hidden"
-    >
-      {/* decorative blobs */}
-      <div class="absolute top-20 left-10 w-20 h-20 bg-primary-200 rounded-full opacity-20 motion-safe:animate-float" />
-      <div class="absolute top-40 right-20 w-16 h-16 bg-primary-300 rounded-full opacity-30 motion-safe:animate-float delay-1000" />
-      <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-5rem)]">
-          <div class="text-center lg:text-left space-y-8">
-            <div class="space-y-6">
-              <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-neutral-900 leading-tight tracking-tight">
-                Launch Once.
-                <span class="block text-primary-600">Grow Everywhere.</span>
-              </h1>
-              <p class="text-lg sm:text-xl lg:text-2xl text-neutral-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light">
-                The complete{" "}
-                <span class="font-semibold text-primary-600">
-                  headless commerce platform
-                </span>{" "}
-                that scales with your business — with production-ready
-                automations and low ops cost.
-              </p>
-            </div>
+    <section id="roadmap" class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">
+            Your Email Automation Journey
+          </h2>
+          <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
+            Start simple, scale smart. Here's how we help you grow from basic emails to advanced AI-powered campaigns.
+          </p>
+        </div>
 
-            <div class="flex justify-center lg:justify-start gap-4 mt-4">
-              <AnchorButton
-                href="#features"
-                className="rounded-full bg-primary-600 px-6 py-3 text-white font-semibold shadow"
-              >
-                Explore features
-              </AnchorButton>
-              <AnchorButton
-                href="#contact"
-                className="rounded-full bg-white px-6 py-3 text-neutral-900 font-medium ring-1 ring-black/5"
-              >
-                Get in touch
-              </AnchorButton>
+        <div class="grid lg:grid-cols-3 gap-8 mb-12">
+          {/* Step 1: Start Simple */}
+          <div class="bg-white rounded-2xl p-8 text-center relative">
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+              <div class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
+                1
+              </div>
+            </div>
+            <div class="mt-4">
+              <h3 class="text-2xl font-bold text-neutral-900 mb-4">Start Simple</h3>
+              <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span class="text-2xl">🚀</span>
+              </div>
+              <ul class="text-left space-y-3 text-neutral-600">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                  Welcome email series
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                  Basic abandoned cart emails
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                  Order confirmation emails
+                </li>
+              </ul>
+              <div class="mt-6 text-sm text-neutral-500">
+                Perfect for: New stores, 0-1K customers
+              </div>
             </div>
           </div>
 
-          <div class="relative flex justify-center lg:justify-end">
-            <div class="relative z-10">
-              <img
-                src="/images/phone.png"
-                alt="HeadlessPro mobile app"
-                class="w-full max-w-md animate-float"
-              />
+          {/* Step 2: Scale Medium */}
+          <div class="bg-white rounded-2xl p-8 text-center relative">
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+              <div class="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold">
+                2
+              </div>
             </div>
+            <div class="mt-4">
+              <h3 class="text-2xl font-bold text-neutral-900 mb-4">Scale Medium</h3>
+              <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span class="text-2xl">📈</span>
+              </div>
+              <ul class="text-left space-y-3 text-neutral-600">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+                  Customer segmentation
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+                  Win-back campaigns
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+                  Post-purchase sequences
+                </li>
+              </ul>
+              <div class="mt-6 text-sm text-neutral-500">
+                Perfect for: Growing stores, 1K-10K customers
+              </div>
+            </div>
+          </div>
 
-            <div class="absolute -top-8 -right-8 lg:-right-16 z-20 hidden lg:block">
-              <img
-                src="/images/dashboard.png"
-                alt="Analytics dashboard"
-                class="w-64 h-auto animate-drift delay-500 opacity-90"
-              />
+          {/* Step 3: Go Advanced */}
+          <div class="bg-white rounded-2xl p-8 text-center relative">
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+              <div class="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold">
+                3
+              </div>
+            </div>
+            <div class="mt-4">
+              <h3 class="text-2xl font-bold text-neutral-900 mb-4">Go Advanced</h3>
+              <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span class="text-2xl">🤖</span>
+              </div>
+              <ul class="text-left space-y-3 text-neutral-600">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
+                  AI product recommendations
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
+                  Predictive analytics
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
+                  Dynamic personalization
+                </li>
+              </ul>
+              <div class="mt-6 text-sm text-neutral-500">
+                Perfect for: Established stores, 10K+ customers
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Scroll indicator (link to features) */}
-      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div class="flex flex-col items-center space-y-2 text-neutral-400">
-          <span class="text-sm font-medium">Scroll to explore</span>
-          <a
-            href="#features"
-            class="block mt-1"
-            aria-label="Scroll to features"
-          >
-            <svg
-              class="w-6 h-6 animate-bounceArrow"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width={2}
-                d="M19 14l-7 7m0 0l-7-7m7 7V3"
-              />
-            </svg>
-          </a>
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="order-1">
+            <h3 class="text-2xl font-bold text-neutral-900 mb-6">
+              Track Your Success Every Step
+            </h3>
+            <p class="text-lg text-neutral-600 mb-6">
+              Our analytics dashboard shows you exactly how your automations are performing, 
+              so you can optimize and scale with confidence.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <div class="w-2 h-2 rounded-full bg-primary-600"></div>
+                <span class="text-neutral-700">Revenue attribution by automation</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-2 h-2 rounded-full bg-primary-600"></div>
+                <span class="text-neutral-700">Customer journey visualization</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-2 h-2 rounded-full bg-primary-600"></div>
+                <span class="text-neutral-700">A/B testing insights</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-2 h-2 rounded-full bg-primary-600"></div>
+                <span class="text-neutral-700">ROI tracking and forecasting</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center order-2">
+            <img
+              src="/images/Home_Page_1.png"
+              alt="Email Analytics Dashboard"
+              class="w-full max-w-md rounded-lg shadow-lg"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -245,375 +381,98 @@ export default function Home() {
         threshold={0.15}
       />
 
+      <Header />
+
       <HeroSection />
 
-      {/* Automation section inserted before FeatureTabs */}
-      <AutomationSection />
+      <AutomationTypesSection />
 
-      <div id="aos-scope">
-        {/* Commerce Solutions */}
-        <section  class="relative bg-neutral-50 py-16 lg:py-24">
-          <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight text-neutral-900 flex items-center justify-center flex-wrap gap-4 ">
-              <span class="">Headless E-Commerce from</span>
-              <img
-                src="/images/logo.png"
-                alt="HeadlessPro Logo"
-                class="inline-block w-24 h-auto md:w-32"
-              />
-            </h2>
-            <p class="mt-6 max-w-3xl mx-auto text-lg sm:text-xl text-neutral-600 leading-relaxed font-light">
-              Our modular platform unites best-in-class services so you can
-              solve your toughest commerce challenges rapidly and reliably.
-            </p>
-          </div>
-        </section>
+      <RoadmapSection />
 
-        {/* New Release Spotlight - CTA now in-page */}
-        <section id='features' class="bg-white py-16 lg:py-24">
-          <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-              <div class="space-y-6">
-                <p class="text-sm font-semibold uppercase text-primary-600 tracking-wide">
-                  New Release
-                </p>
-                <h3 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-neutral-900 leading-tight">
-                  Agentic Commerce Orchestrator
-                </h3>
-                <p class="text-lg text-neutral-600 leading-relaxed font-light">
-                  Give your team an always-on commerce copilot that connects
-                  catalog, promotions, and customer data so every purchase
-                  journey feels tailored.
-                </p>
-                <AnchorButton
-                  href="#features"
-                  className="inline-flex items-center font-semibold text-primary-600 hover:text-primary-700 transition-colors duration-200"
-                >
-                  Explore orchestrations
-                </AnchorButton>
-              </div>
-              <div class="flex justify-center items-center">
-                <img
-                  src="/images/Agentic_Commerce_Orchestrator_Design.png"
-                  alt="Agentic Commerce Orchestrator"
-                  class="w-full h-64 md:h-auto object-cover rounded-2xl shadow-soft"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      {/* Keep existing FeatureTabs island */}
-      <FeatureTabs />
-
-      {/* Showcase, case studies and rest remain — BUT CTAs are in-page */}
-      <section class="py-20 lg:py-28">
-        <div class="container mx-auto px-4 lg:px-8 space-y-16 sm:mb-6">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 sm:mb-6">
-            <article class="flex h-full flex-col rounded-[28px] bg-white p-8 ring-1 ring-black/5 shadow-card-1 sm:mb-6">
-              <div class="space-y-3 flex-1">
-                <h3 class="text-2xl md:text-3xl font-bold leading-tight">
-                  Sales across every channel.
-                </h3>
-              </div>
-              <figure class="shot mt-6 [--zoom:1.10] flex-shrink-0">
-                <div class="shot-frame">
-                  <img
-                    src="/images/web_channel_sales_card_v2.png"
-                    alt=""
-                    class="shot-img"
-                    loading="lazy"
-                    decoding="async"
-                  />
+      {/* Lead Magnet Section */}
+      <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 lg:px-8">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900 mb-6">
+                Get Your Free Email Automation Setup
+              </h2>
+              <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
+                Choose your free gift: Get a complete welcome email sequence setup 
+                or receive AI-powered product recommendation templates for your store.
+              </p>
+              
+              {/* Lead Magnet Options */}
+              <div class="space-y-6 mb-8">
+                <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                  <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span class="text-white text-sm font-bold">1</span>
+                    </div>
+                    <div>
+                      <h3 class="font-semibold text-neutral-900 mb-1">Free Welcome Email Sequence</h3>
+                      <p class="text-sm text-neutral-600">Complete 5-email welcome series templates + setup guide</p>
+                    </div>
+                  </div>
                 </div>
-              </figure>
-            </article>
-
-            <article class="flex h-full flex-col rounded-[28px] bg-white p-8 ring-1 ring-black/5 shadow-card-1 sm:mb-6">
-              <div class="space-y-3 flex-1">
-                <h3 class="text-2xl md:text-3xl font-bold leading-tight">
-                  Inventory at a glance.
-                </h3>
-              </div>
-              <figure class="shot mt-6 [--zoom:1.00] flex-shrink-0">
-                <div class="shot-frame">
-                  <img
-                    src="/images/product_catalog_grid.png"
-                    alt=""
-                    class="shot-img"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              </figure>
-            </article>
-
-            <article class="flex h-full flex-col rounded-[28px] bg-white p-8 ring-1 ring-black/5 shadow-card-1 sm:mb-6">
-              <div class="space-y-3 flex-1">
-                <h3 class="text-2xl md:text-3xl font-bold leading-tight">
-                  Create Coupon.
-                </h3>
-              </div>
-              <figure class="shot mt-6 [--zoom:1.08] flex-shrink-0">
-                <div class="shot-frame">
-                  <img
-                    src="/images/create_coupon_simple_centered.png"
-                    alt=""
-                    class="shot-img"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              </figure>
-            </article>
-          </div>
-
-          {/* Spotlight */}
-          <div class="relative overflow-hidden rounded-[32px] ring-1 ring-black/5 bg-gradient-to-br from-neutral-50 via-white to-neutral-50 p-8 md:p-12">
-            <div class="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
-              <div class="space-y-4">
-                <p class="text-sm font-semibold uppercase tracking-wide text-primary-600">
-                  Intelligent
-                </p>
-                <h3 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold leading-tight">
-                  Meet our Intelligent Churn Assistant.
-                </h3>
-                <p class="text-lg text-neutral-600">
-                  Find customers at risk and trigger coupons, emails, or SMS
-                  winbacks — fully automated.
-                </p>
-              </div>
-              <figure class="shot mt-4 sm:mt-4 w-full [--zoom:1.12]">
-                <div class="relative h-[340px] md:h-[400px] lg:h-[460px]">
-                  <img
-                    src="/images/ml_churn_risk_card_clear.png"
-                    alt="Churn Assistant UI"
-                    class="shot-img"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              </figure>
-            </div>
-            <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,.06)_0%,transparent_60%)]" />
-          </div>
-        </div>
-
-        {/* ===== FM Lab — Case Studies (centered header, image follows) ===== */}
-        <section class="py-20 lg:py-28">
-          <div class="mx-auto max-w-6xl px-4 sm:px-6">
-            {/* Frosted card */}
-            <div class="group relative isolate overflow-hidden rounded-[28px]
-             ring-1 ring-white/10
-             shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_30px_70px_-30px_rgba(0,0,0,0.45)]
-             min-h-[420px] sm:min-h-[560px] lg:min-h-[520px]
-             transition-transform duration-500 will-change-transform
-             motion-safe:hover:scale-[1.01]">
-              {/* Background image */}
-              <img
-                src="/images/case-studies-portrait.jpg"
-                alt="FM Lab mobile and web storefront design"
-                class="absolute inset-0 -z-10 h-full w-full object-cover
-               transition-transform duration-700 ease-[cubic-bezier(.2,.6,.2,1)]
-               motion-safe:group-hover:scale-[1.03]"
-                loading="lazy"
-                decoding="async"
-              />
-              {/* Frost + gradients (legibility) */}
-              <div class="absolute inset-0 -z-10">
-                {/* Blur layer only when supported (keeps Safari happy) */}
-                <div class="absolute inset-0 supports-[backdrop-filter]:backdrop-blur-xl supports-[backdrop-filter]:bg-white/5 bg-black/20">
-                </div>
-                {/* Top glossy edge */}
-                <div class="pointer-events-none absolute inset-x-0 top-0 h-24
-                    bg-gradient-to-b from-white/30 via-white/10 to-transparent">
-                </div>
-                {/* Bottom fade for text contrast */}
-                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-40
-                    bg-gradient-to-t from-black/50 via-black/20 to-transparent">
-                </div>
-              </div>
-
-              {/* Content — centered */}
-              {/* Content — Apple typography & colors */}
-              <div class="absolute inset-0 z-20 grid place-items-center px-4">
-                <div class="flex flex-col items-center text-center gap-5 max-w-[50ch]">
-                  {/* Logo row stays as-is */}
-                  <h2 class="text-2xl sm:text-4xl lg:text-5xl font-display font-bold leading-tight text-white">
-                    <span class="inline-flex items-center gap-2 sm:gap-3 align-middle">
-                      <img
-                        src="/images/logo.png"
-                        alt="FM"
-                        class="h-10 sm:h-12 lg:h-14 w-auto drop-shadow mr-3"
-                      />{" "}
-                      <span>Lab</span>
-                    </span>
-                  </h2>
-
-                  {/* Headline: tight, semi-bold, pure white */}
-                  <h2 class="text-[clamp(28px,5vw,54px)] font-semibold tracking-tight leading-[1.06] text-white">
-                    Design That Sells
-                  </h2>
-
-                  {/* Body: slightly softer white, comfy line-height */}
-                  <p class="text-[clamp(16px,2.1vw,20px)] font-medium leading-relaxed text-white/85">
-                    FM Lab turns minimal UI and motion into measurable lift
-                    across mobile and web storefronts.
-                  </p>
-
-                  {/* CTAs: primary = filled white, secondary = glass */}
-                  <div class="mt-2 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-                    {/* Primary */}
-                    <a
-                      href="/case-studies/mobile"
-                      class="inline-flex rounded-full px-6 sm:px-7 py-2.5 sm:py-3
-                bg-white text-neutral-900 font-semibold
-                ring-1 ring-black/5
-                shadow-[inset_0_1px_0_rgba(255,255,255,.6),0_6px_20px_-8px_rgba(0,0,0,.25)]
-                hover:bg-white/95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A84FF] transition hover:bg-sky-700"
-                    >
-                      Mobile case study
-                    </a>
-
-                    {/* Secondary */}
-                    <a
-                      href="/case-studies/web"
-                      class="inline-flex rounded-full px-6 sm:px-7 py-2.5 sm:py-3
-                text-white font-semibold
-                ring-1 ring-white/50 bg-white/10 backdrop-blur-xl
-                hover:bg-white/14 hover:ring-white/70
-                focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A84FF] transition hover:bg-sky-700"
-                    >
-                      Website case study
-                    </a>
+                
+                <div class="bg-purple-50 rounded-lg p-4 border border-purple-200">
+                  <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span class="text-white text-sm font-bold">2</span>
+                    </div>
+                    <div>
+                      <h3 class="font-semibold text-neutral-900 mb-1">AI Recommendations Demo</h3>
+                      <p class="text-sm text-neutral-600">Free analysis of your store + personalized automation strategy</p>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Subtle focus ring on hover (Apple-esque) */}
-              <div class="pointer-events-none absolute inset-0 rounded-[28px] ring-1 ring-white/0 group-hover:ring-white/20 transition">
+              <div class="space-y-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-2 h-2 rounded-full bg-primary-600"></div>
+                  <span class="text-neutral-700">Setup in 24 hours</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-2 h-2 rounded-full bg-primary-600"></div>
+                  <span class="text-neutral-700">No credit card required</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-2 h-2 rounded-full bg-primary-600"></div>
+                  <span class="text-neutral-700">Includes implementation support</span>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-      </section>
-
-      {/* More ways HeadlessPro empowers you */}
-      {/* ===== Apple-style “More ways … empowers you” ===== */}
-      <section class="py-20 lg:py-28 bg-gradient-to-r from-neutral-50 to-white">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6">
-          <div class="md:grid md:grid-cols-2 md:gap-16 md:items-start">
-            {/* Left: title + features */}
-            <div class="space-y-8">
-              <h3 class="text-4xl lg:text-5xl font-semibold tracking-tight text-neutral-900">
-                More ways{" "}
-                <span class="bg-gradient-to-r from-[#0A84FF] to-[#64D2FF] bg-clip-text text-transparent">
-                  Headless Engine
-                </span>{" "}
-                empowers you
-              </h3>
-
-              <ul class="space-y-6">
-                {[
-                  {
-                    icon: "/images/recommendations.png",
-                    title: "Smart Recommendations",
-                    text:
-                      "AI-driven product suggestions that boost order value.",
-                  },
-                  {
-                    icon: "/images/analytics.png",
-                    title: "Real-Time Analytics",
-                    text:
-                      "Live dashboards to track revenue, churn, and cohorts.",
-                  },
-                  {
-                    icon: "/images/automation.png",
-                    title: "Workflow Automation",
-                    text:
-                      "Trigger emails, inventory syncs, and promos automatically.",
-                  },
-                ].map((f) => (
-                  <li key={f.title} class="group flex items-start gap-5">
-                    {/* Icon chip (glass, subtle shadow) */}
-                    <div class="grid place-items-center h-12 w-12 rounded-2xl
-                       bg-white/70 backdrop-blur-xl ring-1 ring-black/5
-                       shadow-[inset_0_1px_0_rgba(255,255,255,.7),0_10px_30px_-12px_rgba(0,0,0,.25)]
-                       transition-transform motion-safe:group-hover:-translate-y-0.5 flex-none">
-                      <img src={f.icon} alt="" class="h-6 w-6" />
-                    </div>
-
-                    <div class="space-y-1">
-                      <h4 class="text-xl font-semibold tracking-tight text-neutral-900">
-                        {f.title}
-                      </h4>
-                      <p class="text-neutral-600">{f.text}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Right: airy floating chips (decorative) */}
-            <div class="relative mt-14 md:mt-0 h-90 md:h-auto">
-              <div class="hidden md:block relative h-full">
-                {[
-                  {
-                    icon: "/images/recommendations.png",
-                    top: "12%",
-                    left: "18%",
-                  },
-                  { icon: "/images/automation.png", top: "46%", left: "56%" },
-                  { icon: "/images/analytics.png", top: "22%", left: "78%" },
-                ].map((f, i) => (
-                  <div
-                    key={i}
-                    class="absolute"
-                    style={{ top: f.top, left: f.left }}
-                  >
-                    <div class="p-4 rounded-2xl bg-white/70 backdrop-blur-xl ring-1 ring-black/5
-                          shadow-[inset_0_1px_0_rgba(255,255,255,.7),0_12px_40px_-18px_rgba(0,0,0,.28)]
-                          motion-safe:animate-[float_6s_ease-in-out_infinite]">
-                      <img src={f.icon} alt="" class="h-20 w-" />
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <div class="flex justify-center">
+              <img
+                src="/images/Home_Page_4.png"
+                alt="Free Email Automation Setup"
+                class="w-full max-w-md rounded-lg shadow-lg"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Make sure this contact target exists — simple contact CTA */}
+      {/* Contact Form Section */}
       <div id="contact" class="py-20 bg-neutral-50">
-        <div class="container mx-auto px-4 lg:px-8 text-center">
-          <h3 class="text-2xl font-semibold mb-4">Talk to us</h3>
-          <p class="text-neutral-600 max-w-2xl mx-auto mb-6">
-            Tell us about your project and we'll show how Headless Engine makes
-            it faster and cheaper to operate.
-          </p>
-          <a
-            href="mailto:lucy@fastandmodern.com"
-            class="inline-flex items-center rounded-full bg-primary-600 px-6 py-3 text-white font-semibold shadow"
-          >
-            Email our team
-          </a>
+        <div class="container mx-auto px-4 lg:px-8">
+          <div class="max-w-2xl mx-auto">
+            <div class="text-center mb-12">
+              <h2 class="text-3xl font-bold text-neutral-900 mb-4">
+                Claim Your Free Email Automation Gift
+              </h2>
+              <p class="text-lg text-neutral-600">
+                Tell us about your store and we'll send you the perfect automation starter kit within 24 hours.
+              </p>
+            </div>
+            <div class="bg-white rounded-2xl p-8 shadow-sm ring-1 ring-black/5">
+              <EmailContactForm />
+            </div>
+          </div>
         </div>
       </div>
-
-      {/* Pricing anchor  */}
-      <div id="pricing" />
-
-      {/* Endcap CTA (keeps original component) */}
-      <EndcapCTA
-        title="Ready when you are."
-        description="Launch Once, Grow Everywhere."
-        primaryHref="#contact"
-        primaryLabel="Contact us"
-        secondaryHref="#features"
-        secondaryLabel="See features"
-      />
     </>
   );
 }

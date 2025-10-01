@@ -1,5 +1,4 @@
 // islands/FeatureTabs.tsx
-import { h } from "preact";
 import { useState } from "preact/hooks";
 
 type Feature = {
@@ -13,60 +12,61 @@ type Feature = {
 export default function FeatureTabs() {
   const features: Feature[] = [
     {
-      label: "Catalog",
-      title: "One place for all products",
+      label: "Smart Promotions",
+      title: "Automated discount engine",
       description:
-        "Add products, variants, and prices once. We keep everything in sync across your store and channels.",
+        "Intelligent promotion system that applies the right discounts at the right time based on customer behavior and inventory levels.",
       items: [
-        "No more spreadsheets",
-        "Publish to web, mobile, marketplaces",
-        "Live inventory updates",
-        "Smart product recommendations",
+        "Cart abandonment recovery",
+        "Dynamic pricing rules",
+        "VIP customer exclusives",
+        "Inventory-driven promotions",
       ],
       img: "/images/catalog_management.png",
     },
     {
-      label: "Storefront",
-      title: "Build your store visually",
+      label: "Inventory Sync",
+      title: "Real-time stock management",
       description:
-        "Start with ready-made blocks. Drag, drop, and publish—no heavy dev work.",
+        "Multi-channel inventory synchronization with intelligent fulfillment routing and automated reorder triggers.",
       items: [
-        "Customizable sections",
-        "See changes on phone & desktop",
-        "Save versions and roll back",
+        "Multi-warehouse sync",
+        "Optimal order routing",
+        "Low stock alerts",
+        "Auto-reorder workflows",
       ],
       img: "/images/storefront_design.png",
     },
     {
-      label: "Analytics",
-      title: "Know what’s working",
+      label: "Customer Journeys",
+      title: "Automated lifecycle management",
       description:
-        "Dashboards for sales, traffic, and customers. Create simple custom reports when you need them.",
-      items: ["Sales & traffic views", "Custom reports", "Event export"],
+        "Personalized customer experiences from welcome sequences to churn prevention with AI-driven insights.",
+      items: ["Welcome automation", "Churn prediction", "Loyalty programs", "Behavioral triggers"],
       img: "/images/analytics_insights.png",
     },
     {
-      label: "Campaigns",
-      title: "Send the right message automatically",
+      label: "Returns Processing",
+      title: "Streamlined refund automation",
       description:
-        "Set triggers once—emails, SMS, or push go out based on customer actions.",
-      items: ["Behavior-based triggers", "Easy A/B tests", "Email, SMS, push"],
+        "Instant return eligibility checks, automated refund processing, and smart exchange recommendations.",
+      items: ["Instant eligibility", "Auto-refunds", "Return labels", "Exchange suggestions"],
       img: "/images/campaign_automation.png",
     },
     {
-      label: "Fulfillment",
-      title: "Ship faster with fewer errors",
+      label: "Analytics",
+      title: "Automation performance insights",
       description:
-        "Manage picking, packing, shipping, and returns from one place.",
-      items: ["Inventory sync", "Batch label printing", "Easy returns & exchanges"],
+        "Real-time dashboards showing how your automations are performing and driving revenue growth.",
+      items: ["Automation metrics", "ROI tracking", "Performance alerts", "Custom reports"],
       img: "/images/order_fulfillment_small.png",
     },
     {
-      label: "Workflows",
-      title: "Automate the busywork",
+      label: "Integration Hub",
+      title: "Connect everything seamlessly",
       description:
-        "Create simple rules and approvals. Connect tools with webhooks and APIs.",
-      items: ["Rule-based steps", "Webhook/API connectors", "Activity logs"],
+        "Pre-built connectors and webhook automation to integrate with your existing tools and workflows.",
+      items: ["Pre-built connectors", "Webhook automation", "API management", "Custom integrations"],
       img: "/images/workflow_automation.png",
     },
   ];
@@ -78,7 +78,7 @@ export default function FeatureTabs() {
     <section className="bg-gray-50 py-16 sm:py-20">
       <div className="container mx-auto px-6">
         <h3 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-8 sm:mb-10 text-center">
-          Everything you need to sell
+          Automation features that drive growth
         </h3>
 
         {/* Tabs */}
@@ -92,6 +92,7 @@ export default function FeatureTabs() {
             return (
               <button
                 key={label}
+                type="button"
                 role="tab"
                 aria-selected={isActive}
                 aria-controls={`panel-${label}`}
