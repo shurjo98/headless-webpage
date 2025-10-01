@@ -1,4 +1,4 @@
-// /** components/Header.tsx – Bigger header + bigger buttons */
+// /** components/Header.tsx - Bigger header + bigger buttons */
 // import { useSignal } from "@preact/signals";
 // import { IS_BROWSER } from "$fresh/runtime.ts";
 
@@ -110,15 +110,14 @@
  */
 
 // This is for one page
-import { h } from "preact";
+// import { h } from "preact"; // Not needed for JSX
 import { useEffect, useRef, useState } from "preact/hooks";
 
 const NAV_LINKS = [
-  { label: "Home", href: "#hero" },
-  { label: "Automation", href: "#automation" },
-  { label: "Features", href: "#features" },
-  { label: "About", href: "#about" }
-  // { label: "Contact", href: "#contact" },
+  { label: "Home", href: "#home" },
+  { label: "Automations", href: "#automation-types" },
+  { label: "Roadmap", href: "#roadmap" },
+  { label: "Contact", href: "#contact" }
 ];
 
 function safeQuery(id: string) {
@@ -151,38 +150,108 @@ export default function Header() {
     const elems = ids.map((id) => ({ id, el: safeQuery(id) })).filter((x) => x.el);
     if (!elems.length) return;
 
+    // Set initial active state based on current scroll position
+    const setInitialActive = () => {
+      const scrollY = globalThis.scrollY;
+      let currentSection = "#home"; // default
+      
+      // If we're at the very top (within 200px), always show home
+      if (scrollY < 200) {
+        setActive("#home");
+        return;
+      }
+      
+      // Find the section that's currently at the top of the viewport
+      for (const { id, el } of elems.reverse()) { // Check from bottom to top
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          const elementTop = rect.top + scrollY;
+          if (scrollY >= elementTop - 120) { // 120px offset for header + padding
+            currentSection = id;
+            break;
+          }
+        }
+      }
+      setActive(currentSection);
+    };
+
+    // Set initial state
+    setInitialActive();
+
     const observer = new IntersectionObserver(
       (entries) => {
-        // choose the most visible section
-        let best: IntersectionObserverEntry | null = null;
-        for (const e of entries) {
-          if (!best || e.intersectionRatio > best.intersectionRatio) best = e;
-        }
-        if (best && best.target && (best.target as Element).id) {
-          setActive(`#${(best.target as Element).id}`);
+        // Find sections that are actually visible (intersecting)
+        const visibleEntries = entries.filter(e => e.isIntersecting);
+        if (visibleEntries.length === 0) return;
+
+        // Sort by their position on the page (top to bottom)
+        visibleEntries.sort((a, b) => {
+          const aRect = a.target.getBoundingClientRect();
+          const bRect = b.target.getBoundingClientRect();
+          return aRect.top - bRect.top;
+        });
+
+        // Choose the first visible section (topmost)
+        const topSection = visibleEntries[0];
+        if (topSection && topSection.target && (topSection.target as Element).id) {
+          setActive(`#${(topSection.target as Element).id}`);
         }
       },
-      { root: null, rootMargin: "0px 0px -40% 0px", threshold: [0, 0.1, 0.3, 0.6] }
+      { root: null, rootMargin: "-80px 0px -50% 0px", threshold: [0, 0.1, 0.3, 0.6] }
     );
 
     elems.forEach((x) => observer.observe(x.el as Element));
-    return () => observer.disconnect();
+
+    // Add scroll listener as backup for edge cases
+    const handleScroll = () => {
+      const scrollY = globalThis.scrollY;
+      
+      // If we're at the very top, always show home
+      if (scrollY < 100) {
+        setActive("#home");
+        return;
+      }
+      
+      // Find current section based on scroll position
+      let currentSection = "#home";
+      for (const { id, el } of elems) {
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          const elementTop = rect.top + scrollY;
+          if (scrollY >= elementTop - 100) {
+            currentSection = id;
+          }
+        }
+      }
+      setActive(currentSection);
+    };
+
+    globalThis.addEventListener("scroll", handleScroll, { passive: true });
+    
+    return () => {
+      observer.disconnect();
+      globalThis.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  const handleNav = (e: MouseEvent, href: string) => {
+  const handleNav = (e: Event, href: string) => {
     // allow external / mailto / tel
     if (href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("tel:")) return;
     e.preventDefault();
     const id = href.startsWith("#") ? href : `#${href}`;
     const el = safeQuery(id);
     setOpen(false);
+    
+    // Immediately set the active state for better UX
+    setActive(id);
+    
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
-      try { history.replaceState(null, "", id); } catch {}
+      try { history.replaceState(null, "", id); } catch { /* ignore */ }
     } else {
       // fallback to top
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      try { window.location.hash = id; } catch {}
+      globalThis.scrollTo({ top: 0, behavior: "smooth" });
+      try { globalThis.location.hash = id; } catch { /* ignore */ }
     }
   };
 
@@ -192,17 +261,17 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a
-            href="#hero"
-            onClick={(e) => handleNav(e as any, "#hero")}
+            href="#home"
+            onClick={(e) => handleNav(e, "#home")}
             className="flex items-center gap-3"
             aria-label="Go to top"
           >
-            <img src="/images/logo.png" alt="Logo" className="h-8 w-auto" />
-            <span className="hidden sm:inline font-semibold text-neutral-800">Headless Engine</span>
+            <img src="/images/logo.png" alt="EmailPro Logo" className="h-8 w-auto" />
+            <span className="hidden sm:inline font-semibold text-neutral-800">EmailPro</span>
           </a>
 
           {/* Desktop nav */}
-          <nav ref={navRef as any} className="hidden md:flex items-center gap-6">
+          <nav ref={navRef} className="hidden md:flex items-center gap-6">
             <ul className="flex items-center gap-6">
               {NAV_LINKS.map((link) => {
                 const isActive = active === link.href;
@@ -210,10 +279,12 @@ export default function Header() {
                   <li key={link.href}>
                     <a
                       href={link.href}
-                      onClick={(e) => handleNav(e as any, link.href)}
+                      onClick={(e) => handleNav(e, link.href)}
                       className={
-                        "text-sm transition-colors duration-150 " +
-                        (isActive ? "text-neutral-900 font-semibold" : "text-neutral-600 hover:text-neutral-900")
+                        "text-sm transition-colors duration-150 px-3 py-2 rounded-lg " +
+                        (isActive 
+                          ? "text-primary-600 font-semibold bg-primary-50 border border-primary-200" 
+                          : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50")
                       }
                       aria-current={isActive ? "true" : undefined}
                     >
@@ -223,18 +294,12 @@ export default function Header() {
                 );
               })}
             </ul>
-            <a
-              href="#contact"
-              onClick={(e) => handleNav(e as any, "#contact")}
-              className="ml-4 inline-flex items-center rounded-full bg-neutral-900 text-white px-4 py-2 text-sm font-semibold shadow-sm hover:opacity-95"
-            >
-              Contact
-            </a>
           </nav>
 
           {/* Mobile controls */}
           <div className="md:hidden flex items-center">
             <button
+              type="button"
               aria-label="Open menu"
               aria-expanded={open}
               onClick={() => setOpen((s) => !s)}
@@ -264,10 +329,12 @@ export default function Header() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    onClick={(e) => handleNav(e as any, link.href)}
+                    onClick={(e) => handleNav(e, link.href)}
                     className={
                       "block px-3 py-2 rounded-md text-base " +
-                      (isActive ? "text-neutral-900 font-semibold" : "text-neutral-700 hover:bg-neutral-100")
+                      (isActive 
+                        ? "text-primary-600 font-semibold bg-primary-50 border border-primary-200" 
+                        : "text-neutral-700 hover:bg-neutral-100")
                     }
                   >
                     {link.label}
@@ -276,15 +343,6 @@ export default function Header() {
               );
             })}
           </ul>
-          <div className="pt-2">
-            <a
-              href="#contact"
-              onClick={(e) => handleNav(e as any, "#contact")}
-              className="block w-full text-center rounded-full bg-neutral-900 text-white px-4 py-2 font-semibold"
-            >
-              Contact
-            </a>
-          </div>
         </div>
       </div>
     </header>

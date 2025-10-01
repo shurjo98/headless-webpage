@@ -9,15 +9,15 @@ export default function App({ Component }: AppProps) {
   return (
     <>
       <Head>
-        <title>HeadlessPro - Launch Once, Grow Everywhere</title>
+        <title>HeadlessPro - Automate Your Ecommerce, Scale Without Limits</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="description"
-          content="The complete headless commerce platform that scales with your business. Launch once, grow everywhere."
+          content="The complete headless commerce automation engine that handles promotions, inventory, fulfillment, and customer journeys automatically."
         />
         <meta
           name="keywords"
-          content="headless commerce, ecommerce platform, API-first, modern commerce"
+          content="ecommerce automation, headless commerce, automated promotions, inventory automation, customer lifecycle automation, returns automation"
         />
         <meta name="author" content="HeadlessPro" />
 
@@ -26,11 +26,11 @@ export default function App({ Component }: AppProps) {
         <meta property="og:url" content="https://headlesspro.com/" />
         <meta
           property="og:title"
-          content="HeadlessPro - Launch Once, Grow Everywhere"
+          content="HeadlessPro - Automate Your Ecommerce, Scale Without Limits"
         />
         <meta
           property="og:description"
-          content="The complete headless commerce platform that scales with your business."
+          content="The complete headless commerce automation engine that handles promotions, inventory, fulfillment, and customer journeys automatically."
         />
         <meta property="og:image" content="/images/og-image.png" />
 
@@ -39,11 +39,11 @@ export default function App({ Component }: AppProps) {
         <meta property="twitter:url" content="https://headlesspro.com/" />
         <meta
           property="twitter:title"
-          content="HeadlessPro - Launch Once, Grow Everywhere"
+          content="HeadlessPro - Automate Your Ecommerce, Scale Without Limits"
         />
         <meta
           property="twitter:description"
-          content="The complete headless commerce platform that scales with your business."
+          content="The complete headless commerce automation engine that handles promotions, inventory, fulfillment, and customer journeys automatically."
         />
         <meta property="twitter:image" content="/images/og-image.png" />
 
